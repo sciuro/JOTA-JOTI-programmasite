@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="nl">
     <head>
-        <title><?php echo $title; ?></title>
+        <title><?php echo $pagina->titel; ?></title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Themasite Jota-Joti Nederland">
         <meta name="author" content="Jota-Joti Organisatie Nederland">
