@@ -7,8 +7,8 @@
             $this->load->model('pagina_model');
 
             // Variabelen van de pagina zetten.
-            $data['page'] = "home";
             $data['pagina'] = $this->pagina_model->get_pagina($urlnaam);
+            $data['page'] = $urlnaam;
             $data['titel'] = $data['pagina']['titel'];
 
             // Eerst de header laden.

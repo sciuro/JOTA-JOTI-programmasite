@@ -18,9 +18,9 @@
                     <?php } else { ?>
                     <li>
                     <?php } ?>
-                    <a href="<?php echo base_url();?>">Home</a></li>
+                    <a href="<?php echo base_url();?>info/pagina/home">Home</a></li>
                       
-                    <?php if ($page == "view"){ ?>
+                    <?php if ($page == "algemeen"){ ?>
                     <li class="active">
                     <?php } else { ?>
                     <li>
