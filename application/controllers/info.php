@@ -1,5 +1,10 @@
 <?php
     class info extends CI_Controller {
+
+        public function index()
+        {
+            redirect('info/pagina/404');
+        }
         
         public function pagina($urlnaam)
         {
@@ -8,6 +13,10 @@
 
             // Variabelen van de pagina zetten.
             $data['pagina'] = $this->pagina_model->get_pagina($urlnaam);
+
+            if (!$data['pagina']) {
+                redirect('info/pagina/404');
+            }
             $data['page'] = $urlnaam;
             $data['titel'] = $data['pagina']['titel'];
 
