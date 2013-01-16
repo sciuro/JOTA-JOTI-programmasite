@@ -1,10 +1,52 @@
-	<ul class="nav">
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
 
-    	<?php if ($page == "home"){ ?><li class="active">
-    	<?php } else { ?><li>
-    	<?php } ?>
-    		<a href="<?php echo base_url();?>">Home</a>
-    	</li>
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
 
-    </ul>
+            <a class="brand" href="<?php echo base_url();?>">Jota-Joti</a>
 
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+
+                    <?php if ($page == "home"){ ?>
+                    <li class="active">
+                    <?php } else { ?>
+                    <li>
+                    <?php } ?>
+                    <a href="<?php echo base_url();?>">Home</a></li>
+                      
+                    <?php if ($page == "view"){ ?>
+                    <li class="active">
+                    <?php } else { ?>
+                    <li>
+                    <?php } ?>
+                    <a href="<?php echo base_url();?>info/pagina/algemeen">Algemeen</a></li>
+                    
+                    <?php if ($page == "spelen"){ ?>
+                    <li class="dropdown active">
+                    <?php } else { ?>
+                    <li class="dropdown">
+                    <?php } ?>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Spelen</a>
+						<ul class="dropdown-menu" role="menu">
+							<li><a tabindex="-1" href="<?php echo base_url();?>info/pagina/spelen">Algemeen</a></li>
+                            <li class="divider"></li>
+							<li><a tabindex="-1" href="<?php echo base_url();?>spelen/speltak/bevers/">Bevers</a></li>
+                            <li><a tabindex="-1" href="<?php echo base_url();?>spelen/speltak/welpen/">Welpen</a></li>
+                            <li><a tabindex="-1" href="<?php echo base_url();?>spelen/speltak/scouts/">Scouts</a></li>
+                            <li><a tabindex="-1" href="<?php echo base_url();?>spelen/speltak/explorers/">Explorers</a></li>
+                            <li><a tabindex="-1" href="<?php echo base_url();?>spelen/speltak/roverscouts/">Roverscouts</a></li>
+
+						</ul>
+					</li>
+                 
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
