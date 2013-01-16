@@ -6,7 +6,7 @@
 			$this->db->where('urlnaam', $pagina);
 
 			$query = $this->db->get('pagina');
-			return $query->row();
+			return $query->row_array();
 		}
 		
     }

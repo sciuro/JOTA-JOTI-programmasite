@@ -1,3 +1,3 @@
-<?php echo $pagina->tekst; ?>
+<?php echo $pagina['tekst']; ?>
 
-<p>Laatste aanpassing: <?php echo $pagina->timestamp; ?>
+<p>Laatste aanpassing: <?php echo $pagina['timestamp']; ?>
