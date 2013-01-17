@@ -36,11 +36,11 @@
 						<ul class="dropdown-menu" role="menu">
 							<li><a tabindex="-1" href="<?php echo base_url();?>info/pagina/spelen">Algemeen</a></li>
                             <li class="divider"></li>
-							<li><a tabindex="-1" href="<?php echo base_url();?>overzicht/speltak/bevers/">Bevers</a></li>
-                            <li><a tabindex="-1" href="<?php echo base_url();?>overzicht/speltak/welpen/">Welpen</a></li>
-                            <li><a tabindex="-1" href="<?php echo base_url();?>overzicht/speltak/scouts/">Scouts</a></li>
-                            <li><a tabindex="-1" href="<?php echo base_url();?>overzicht/speltak/explorers/">Explorers</a></li>
-                            <li><a tabindex="-1" href="<?php echo base_url();?>overzicht/speltak/roverscouts/">Roverscouts</a></li>
+							<li><a tabindex="-1" href="<?php echo base_url();?>overzicht/bevers/">Bevers</a></li>
+                            <li><a tabindex="-1" href="<?php echo base_url();?>overzicht/welpen/">Welpen</a></li>
+                            <li><a tabindex="-1" href="<?php echo base_url();?>overzicht/scouts/">Scouts</a></li>
+                            <li><a tabindex="-1" href="<?php echo base_url();?>overzicht/explorers/">Explorers</a></li>
+                            <li><a tabindex="-1" href="<?php echo base_url();?>overzicht/roverscouts/">Roverscouts</a></li>
 
 						</ul>
 					</li>
