@@ -44,6 +44,18 @@
 
 						</ul>
 					</li>
+
+                    <?php if ($page == "beheer"){ ?>
+                    <li class="dropdown active">
+                    <?php } else { ?>
+                    <li class="dropdown">
+                    <?php } ?>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Beheer</a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a tabindex="-1" href="<?php echo base_url();?>beheer">Instellingen</a></li>
+                            <li><a tabindex="-1" href="<?php echo base_url();?>beheer/spel">Spelen</a></li>
+                        </ul>
+                    </li>
                  
                 </ul>
             </div>
