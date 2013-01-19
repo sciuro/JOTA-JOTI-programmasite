@@ -9,10 +9,13 @@
         public function opties($tab = 'algemeen')
         {
             // Modellen laden
-            if ($tab == 'speltakken') {
-                $this->load->model('beheer_model');
+            $this->load->model('beheer_model');
 
+            if ($tab == 'speltakken') {
                 $data['speltakken'] = $this->beheer_model->get_speltakken();
+            } elseif ($tab == 'gebieden') {
+                $data['speltakken'] = $this->beheer_model->get_speltakken();
+                $data['gebieden'] = $this->beheer_model->get_gebieden();
             }
 
             // Variabelen goedzetten
@@ -56,14 +59,19 @@
 
         public function verwijder($item, $id)
         {
-            if(($item == 'speltak') && ($id)) {
-                // Model laden
-                $this->load->model('beheer_model');
-
+            // Model laden
+            $this->load->model('beheer_model');
+            
+            if (($item == 'speltak') && ($id)) {
                 // item verwijderen
                 $this->beheer_model->verwijder_speltak($id);
 
                 redirect('beheer/opties/speltakken');
+            } elseif ($item == 'gebied') {
+                // Gebied verwijderen
+                $this->beheer_model->verwijder_gebied($id);
+
+                redirect('beheer/opties/gebieden');
             } else {
                 // Anders loopt iemand te klooien.
                 redirect('beheer/opties');
@@ -72,14 +80,19 @@
 
         public function opslaan($item)
         {
-            if($item == 'speltakken') {
-                // Model laden
-                $this->load->model('beheer_model');
+            // Model laden
+            $this->load->model('beheer_model');
 
+            if($item == 'speltakken') {
                 // item aanpassen
                 $this->beheer_model->opslaan_speltak();
 
                 redirect('beheer/opties/speltakken');
+            } elseif ($item == 'gebieden') {
+                // item aanpassen
+                $this->beheer_model->opslaan_gebied();
+
+                redirect('beheer/opties/gebieden');
             } else {
                 // Anders loopt iemand te klooien.
                 redirect('beheer/opties');

@@ -54,7 +54,120 @@
    	<?php } elseif ($tab == "artikelen") { ?>
     <h3>Artikelen</h3>
 
+    <?php // Gebieden tabblad. ?>
     <?php } elseif ($tab == "gebieden") { ?>
+
+    <div class='row'>    
+      <table class="table table-hover span4 offset4">
+        
+        <thead>
+          <tr>
+            <th></th>
+            <th>Speltak</th>
+            <th>Gebieden</th>
+          </tr>
+        </thead>
+        
+        <tbody>
+          <?php foreach ($gebieden as $gebied) { ?>
+          <tr>
+            <td><a href="#verandergebied<?php echo $gebied['id']; ?>" data-toggle="modal"><span class="badge badge-info"><i class="icon-pencil icon-white"></i></span></a>
+                
+                <?php if (!$gebied['aantal']) { ?>
+                <a href="<?php echo base_url(); ?>beheer/verwijder/gebied/<?php echo $gebied['id']; ?>"><span class="badge badge-important"><i class="icon-remove icon-white"></i></span></a>
+                <?php } else { ?>
+                <span class="badge"><i class="icon-remove icon-white"></i></span>
+                <?php } ?>
+
+                <?php // De overlay voor het toevoegen van nieuwe gebieden. ?>
+                <div id="verandergebied<?php echo $gebied['id']; ?>" class="modal hide" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                  <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  <h3 id="myModalLabel">Verander gebied</h3>
+                </div>
+                <?php $attributes = array('class' => 'form-horizontal');
+                      echo form_open('beheer/opslaan/'.$tab, $attributes); ?>
+                <div class="modal-body">
+                  <p>Verander gebied</p>
+
+                  <div class="control-group">
+                    <label class="control-label" for="gebiednaam">Naam:</label>
+                      <div class="controls">
+                        <input type="text" id="gebiednaam" name="gebiednaam" placeholder="Gebiednaam" value="<?php echo $gebied['naam']; ?>">
+                        <input type="hidden" name="gebiedid" value="<?php echo $gebied['id']; ?>">
+                      </div>
+                  </div>
+
+                  <div class="control-group">
+                    <label class="control-label" for="speltak">Speltak:</label>
+                      <div class="controls">
+                        <?php foreach ($speltakken as $speltak) { ?>
+                          <?php if ($gebied['speltakid'] == $speltak['id']) {$checked = 'checked';} else {$checked=''; } ?>
+                          <label class="radio"><input type="radio" name="speltakid" value="<?php echo $speltak['id']; ?>" <?php echo $checked; ?>><?php echo $speltak['naam']; ?></label>
+                        <?php } ?>
+                      </div>
+                  </div>
+
+                  <div class="modal-footer">
+                    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+                    <button type="submit" class="btn btn-primary">Opslaan</button>
+                  </div>
+
+                </form>
+
+                </td>
+            <td><?php echo $gebied['speltak'];?></td>
+            <td><?php echo $gebied['naam'];?></td>
+          </tr>
+          <?php } ?>
+        </tbody>
+      </table>
+    </div>
+
+    <div class='row'>
+      <div class='span1 offset6'>
+        <a href="#nieuwgebied" role="button" class="btn" data-toggle="modal">Nieuw</a>
+
+        <?php // De overlay voor het toevoegen van nieuwe gebieden. ?>
+        <div id="nieuwgebied" class="modal hide" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h3 id="myModalLabel">Nieuw gebied</h3>
+          </div>
+          <?php $attributes = array('class' => 'form-horizontal');
+                echo form_open('beheer/opslaan/'.$tab, $attributes); ?>
+            <div class="modal-body">
+              <p>Nieuwe gebied</p>
+
+              <div class="control-group">
+                <label class="control-label" for="gebiednaam">Naam:</label>
+                <div class="controls">
+                  <input type="text" id="gebiednaam" name="gebiednaam" placeholder="Gebiednaam">
+                </div>
+              </div>
+            </div>
+
+            <div class="control-group">
+              <label class="control-label" for="speltak">Speltak:</label>
+                <div class="controls">
+                  <?php foreach ($speltakken as $speltak) { ?>
+                    <label class="radio"><input type="radio" name="speltakid" value="<?php echo $speltak['id']; ?>"><?php echo $speltak['naam']; ?></label>
+                  <?php } ?>
+                </div>
+              </div>
+
+            <div class="modal-footer">
+              <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+              <button type="submit" class="btn btn-primary">Opslaan</button>
+            </div>
+
+          </form>
+
+        </div>
+
+      </div>
+    </div>
+
 
     <?php // Speltakken tabblad ?>
     <?php } elseif ($tab == "speltakken") { ?>
@@ -97,7 +210,6 @@
                         <input type="text" id="speltaknaam" name="speltaknaam" placeholder="Speltaknaam" value="<?php echo $speltak['naam']; ?>">
                         <input type="hidden" name="speltakid" value="<?php echo $speltak['id']; ?>">
                       </div>
-                    </div>
 
                   </div>
 
