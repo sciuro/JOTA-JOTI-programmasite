@@ -55,20 +55,115 @@
     <h3>Artikelen</h3>
 
     <?php } elseif ($tab == "gebieden") { ?>
-    <h3>Activiteitengebieden</h3>
 
+    <?php // Speltakken tabblad ?>
     <?php } elseif ($tab == "speltakken") { ?>
 
-    <?php $attributes = array('class' => 'form-horizontal');
-    echo form_open('beheer/save/'.$tab, $attributes); ?>
+    <div class='row'>    
+      <table class="table table-hover span3 offset4">
+        
+        <thead>
+          <tr>
+            <th></th>
+            <th>Speltak</th>
+          </tr>
+        </thead>
+        
+        <tbody>
+          <?php foreach ($speltakken as $speltak) { ?>
+          <tr>
+            <td><a href="#veranderspeltak<?php echo $speltak['id']; ?>" data-toggle="modal"><span class="badge badge-info"><i class="icon-pencil icon-white"></i></span></a>
+                
+                <?php if (!$speltak['aantal']) { ?>
+                <a href="<?php echo base_url(); ?>beheer/verwijder/speltak/<?php echo $speltak['id']; ?>"><span class="badge badge-important"><i class="icon-remove icon-white"></i></span></a>
+                <?php } else { ?>
+                <span class="badge"><i class="icon-remove icon-white"></i></span>
+                <?php } ?>
 
-    </form>
+                <?php // De overlay voor het toevoegen van nieuwe speltakken. ?>
+                <div id="veranderspeltak<?php echo $speltak['id']; ?>" class="modal hide" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                  <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  <h3 id="myModalLabel">Verander speltak</h3>
+                </div>
+                <?php $attributes = array('class' => 'form-horizontal');
+                      echo form_open('beheer/opslaan/'.$tab, $attributes); ?>
+                <div class="modal-body">
+                  <p>Verander speltak</p>
+
+                  <div class="control-group">
+                    <label class="control-label" for="speltaknaam">Naam:</label>
+                      <div class="controls">
+                        <input type="text" id="speltaknaam" name="speltaknaam" placeholder="Speltaknaam" value="<?php echo $speltak['naam']; ?>">
+                        <input type="hidden" name="speltakid" value="<?php echo $speltak['id']; ?>">
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <div class="modal-footer">
+                    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+                    <button type="submit" class="btn btn-primary">Opslaan</button>
+                  </div>
+
+                </form>
+
+                </td>
+            <td><?php echo $speltak['naam'];?></td>
+          </tr>
+          <?php } ?>
+        </tbody>
+      </table>
+    </div>
+
+    <div class='row'>
+      <div class='span1 offset6'>
+        <a href="#nieuwspeltak" role="button" class="btn" data-toggle="modal">Nieuw</a>
+
+        <?php // De overlay voor het toevoegen van nieuwe speltakken. ?>
+        <div id="nieuwspeltak" class="modal hide" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h3 id="myModalLabel">Nieuwe speltak</h3>
+          </div>
+          <?php $attributes = array('class' => 'form-horizontal');
+                echo form_open('beheer/opslaan/'.$tab, $attributes); ?>
+            <div class="modal-body">
+              <p>Nieuwe speltak</p>
+
+              <div class="control-group">
+                <label class="control-label" for="speltaknaam">Naam:</label>
+                <div class="controls">
+                  <input type="text" id="speltaknaam" name="speltaknaam" placeholder="Speltaknaam">
+                </div>
+              </div>
+
+            </div>
+
+            <div class="modal-footer">
+              <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+              <button type="submit" class="btn btn-primary">Opslaan</button>
+            </div>
+
+          </form>
+
+        </div>
+
+      </div>
+    </div>
+
+
+
+
+
 
     <?php } elseif ($tab == "duur") { ?>
     <h3>Totale programmaduur</h3>
 
 	
-
+        <?php $attributes = array('class' => 'form-horizontal');
+    echo form_open('beheer/save/'.$tab, $attributes); ?>
+    </form>
 
    		<div class="control-group">
    			<label class="control-label" for="proxyhost">Proxy servername:</label>
