@@ -66,6 +66,10 @@
             $this->load->model('overzicht_model');
             $data['spelen'] = $this->overzicht_model->get_spelen($speltak, $duur);
 
+            foreach ($data['spelen'] as $spel) {
+                $data['artikelen'][$spel['id']] = $this->overzicht_model->get_artikelen($spel['id']);
+            }
+
             // Eerst de header laden.
             $this->load->view('header_view', $data);
             
@@ -92,11 +96,14 @@
             $data['speltak'] = $this->overzicht_model->get_gebied_speltak($gebied)->naam;
 
             $data['spelen'] = $this->overzicht_model->get_gebied($gebied);
+            foreach ($data['spelen'] as $spel) {
+                $data['artikelen'][$spel['id']] = $this->overzicht_model->get_artikelen($spel['id']);
+            }
 
             // Variabelen van de pagina zetten.
             $data['page'] = "overzicht";
             $data['titel'] = "Overzicht spelen gebied ".$data['gebied'];
-            //$data['duur'] = $duur;
+            $data['duur'] = NULL;
 
             // Eerst de header laden.
             $this->load->view('header_view', $data);
@@ -105,7 +112,7 @@
             $this->load->view('menu_view', $data);
 
             // Pagina inhoud weergeven
-            $this->load->view('overzicht_gebied_view', $data);
+            $this->load->view('overzicht_spelen_view', $data);
 
              // Als laatste de footer laden.
              $this->load->view('footer_view', $data);

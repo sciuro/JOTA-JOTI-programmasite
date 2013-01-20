@@ -3,7 +3,7 @@
     class Overzicht_model extends CI_Model{
         
 		public function get_spelen($speltak, $duur){
-			$this->db->select('spel.id, spel.titel, spel.urlnaam');
+			$this->db->select('spel.id, spel.titel, spel.urlnaam, spel.omschrijving, spel.voorbereiding, spel.beschrijving, spel.duur, spel.spelers, spel.leiding, spel.jota, spel.joti');
 			$this->db->from('spel');
 			
 			// Joins voor bepaling speltak.
@@ -32,6 +32,20 @@
 			return $query->result_array();
 		}
 
+		public function get_gebied($gebied) {
+			$this->db->select('spel.id, spel.titel, spel.urlnaam, spel.omschrijving, spel.voorbereiding, spel.beschrijving, spel.duur, spel.spelers, spel.leiding, spel.jota, spel.joti');
+			$this->db->from('spel');
+
+			// Joins voor bepaling gebied.
+			$this->db->join('spel_gebied', 'spel.id = spel_gebied.spel_id');
+			$this->db->join('gebied', 'spel_gebied.gebied_id = gebied.id');
+
+			$this->db->where('gebied.id', $gebied);
+
+			$query = $this->db->get();
+			return $query->result_array();
+		}
+		
 		public function get_gebieden($speltak){
 			$this->db->select('gebied.id, gebied.naam');
 			$this->db->from('gebied');
@@ -79,15 +93,14 @@
 			return $query->row();
 		}
 
-		public function get_gebied($gebied) {
-			$this->db->select('spel.id, spel.titel, spel.urlnaam');
-			$this->db->from('spel');
+		public function get_artikelen($spelid) {
+			$this->db->select('spel_artikel.aantal, artikel.naam, artikel.naammv');
+			$this->db->from('spel_artikel');
 
-			// Joins voor bepaling gebied.
-			$this->db->join('spel_gebied', 'spel.id = spel_gebied.spel_id');
-			$this->db->join('gebied', 'spel_gebied.gebied_id = gebied.id');
+			$this->db->join('artikel', 'spel_artikel.artikel_id=artikel.id', 'right');
+			$this->db->where('spel_artikel.spel_id', $spelid);
 
-			$this->db->where('gebied.id', $gebied);
+			$this->db->order_by('artikel.naam');
 
 			$query = $this->db->get();
 			return $query->result_array();
