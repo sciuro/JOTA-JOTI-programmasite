@@ -16,6 +16,10 @@
             } elseif ($tab == 'gebieden') {
                 $data['speltakken'] = $this->beheer_model->get_speltakken();
                 $data['gebieden'] = $this->beheer_model->get_gebieden();
+            } elseif ($tab == 'duur') {
+                $data['duur'] = $this->beheer_model->get_duur();
+            } elseif ($tab == 'artikelen') {
+                $data['artikelen'] = $this->beheer_model->get_artikelen();
             }
 
             // Variabelen goedzetten
@@ -72,6 +76,16 @@
                 $this->beheer_model->verwijder_gebied($id);
 
                 redirect('beheer/opties/gebieden');
+            } elseif ($item == 'duur') {
+                // Programmaduur verwijderen
+                $this->beheer_model->verwijder_duur($id);
+
+                redirect('beheer/opties/duur');
+            } elseif ($item == 'artikelen') {
+                // Artikel verwijderen
+                $this->beheer_model->verwijder_artikel($id);
+
+                redirect('beheer/opties/artikelen');
             } else {
                 // Anders loopt iemand te klooien.
                 redirect('beheer/opties');
@@ -93,6 +107,16 @@
                 $this->beheer_model->opslaan_gebied();
 
                 redirect('beheer/opties/gebieden');
+            } elseif ($item == 'duur') {
+                // item aanpassen
+                $this->beheer_model->opslaan_duur();
+
+                redirect('beheer/opties/duur');
+            } elseif ($item == 'artikelen') {
+                // item aanpassen
+                $this->beheer_model->opslaan_artikel();
+
+                redirect('beheer/opties/artikelen');            
             } else {
                 // Anders loopt iemand te klooien.
                 redirect('beheer/opties');

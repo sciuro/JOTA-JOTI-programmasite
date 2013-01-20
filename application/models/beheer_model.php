@@ -29,6 +29,32 @@
 			$query = $this->db->get();
 			return $query->result_array();			
 		}
+
+		public function get_duur(){
+			$this->db->select('duur.id, duur.lengte, count(spel_duur.spel_id) AS aantal');
+			$this->db->from('duur');
+
+			$this->db->join('spel_duur', 'duur.id=spel_duur.duur_id', 'left');
+			$this->db->group_by('duur.lengte');
+
+			$this->db->order_by('duur.lengte');
+
+			$query = $this->db->get();
+			return $query->result_array();
+		}		
+
+		public function get_artikelen(){
+			$this->db->select('artikel.id, artikel.naam, artikel.naammv, count(spel_artikel.spel_id) AS aantal');
+			$this->db->from('artikel');
+
+			$this->db->join('spel_artikel', 'artikel.id=spel_artikel.artikel_id', 'left');
+			$this->db->group_by('artikel.naam');
+
+			$this->db->order_by('artikel.naam');
+
+			$query = $this->db->get();
+			return $query->result_array();
+		}	
 		
 		public function verwijder_speltak($id) {
 			$this->db->where('id', $id);
@@ -40,6 +66,20 @@
 		public function verwijder_gebied($id) {
 			$this->db->where('id', $id);
 			$this->db->delete('gebied');
+
+			return;
+		}
+
+		public function verwijder_duur($id) {
+			$this->db->where('id', $id);
+			$this->db->delete('duur');
+
+			return;
+		}
+
+		public function verwijder_artikel($id) {
+			$this->db->where('id', $id);
+			$this->db->delete('artikel');
 
 			return;
 		}
@@ -71,6 +111,37 @@
 			} else {
 				// Inserten van data.
 				$this->db->insert('gebied', $data);
+			}
+
+		}
+
+		public function opslaan_duur() {
+			$data = array('lengte' => $this->input->post('lengte'));
+
+			// Eerst controleren of er moet worden geupdate, of geinsert.
+			if ($this->input->post('duurid')) {
+				//Update van de data.
+				$this->db->where('id', $this->input->post('duurid'));
+				$this->db->update('duur', $data);
+			} else {
+				// Inserten van data.
+				$this->db->insert('duur', $data);
+			}
+
+			return;
+		}
+
+		public function opslaan_artikel() {
+			$data = array('naam' => $this->input->post('naam'), 'naammv' => $this->input->post('naammv'));
+
+			// Eerst controleren of er moet worden geupdate, of geinsert.
+			if ($this->input->post('artikelid')) {
+				//Update van de data.
+				$this->db->where('id', $this->input->post('artikelid'));
+				$this->db->update('artikel', $data);
+			} else {
+				// Inserten van data.
+				$this->db->insert('artikel', $data);
 			}
 
 		}

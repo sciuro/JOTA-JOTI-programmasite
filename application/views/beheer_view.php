@@ -51,8 +51,105 @@
     <?php if ($tab == "algemeen"){ ?>
     <h3>Algemene instellingen</h3>
 
+    <?php // Artikelen tabblad. ?>
    	<?php } elseif ($tab == "artikelen") { ?>
-    <h3>Artikelen</h3>
+
+    <div class='row'>    
+      <table class="table table-hover span4 offset4">
+        
+        <thead>
+          <tr>
+            <th></th>
+            <th>Artikel</th>
+            <th>Meevoud</th>
+          </tr>
+        </thead>
+        
+        <tbody>
+          <?php foreach ($artikelen as $artikel) { ?>
+          <tr>
+            <td><a href="#veranderartikel<?php echo $artikel['id']; ?>" data-toggle="modal"><span class="badge badge-info"><i class="icon-pencil icon-white"></i></span></a>
+                
+                <?php if (!$artikel['aantal']) { ?>
+                <a href="<?php echo base_url(); ?>beheer/verwijder/artikelen/<?php echo $artikel['id']; ?>"><span class="badge badge-important"><i class="icon-remove icon-white"></i></span></a>
+                <?php } else { ?>
+                <span class="badge"><i class="icon-remove icon-white"></i></span>
+                <?php } ?>
+
+                <?php // De overlay voor het veranderen van nieuwe artikelen. ?>
+                <div id="veranderartikel<?php echo $artikel['id']; ?>" class="modal hide" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                  <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  <h3 id="myModalLabel">Verander artikel</h3>
+                </div>
+                <?php $attributes = array('class' => 'form-horizontal');
+                      echo form_open('beheer/opslaan/'.$tab, $attributes); ?>
+                <div class="modal-body">
+                  <p>Verander artikel</p>
+
+                  <div class="control-group">
+                    <label class="control-label" for="artikel">Lengte:</label>
+                      <div class="controls">
+                        <input type="text" id="artikel" name="naam" placeholder="Artikelnaam" value="<?php echo $artikel['naam']; ?>">
+                        <input type="text" id="artikel" name="naammv" placeholder="Meervoud" value="<?php echo $artikel['naammv']; ?>">
+                        <input type="hidden" name="artikelid" value="<?php echo $artikel['id']; ?>">
+                      </div>
+
+                  </div>
+
+                  <div class="modal-footer">
+                    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+                    <button type="submit" class="btn btn-primary">Opslaan</button>
+                  </div>
+
+                </form>
+
+                </td>
+            <td><?php echo $artikel['naam'];?></td>
+            <td><?php echo $artikel['naammv'];?></td>
+          </tr>
+          <?php } ?>
+        </tbody>
+      </table>
+    </div>
+
+    <div class='row'>
+      <div class='span1 offset6'>
+        <a href="#nieuwartikel" role="button" class="btn" data-toggle="modal">Nieuw</a>
+
+        <?php // De overlay voor het toevoegen van nieuwe artikelen. ?>
+        <div id="nieuwartikel" class="modal hide" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h3 id="myModalLabel">Nieuw artikel</h3>
+          </div>
+          <?php $attributes = array('class' => 'form-horizontal');
+                echo form_open('beheer/opslaan/'.$tab, $attributes); ?>
+            <div class="modal-body">
+              <p>Nieuwe artikel</p>
+
+              <div class="control-group">
+                <label class="control-label" for="artikel">Naam:</label>
+                <div class="controls">
+                  <input type="text" id="artikel" name="naam" placeholder="Artikelnaam">
+                  <input type="text" id="artikel" name="naammv" placeholder="Meervoud">
+                </div>
+              </div>
+
+            </div>
+
+            <div class="modal-footer">
+              <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+              <button type="submit" class="btn btn-primary">Opslaan</button>
+            </div>
+
+          </form>
+
+        </div>
+
+      </div>
+    </div>
+
 
     <?php // Gebieden tabblad. ?>
     <?php } elseif ($tab == "gebieden") { ?>
@@ -270,7 +367,99 @@
 
 
     <?php } elseif ($tab == "duur") { ?>
-    <h3>Totale programmaduur</h3>
+
+    <div class='row'>    
+      <table class="table table-hover span3 offset4">
+        
+        <thead>
+          <tr>
+            <th></th>
+            <th>Programmaduur</th>
+          </tr>
+        </thead>
+        
+        <tbody>
+          <?php foreach ($duur as $programma) { ?>
+          <tr>
+            <td><a href="#veranderduur<?php echo $programma['id']; ?>" data-toggle="modal"><span class="badge badge-info"><i class="icon-pencil icon-white"></i></span></a>
+                
+                <?php if (!$programma['aantal']) { ?>
+                <a href="<?php echo base_url(); ?>beheer/verwijder/duur/<?php echo $programma['id']; ?>"><span class="badge badge-important"><i class="icon-remove icon-white"></i></span></a>
+                <?php } else { ?>
+                <span class="badge"><i class="icon-remove icon-white"></i></span>
+                <?php } ?>
+
+                <?php // De overlay voor het toevoegen van nieuwe programma's. ?>
+                <div id="veranderduur<?php echo $programma['id']; ?>" class="modal hide" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                  <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  <h3 id="myModalLabel">Verander programmaduur</h3>
+                </div>
+                <?php $attributes = array('class' => 'form-horizontal');
+                      echo form_open('beheer/opslaan/'.$tab, $attributes); ?>
+                <div class="modal-body">
+                  <p>Verander programmaduur</p>
+
+                  <div class="control-group">
+                    <label class="control-label" for="duur">Lengte:</label>
+                      <div class="controls">
+                        <input type="text" id="duur" name="lengte" placeholder="Aantal uren" value="<?php echo $programma['lengte']; ?>">
+                        <input type="hidden" name="duurid" value="<?php echo $programma['id']; ?>">
+                      </div>
+
+                  </div>
+
+                  <div class="modal-footer">
+                    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+                    <button type="submit" class="btn btn-primary">Opslaan</button>
+                  </div>
+
+                </form>
+
+                </td>
+            <td><?php echo $programma['lengte'];?> uur</td>
+          </tr>
+          <?php } ?>
+        </tbody>
+      </table>
+    </div>
+
+    <div class='row'>
+      <div class='span1 offset6'>
+        <a href="#nieuwduur" role="button" class="btn" data-toggle="modal">Nieuw</a>
+
+        <?php // De overlay voor het toevoegen van nieuwe programmaduur. ?>
+        <div id="nieuwduur" class="modal hide" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h3 id="myModalLabel">Nieuw programmaduur</h3>
+          </div>
+          <?php $attributes = array('class' => 'form-horizontal');
+                echo form_open('beheer/opslaan/'.$tab, $attributes); ?>
+            <div class="modal-body">
+              <p>Nieuwe programmaduur</p>
+
+              <div class="control-group">
+                <label class="control-label" for="duur">Naam:</label>
+                <div class="controls">
+                  <input type="text" id="duur" name="lengte" placeholder="Aantal uren">
+                </div>
+              </div>
+
+            </div>
+
+            <div class="modal-footer">
+              <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+              <button type="submit" class="btn btn-primary">Opslaan</button>
+            </div>
+
+          </form>
+
+        </div>
+
+      </div>
+    </div>
+
 
     <?php } ?>
 
