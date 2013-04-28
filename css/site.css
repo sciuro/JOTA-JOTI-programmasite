@@ -1,0 +1,12 @@
+
+html, body {
+  background-color: rgb(160, 128, 182);
+}
+
+div.navbar {
+  background-color: black;
+}
+
+div.pagina {
+  background-color: white;
+}

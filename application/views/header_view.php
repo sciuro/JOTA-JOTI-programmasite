@@ -9,6 +9,7 @@
         <!-- Bootstrap -->
         <link href="<?php echo base_url();?>assets/bootstrap/css/bootstrap.css" rel="stylesheet">
         <link href="<?php echo base_url();?>assets/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+        <link href="<?php echo base_url();?>css/site.css" rel="stylesheet">
 
         <!-- Speciaal voor alle IE6-8 zonder HTML5 support -->
         <!--[if lt IE 9]>

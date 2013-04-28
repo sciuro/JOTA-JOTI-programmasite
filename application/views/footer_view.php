@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container pagina">
 	<hr>
 	<footer>
 		<p>&copy; 2013 Scouting Nederland. All rights reserved.</p>
