@@ -6,8 +6,11 @@
 	</header>
 
 	<div class='row'>
-		<div class='span12'>
+		<div class='span10'>
 			<?php echo $pagina['tekst']; ?>
+		</div>
+		<div class='span2'>
+			<a href="http://www.jota-joti.nl"><img src="<?php echo base_url();?>images/logo_blauw.gif"></a>
 		</div>
 	</div>
 
