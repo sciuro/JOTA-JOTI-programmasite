@@ -1,8 +1,6 @@
 <div class='container pagina'>
 	<header class="jumbotron subhead">
-		<div class="container">
 			<h1><?php echo $pagina['titel']; ?></h1>
-		</div>
 	</header>
 
 	<div class='row'>

@@ -16,12 +16,6 @@
             <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
 
-        <style>
-        body {
-            padding-top: 40px; /* 40px to make the container go all the way to the bottom of the topbar */
-        }
-        </style>
-
         <!-- Alle icons -->
         <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo base_url();?>assets/ico/apple-touch-icon-144-precomposed.png">
         <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo base_url();?>assets/ico/apple-touch-icon-114-precomposed.png">

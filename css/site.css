@@ -1,12 +1,13 @@
-
-html, body {
-  background-color: rgb(160, 128, 182);
+body {
+	padding-top: 40px; /* Het laten zien van de topbar */
+	background-color: rgb(160, 128, 182);
 }
 
-div.navbar {
-  background-color: black;
+.navbar {
+	background-color: black;
 }
 
-div.pagina {
-  background-color: white;
+.pagina {
+	background-color: white;
 }
+
