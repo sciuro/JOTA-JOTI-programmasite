@@ -1,7 +1,7 @@
 <div class="container pagina">
 	<hr>
 	<footer>
-		<p>&copy; 2013 Scouting Nederland. All rights reserved.</p>
+		<center><p>&copy; 2013 Scouting Nederland. All rights reserved.</p></center>
 	</footer>
 </div>
 
