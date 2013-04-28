@@ -8,7 +8,7 @@
                 <span class="icon-bar"></span>
             </a>
 
-            <a class="brand" href="<?php echo base_url();?>">Jota-Joti</a>
+            <a class="brand" href="<?php echo base_url();?>"><img src="<?php echo base_url();?>images/logo_blauw.gif" width="150"></a>
 
             <div class="nav-collapse collapse">
                 <ul class="nav">
