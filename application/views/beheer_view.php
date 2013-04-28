@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container pagina">
 	<h1>Beheer themateam website</h1>
 
 	<div class="row">
