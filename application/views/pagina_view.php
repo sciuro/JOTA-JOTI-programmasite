@@ -18,8 +18,8 @@
     </div>
 </div>
 
-	<div class='row'>
-		<div class='span10'>
+	<div class='row tekst'>
+		<div class='span9'>
 			<header class="jumbotron subhead">
 				<h1><?php echo $pagina['titel']; ?></h1>
 			</header>
