@@ -1,0 +1,19 @@
+Installatie spelensite JOTA-JOTI
+
+1. Pak de gehele zipof tar uit in de root van de webserver of virtualhost.
+2. Let erop dat de .htaccess ook mee komt met de installatie.
+3. Vul de /application/config/database.php met de database settings:
+
+$db['default']['hostname'] = 'localhost';
+$db['default']['username'] = 'username';
+$db['default']['password'] = 'password';
+$db['default']['database'] = 'databasenaam';
+$db['default']['dbdriver'] = 'mysql';
+
+4. Configureer de site zelf in /application/config/config.php.
+   Hier hoeft eigenlijk alleen de base_url aangepast te worden:
+
+$config['base_url']     = 'http://www.mijnsite.nl';
+
+5. Vul de database met eventueel data. Op dit moment is dat vanuit de site
+   nog niet mogelijk.
