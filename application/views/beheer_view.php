@@ -61,7 +61,7 @@
           <tr>
             <th></th>
             <th>Artikel</th>
-            <th>Meevoud</th>
+            <th>Meervoud</th>
           </tr>
         </thead>
         
