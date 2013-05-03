@@ -1,2 +1,5 @@
 # De database config buiten beschouwing laten
 application/config/database.php
+
+# De site specifieke config buiten beschouwing laten
+application/config/config.php
