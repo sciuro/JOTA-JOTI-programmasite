@@ -51,3 +51,6 @@ ALTER TABLE `artikel` CHANGE `naammv` `naammv` VARCHAR( 64 ) CHARACTER SET latin
 -- Gelijktrekken omgevingen
 ALTER TABLE `spel` CHANGE `spelers` `min_spelers` TINYINT( 4 ) NOT NULL 
 ALTER TABLE `spel` ADD `max_spelers` TINYINT( 4 ) NOT NULL AFTER `min_spelers` 
+
+-- Issue #6 en #7 Speltak implementatie
+ALTER TABLE `gebied` ADD `kaartloc` VARCHAR( 15 ) NOT NULL;

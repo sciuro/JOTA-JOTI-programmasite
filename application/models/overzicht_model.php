@@ -47,7 +47,7 @@
 		}
 		
 		public function get_gebieden($speltak){
-			$this->db->select('gebied.id, gebied.naam');
+			$this->db->select('gebied.id, gebied.naam, gebied.kaartloc');
 			$this->db->from('gebied');
 			$this->db->join('speltak', 'gebied.speltak_id = speltak.id');
 			$this->db->where('speltak.naam', $speltak);
