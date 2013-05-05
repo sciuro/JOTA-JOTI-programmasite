@@ -40,3 +40,6 @@ CREATE TABLE IF NOT EXISTS `spel_spellokatie` (
   `duur_id` int(4) NOT NULL,
   KEY `spel_id` (`spel_id`,`duur_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- Bug #12
+ALTER TABLE `gebied` CHANGE `naam` `naam` VARCHAR( 64 ) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL;
