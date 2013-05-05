@@ -55,7 +55,7 @@
    	<?php } elseif ($tab == "artikelen") { ?>
 
     <div class='row'>    
-      <table class="table table-hover span4 offset4">
+      <table class="table table-hover span5 offset3">
         
         <thead>
           <tr>
@@ -155,7 +155,7 @@
     <?php } elseif ($tab == "gebieden") { ?>
 
     <div class='row'>    
-      <table class="table table-hover span4 offset4">
+      <table class="table table-hover span5 offset3">
         
         <thead>
           <tr>
@@ -270,7 +270,7 @@
     <?php } elseif ($tab == "speltakken") { ?>
 
     <div class='row'>    
-      <table class="table table-hover span3 offset4">
+      <table class="table table-hover span5 offset3">
         
         <thead>
           <tr>
@@ -369,7 +369,7 @@
     <?php } elseif ($tab == "duur") { ?>
 
     <div class='row'>    
-      <table class="table table-hover span3 offset4">
+      <table class="table table-hover span5 offset3">
         
         <thead>
           <tr>
