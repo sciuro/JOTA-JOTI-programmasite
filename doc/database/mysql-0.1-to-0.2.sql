@@ -27,3 +27,16 @@ ALTER TABLE `spel_gebied` CHANGE `spel_id` `spel_id` INT( 4 ) NOT NULL ,
 
 -- Issue #1: verwijderen urlnaam
 ALTER TABLE `spel` DROP `urlnaam`;
+
+-- Issue #2: Spellokatie bij spelen
+CREATE TABLE IF NOT EXISTS `spellokatie` (
+  `id` int(4) NOT NULL AUTO_INCREMENT,
+  `naam` varchar(32) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+CREATE TABLE IF NOT EXISTS `spel_spellokatie` (
+  `spel_id` int(4) NOT NULL,
+  `duur_id` int(4) NOT NULL,
+  KEY `spel_id` (`spel_id`,`duur_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
