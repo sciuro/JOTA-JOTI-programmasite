@@ -43,3 +43,8 @@ CREATE TABLE IF NOT EXISTS `spel_spellokatie` (
 
 -- Bug #12
 ALTER TABLE `gebied` CHANGE `naam` `naam` VARCHAR( 64 ) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL;
+
+-- Bug #14
+ALTER TABLE `artikel` CHANGE `naam` `naam` VARCHAR( 64 ) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL;
+ALTER TABLE `artikel` CHANGE `naammv` `naammv` VARCHAR( 64 ) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL;
+
