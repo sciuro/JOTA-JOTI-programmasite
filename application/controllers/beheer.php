@@ -43,14 +43,19 @@
 
         }
         
-        public function spel($search = NULL)
+        public function spel()
         {
             $this->load->model('beheer_model');
+            if ($this->input->post('search')) {
+                $data['search'] = $this->input->post('search');
+            } else {
+                $data['search'] = NULL;
+            }
 
             // Variabelen goedzetten
             $data['page'] = 'beheer';
             $data['titel'] = "Beheer spelen";
-            $data['spelen'] = $this->beheer_model->get_spelen($search);
+            $data['spelen'] = $this->beheer_model->get_spelen($data['search']);
 
             // Eerst de header laden.
             $this->load->view('header_view', $data);
