@@ -69,6 +69,16 @@
 			return $query->result_array();
 		}
 		
+		public function get_spelen($search){
+			$this->db->select('spel.id, spel.titel, spel.duur, spel.spelers, spel.leiding, spel.jota, spel.joti');
+			$this->db->from('spel');
+
+			$this->db->like('titel', $search);
+
+			$query = $this->db->get();
+			return $query->result_array();
+		}
+
 		public function verwijder_speltak($id) {
 			$this->db->where('id', $id);
 			$this->db->delete('speltak');

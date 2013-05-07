@@ -43,11 +43,14 @@
 
         }
         
-        public function spel($spelid = NULL)
+        public function spel($search = NULL)
         {
+            $this->load->model('beheer_model');
+
             // Variabelen goedzetten
             $data['page'] = 'beheer';
-            $data['titel'] = "Titel";
+            $data['titel'] = "Beheer spelen";
+            $data['spelen'] = $this->beheer_model->get_spelen($search);
 
             // Eerst de header laden.
             $this->load->view('header_view', $data);
@@ -56,7 +59,7 @@
             $this->load->view('menu_view', $data);
 
             // Pagina inhoud weergeven
-            //$this->load->view('beheer_spel_view', $data);
+            $this->load->view('beheer_spel_view', $data);
                         
             // Als laatste de footer laden.
             $this->load->view('footer_view', $data);
