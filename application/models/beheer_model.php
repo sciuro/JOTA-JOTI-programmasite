@@ -54,7 +54,20 @@
 
 			$query = $this->db->get();
 			return $query->result_array();
-		}	
+		}
+
+		public function get_spellokaties(){
+			$this->db->select('spellokatie.id, spellokatie.naam, count(spel_spellokatie.spel_id) AS aantal');
+			$this->db->from('spellokatie');
+
+			$this->db->join('spel_spellokatie', 'spellokatie.id=spel_spellokatie.spellokatie_id', 'left');
+			$this->db->group_by('spellokatie.naam');
+
+			$this->db->order_by('spellokatie.naam');
+
+			$query = $this->db->get();
+			return $query->result_array();
+		}
 		
 		public function verwijder_speltak($id) {
 			$this->db->where('id', $id);
@@ -73,6 +86,13 @@
 		public function verwijder_duur($id) {
 			$this->db->where('id', $id);
 			$this->db->delete('duur');
+
+			return;
+		}
+
+		public function verwijder_spellokatie($id) {
+			$this->db->where('id', $id);
+			$this->db->delete('spellokatie');
 
 			return;
 		}
@@ -126,6 +146,22 @@
 			} else {
 				// Inserten van data.
 				$this->db->insert('duur', $data);
+			}
+
+			return;
+		}
+
+		public function opslaan_spellokatie() {
+			$data = array('naam' => $this->input->post('spellokatie'));
+
+			// Eerst controleren of er moet worden geupdate, of geinsert.
+			if ($this->input->post('spellokatieid')) {
+				//Update van de data.
+				$this->db->where('id', $this->input->post('spellokatieid'));
+				$this->db->update('spellokatie', $data);
+			} else {
+				// Inserten van data.
+				$this->db->insert('spellokatie', $data);
 			}
 
 			return;

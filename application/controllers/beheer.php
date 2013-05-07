@@ -18,6 +18,8 @@
                 $data['gebieden'] = $this->beheer_model->get_gebieden();
             } elseif ($tab == 'duur') {
                 $data['duur'] = $this->beheer_model->get_duur();
+            } elseif ($tab == 'spellokaties') {
+                $data['spellokaties'] = $this->beheer_model->get_spellokaties();
             } elseif ($tab == 'artikelen') {
                 $data['artikelen'] = $this->beheer_model->get_artikelen();
             }
@@ -81,6 +83,11 @@
                 $this->beheer_model->verwijder_duur($id);
 
                 redirect('beheer/opties/duur');
+            } elseif ($item == 'spellokaties') {
+                // Spellokatie verwijderen
+                $this->beheer_model->verwijder_spellokatie($id);
+
+                redirect('beheer/opties/spellokaties');
             } elseif ($item == 'artikelen') {
                 // Artikel verwijderen
                 $this->beheer_model->verwijder_artikel($id);
@@ -112,6 +119,11 @@
                 $this->beheer_model->opslaan_duur();
 
                 redirect('beheer/opties/duur');
+            } elseif ($item == 'spellokaties') {
+                // item aanpassen
+                $this->beheer_model->opslaan_spellokatie();
+
+                redirect('beheer/opties/spellokaties');
             } elseif ($item == 'artikelen') {
                 // item aanpassen
                 $this->beheer_model->opslaan_artikel();

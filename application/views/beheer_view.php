@@ -28,6 +28,14 @@
     				<a href="<?php echo base_url();?>beheer/opties/gebieden">Gebieden</a>
     			</li>
 
+          <?php if ($tab == "spellokaties"){ ?>
+          <li class="active">
+          <?php } else { ?>
+          <li>
+            <?php } ?>
+            <a href="<?php echo base_url();?>beheer/opties/spellokaties">Spellokaties</a>
+          </li>
+
           <?php if ($tab == "speltakken"){ ?>
           <li class="active">
           <?php } else { ?>
@@ -252,6 +260,101 @@
                   <?php } ?>
                 </div>
               </div>
+
+            <div class="modal-footer">
+              <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+              <button type="submit" class="btn btn-primary">Opslaan</button>
+            </div>
+
+          </form>
+
+        </div>
+
+      </div>
+    </div>
+
+<?php // Spellokaties tabblad ?>
+    <?php } elseif ($tab == "spellokaties") { ?>
+
+    <div class='row'>    
+      <table class="table table-hover span5 offset3">
+        
+        <thead>
+          <tr>
+            <th></th>
+            <th>Spellokatie</th>
+          </tr>
+        </thead>
+        
+        <tbody>
+          <?php foreach ($spellokaties as $spellokatie) { ?>
+          <tr>
+            <td><a href="#veranderspellokatie<?php echo $spellokatie['id']; ?>" data-toggle="modal"><span class="badge badge-info"><i class="icon-pencil icon-white"></i></span></a>
+                
+                <?php if (!$spellokatie['aantal']) { ?>
+                <a href="<?php echo base_url(); ?>beheer/verwijder/spellokaties/<?php echo $spellokatie['id']; ?>"><span class="badge badge-important"><i class="icon-remove icon-white"></i></span></a>
+                <?php } else { ?>
+                <span class="badge"><i class="icon-remove icon-white"></i></span>
+                <?php } ?>
+
+                <?php // De overlay voor het toevoegen van nieuwe speltakken. ?>
+                <div id="veranderspellokatie<?php echo $spellokatie['id']; ?>" class="modal hide" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                  <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  <h3 id="myModalLabel">Verander spellokatie</h3>
+                </div>
+                <?php $attributes = array('class' => 'form-horizontal');
+                      echo form_open('beheer/opslaan/'.$tab, $attributes); ?>
+                <div class="modal-body">
+                  <p>Verander spellokatie</p>
+
+                  <div class="control-group">
+                    <label class="control-label" for="spellokatie">Lokatie:</label>
+                      <div class="controls">
+                        <input type="text" id="spellokatie" name="spellokatie" placeholder="Spellokatie" value="<?php echo $spellokatie['naam']; ?>">
+                        <input type="hidden" name="spellokatieid" value="<?php echo $spellokatie['id']; ?>">
+                      </div>
+
+                  </div>
+
+                  <div class="modal-footer">
+                    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+                    <button type="submit" class="btn btn-primary">Opslaan</button>
+                  </div>
+
+                </form>
+
+                </td>
+            <td><?php echo $spellokatie['naam'];?></td>
+          </tr>
+          <?php } ?>
+        </tbody>
+      </table>
+    </div>
+
+    <div class='row'>
+      <div class='span1 offset6'>
+        <a href="#nieuwspellokatie" role="button" class="btn" data-toggle="modal">Nieuw</a>
+
+        <?php // De overlay voor het toevoegen van nieuwe speltakken. ?>
+        <div id="nieuwspellokatie" class="modal hide" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h3 id="myModalLabel">Nieuwe spellokatie</h3>
+          </div>
+          <?php $attributes = array('class' => 'form-horizontal');
+                echo form_open('beheer/opslaan/'.$tab, $attributes); ?>
+            <div class="modal-body">
+              <p>Nieuwe spellokatie</p>
+
+              <div class="control-group">
+                <label class="control-label" for="spellokatie">Lokatie:</label>
+                <div class="controls">
+                  <input type="text" id="spellokatie" name="spellokatie" placeholder="Spellokatie">
+                </div>
+              </div>
+
+            </div>
 
             <div class="modal-footer">
               <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
