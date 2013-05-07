@@ -13,7 +13,19 @@
 			<?php $attributes = array('class' => 'form-horizontal');
 			echo form_open('beheer/spel', $attributes); ?>
 				<input type="text" id="search" name="search" placeholder="Spelnaam" value="<?php echo $search; ?>">
-				<button type="submit" class="btn">Go</button>
+				<div class="btn-group">
+					<button type="submit" class="btn">Go</button>
+					<button class="btn dropdown-toggle" data-toggle="dropdown">
+						<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu">
+						<li>Titel</li>
+						<li>Speltak</li>
+						<li>Duur</li>
+						<li>Deelnemers</li>
+						<li>Leiding</li>
+					</ul>
+				</div>
 			</form>
 		</div>
 	</div>
