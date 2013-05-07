@@ -37,8 +37,8 @@ CREATE TABLE IF NOT EXISTS `spellokatie` (
 
 CREATE TABLE IF NOT EXISTS `spel_spellokatie` (
   `spel_id` int(4) NOT NULL,
-  `duur_id` int(4) NOT NULL,
-  KEY `spel_id` (`spel_id`,`duur_id`)
+  `spellokatie_id` int(4) NOT NULL,
+  KEY `spel_id` (`spel_id`,`spellokatie_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- Bug #12
