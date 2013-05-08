@@ -40,7 +40,8 @@
             		<th>Spelnaam</th>
             		<th>Speltak</th>
             		<th>Duur</th>
-            		<th>Deelnemers</th>
+            		<th>Min deelnemers</th>
+            		<th>Max deelnemers</th>
            			<th>Leiding</th>
             		<th>Jota</th>
             		<th>Joti</th>
@@ -56,7 +57,8 @@
 					<td><?php echo $spel['titel'];?></td>
 					<td></td>
 					<td><?php echo $spel['duur'];?></td>
-					<td><?php echo $spel['spelers'];?></td>
+					<td><?php echo $spel['min_spelers'];?></td>
+					<td><?php echo $spel['max_spelers'];?></td>
 					<td><?php echo $spel['leiding'];?></td>
 					<td><?php echo $spel['jota'];?></td>
 					<td><?php echo $spel['joti'];?></td>

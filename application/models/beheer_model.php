@@ -70,7 +70,7 @@
 		}
 		
 		public function get_spelen($search){
-			$this->db->select('spel.id, spel.titel, spel.duur, spel.spelers, spel.leiding, spel.jota, spel.joti');
+			$this->db->select('spel.id, spel.titel, spel.duur, spel.min_spelers, spel.max_spelers, spel.leiding, spel.jota, spel.joti');
 			$this->db->from('spel');
 
 			$this->db->like('titel', $search);
