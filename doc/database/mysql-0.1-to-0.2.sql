@@ -48,3 +48,6 @@ ALTER TABLE `gebied` CHANGE `naam` `naam` VARCHAR( 64 ) CHARACTER SET latin1 COL
 ALTER TABLE `artikel` CHANGE `naam` `naam` VARCHAR( 64 ) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL;
 ALTER TABLE `artikel` CHANGE `naammv` `naammv` VARCHAR( 64 ) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL;
 
+-- Gelijktrekken omgevingen
+ALTER TABLE `spel` CHANGE `spelers` `min_spelers` TINYINT( 4 ) NOT NULL 
+ALTER TABLE `spel` ADD `max_spelers` TINYINT( 4 ) NOT NULL AFTER `min_spelers` 

@@ -35,8 +35,8 @@
         	<p><b>Omschrijving:</b><br>
         	<?php echo $spel['omschrijving']; ?></p>
         	<p><b>Eigenschappen:</b><br>
-        	Dit spel duurt <?php echo $spel['duur']; ?> minuten en je hebt <?php echo $spel['spelers']; ?>
-        	spelers en <?php echo $spel['leiding']; ?> leiding nodig.
+        	Dit spel duurt <?php echo $spel['duur']; ?> minuten en je hebt tussen de <?php echo $spel['min_spelers']; ?>
+        	en <?php echo $spel['max_spelers']; ?> spelers nodig en <?php echo $spel['leiding']; ?> leiding.
         	Dit spel kan gespeeld worden met 
         	<?php if ($spel['jota'] == '1' && $spel['joti'] == '1') { ?>
         	zowel de Jota als de Joti.
