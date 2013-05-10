@@ -100,6 +100,13 @@
 			return;
 		}
 
+		public function verwijder_spel($id) {
+			$this->db->where('id', $id);
+			$this->db->delete('spel');
+
+			return;
+		}
+
 		public function verwijder_spellokatie($id) {
 			$this->db->where('id', $id);
 			$this->db->delete('spellokatie');

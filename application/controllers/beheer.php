@@ -96,6 +96,11 @@
                 $this->beheer_model->verwijder_spellokatie($id);
 
                 redirect('beheer/opties/spellokaties');
+            } elseif ($item == 'spel') {
+                // Spellokatie verwijderen
+                $this->beheer_model->verwijder_spel($id);
+
+                redirect('beheer/spel');
             } elseif ($item == 'artikelen') {
                 // Artikel verwijderen
                 $this->beheer_model->verwijder_artikel($id);
