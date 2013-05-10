@@ -51,7 +51,7 @@
 			<tbody>
 				<?php foreach ($spelen as $spel) { ?>
 				<tr>
-					<td><a href="#veranderspel<?php echo $spel['id']; ?>" data-toggle="modal"><span class="badge badge-info"><i class="icon-pencil icon-white"></i></span></a>
+					<td><a href="<?php echo base_url(); ?>beheer/spel/<?php echo $spel['id']; ?>" data-toggle="modal"><span class="badge badge-info"><i class="icon-pencil icon-white"></i></span></a>
 						<a href="<?php echo base_url(); ?>beheer/verwijder/spel/<?php echo $spel['id']; ?>"><span class="badge badge-important"><i class="icon-remove icon-white"></i></span></a>
 					</td>
 					<td><?php echo $spel['titel'];?></td>

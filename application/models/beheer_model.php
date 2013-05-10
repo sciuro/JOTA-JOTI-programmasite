@@ -79,6 +79,56 @@
 			return $query->result_array();
 		}
 
+		public function get_spel($id){
+			$this->db->select('spel.id, spel.titel, spel.omschrijving, spel.voorbereiding, spel.beschrijving, spel.duur as spelduur, spel.min_spelers, spel.max_spelers, spel.leiding, spel.jota, spel.joti');
+			$this->db->from('spel');
+
+			$this->db->where('spel.id', $id);
+
+			$query = $this->db->get();
+			return $query->result_array();
+		}
+
+		public function get_spel_artikelen($spelid){
+			$this->db->select('spel_artikel.artikel_id, spel_artikel.aantal');
+			$this->db->from('spel_artikel');
+
+			$this->db->where('spel_artikel.spel_id', $spelid);
+
+			$query = $this->db->get();
+			return $query->result_array();
+		}
+
+		public function get_spel_duur($spelid){
+			$this->db->select('spel_duur.duur_id');
+			$this->db->from('spel_duur');
+
+			$this->db->where('spel_duur.spel_id', $spelid);
+
+			$query = $this->db->get();
+			return $query->result_array();
+		}
+
+		public function get_spel_gebied($spelid){
+			$this->db->select('spel_gebied.gebied_id');
+			$this->db->from('spel_gebied');
+
+			$this->db->where('spel_gebied.spel_id', $spelid);
+
+			$query = $this->db->get();
+			return $query->result_array();
+		}
+
+		public function get_spel_lokatie($spelid){
+			$this->db->select('spel_spellokatie.spellokatie_id');
+			$this->db->from('spel_spellokatie');
+
+			$this->db->where('spel_spellokatie.spel_id', $spelid);
+
+			$query = $this->db->get();
+			return $query->result_array();
+		}
+
 		public function verwijder_speltak($id) {
 			$this->db->where('id', $id);
 			$this->db->delete('speltak');
