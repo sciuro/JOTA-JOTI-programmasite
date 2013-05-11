@@ -256,7 +256,7 @@
 				'omschrijving' => $this->input->post('omschrijving'),
 				'voorbereiding' => $this->input->post('voorbereiding'),
 				'beschrijving' => $this->input->post('beschrijving'),
-				//'duur' => $this->input->post(''),
+				'duur' => $this->input->post('spelduur'),
 				'min_spelers' => $this->input->post('min_spelers'),
 				'max_spelers' => $this->input->post('max_spelers'),
 				'leiding' => $this->input->post('leiding'),

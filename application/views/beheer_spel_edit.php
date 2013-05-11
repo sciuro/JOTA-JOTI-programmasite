@@ -41,6 +41,22 @@
 		</div>
 
 		<div class="control-group">
+			<label class="control-label" for="spelduur">Spelduur</label>
+			<div class="controls">
+				<select class="span1" id="spelduur" name="spelduur">
+					<?php for ($i = 15; $i <= 120; ) {
+						if ($i == $spel['spelduur']) {?>
+							<option value="<?php echo $i;?>" selected><?php echo $i;?></option>
+						<?php } else {?>
+							<option value="<?php echo $i;?>"><?php echo $i;?></option>
+						<?php } ?>
+					<?php $i=$i+15;
+					} ?>
+				</select> minuten
+			</div>
+		</div>
+
+		<div class="control-group">
 			<label class="control-label" for="deelnemers">Aantal deelnemers</label>
 			<div class="controls">
 				<select class="span1" id="deelnemers" name="min_spelers">
