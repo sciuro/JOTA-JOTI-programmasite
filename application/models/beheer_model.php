@@ -79,6 +79,17 @@
 			return $query->result_array();
 		}
 
+		public function get_spelen_speltakken(){
+			$this->db->select('spel_gebied.spel_id, speltak.naam');
+			$this->db->from('spel_gebied');
+
+			$this->db->join('gebied', 'spel_gebied.gebied_id=gebied.id', 'left');
+			$this->db->join('speltak', 'gebied.speltak_id=speltak.id', 'left');
+
+			$query = $this->db->get();
+			return $query->result_array();
+		}
+
 		public function get_spel($id){
 			$this->db->select('spel.id, spel.titel, spel.omschrijving, spel.voorbereiding, spel.beschrijving, spel.duur as spelduur, spel.min_spelers, spel.max_spelers, spel.leiding, spel.jota, spel.joti');
 			$this->db->from('spel');

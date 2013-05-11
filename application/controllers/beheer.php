@@ -90,6 +90,14 @@
 
             } else {
                 $data['spelen'] = $this->beheer_model->get_spelen($data['search']);
+                $items = $this->beheer_model->get_spelen_speltakken();
+                foreach ($items as $item) {
+                    if (isset($data['speltakken'][$item['spel_id']])) {
+                        $data['speltakken'][$item['spel_id']] = $data['speltakken'][$item['spel_id']].", ".$item['naam'];
+                    } else {
+                        $data['speltakken'][$item['spel_id']] = $item['naam'];
+                    }
+                }
                 $data['titel'] = "Beheer spelen";
             }
 
