@@ -55,22 +55,39 @@
             // Variabelen goedzetten
             $data['page'] = 'beheer';
             if ($id) {
-                $speldata = $this->beheer_model->get_spel($id);
-                $data['spel'] = $speldata['0'];
+                if ($id == 'nieuw') {
+                    $data['titel'] = "Nieuw spel";
+                    $data['spel']['titel'] = '';
+                    $data['spel']['omschrijving'] = '';
+                    $data['spel']['voorbereiding'] = '';
+                    $data['spel']['beschrijving'] = '';
+                    $data['spel']['spelduur'] = '';
+                    $data['spel']['min_spelers'] = '';
+                    $data['spel']['max_spelers'] = '';
+                    $data['spel']['leiding'] = '';
+                    $data['spel']['jota'] = '';
+                    $data['spel']['joti'] = '';
+                    //$data['spel']['artikelen']['0']['artikel_id'] = '';
+                    //$data['spel']['artikelen']['0']['aantal'] = '';
+                    //$data['spel']['duur']['0']['duur_id'] = '';
+                    //$data['spel']['gebied']['0']['gebied_id'] = '';
+                    //$data['spel']['lokatie']['0']['spellokatie_id'] = '';
 
-                $data['spel']['artikelen'] = $this->beheer_model->get_spel_artikelen($id);
+                } else {
+                    $speldata = $this->beheer_model->get_spel($id);
+                    $data['spel'] = $speldata['0'];
+                    $data['spel']['artikelen'] = $this->beheer_model->get_spel_artikelen($id);
+                    $data['spel']['duur'] = $this->beheer_model->get_spel_duur($id);
+                    $data['spel']['gebied'] = $this->beheer_model->get_spel_gebied($id);
+                    $data['spel']['lokatie'] = $this->beheer_model->get_spel_lokatie($id);
+                    $data['titel'] = "Spel ".$data['spel']['titel'];
+                }
+
                 $data['artikelen'] = $this->beheer_model->get_artikelen();
-
-                $data['spel']['duur'] = $this->beheer_model->get_spel_duur($id);
                 $data['duur'] = $this->beheer_model->get_duur();
-
-                $data['spel']['gebied'] = $this->beheer_model->get_spel_gebied($id);
                 $data['gebieden'] = $this->beheer_model->get_gebieden();
-
-                $data['spel']['lokatie'] = $this->beheer_model->get_spel_lokatie($id);
                 $data['spellokaties'] = $this->beheer_model->get_spellokaties();
 
-                $data['titel'] = "Spel ".$data['spel']['titel'];
             } else {
                 $data['spelen'] = $this->beheer_model->get_spelen($data['search']);
                 $data['titel'] = "Beheer spelen";
@@ -164,7 +181,12 @@
                 // item aanpassen
                 $this->beheer_model->opslaan_artikel();
 
-                redirect('beheer/opties/artikelen');            
+                redirect('beheer/opties/artikelen');
+            } elseif ($item == 'spel') {
+                // item aanpassen
+                $spelid = $this->beheer_model->opslaan_spel();
+
+                redirect('beheer/spel/'.$spelid);
             } else {
                 // Anders loopt iemand te klooien.
                 redirect('beheer/opties');

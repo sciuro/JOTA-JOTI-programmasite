@@ -8,7 +8,9 @@
 		</div>
 	</div>
 
-	<form class="form-horizontal">
+	<?php $attributes = array('class' => 'form-horizontal');
+                echo form_open('beheer/opslaan/spel', $attributes); ?>
+    <?php if (isset($spel['id'])) {?><input type="hidden" name="spelid" value="<?php echo $spel['id']; ?>"> <?php }?>
 
 		<div class="control-group">
 			<label class="control-label" for="titel">Naam</label>
@@ -89,6 +91,9 @@
 			</div>
 		</div>
 
+		<center><button type="submit" class="btn btn-primary">Opslaan</button></center>
+
+		<?php if ($titel != 'Nieuw spel') { ?>
 		<hr>
 
 		<div class="control-group">
@@ -102,7 +107,7 @@
 								$checked=1;
 							}
 						} ?>
-						<input type="checkbox" id="duur" name="<?php echo $progln['id'];?>" value="1" <?php if ($checked != 0){?>checked="yes"<?php }?> > <?php echo $progln['lengte'];?> uur<br>
+						<input type="checkbox" id="duur" name="duur<?php echo $progln['id'];?>" value="1" <?php if ($checked != 0){?>checked="yes"<?php }?> > <?php echo $progln['lengte'];?> uur<br>
 					<?php } ?>
 					
 				</label>
@@ -127,7 +132,7 @@
 							$speltak=$gebied['speltak'];
 						}
 						?>
-						<input type="checkbox" id="gebieden" name="<?php echo $gebied['id'];?>" value="1" <?php if ($checked != 0){?>checked="yes"<?php }?> > <?php echo $gebied['naam'];?> uur<br>
+						<input type="checkbox" id="gebieden" name="gebied<?php echo $gebied['id'];?>" value="1" <?php if ($checked != 0){?>checked="yes"<?php }?> > <?php echo $gebied['naam'];?> <br>
 					<?php } ?>
 					
 				</label>
@@ -145,12 +150,16 @@
 								$checked=1;
 							}
 						} ?>
-						<input type="checkbox" id="spellokatie" name="<?php echo $spellokatie['id'];?>" value="1" <?php if ($checked != 0){?>checked="yes"<?php }?> > <?php echo $spellokatie['naam'];?> <br>
+						<input type="checkbox" id="spellokatie" name="lokatie<?php echo $spellokatie['id'];?>" value="1" <?php if ($checked != 0){?>checked="yes"<?php }?> > <?php echo $spellokatie['naam'];?> <br>
 					<?php } ?>
 					
 				</label>
 			</div>
 		</div>
+
+		<center><button type="submit" class="btn btn-primary">Opslaan</button></center>
+
+		<hr>
 
 		<div class="control-group">
 			<label class="control-label" for="artikelen">Artikelen</label>
@@ -163,12 +172,22 @@
 								$artikelaantal=$item['aantal'];
 							}
 						} ?>
-						<input class="span1" type="text" id="artikelen" name="artikelaantal" value="<?php echo $artikelaantal;?>"> <?php echo $artikel['naam']; ?> <br>
-					<?php } ?>
+						<?php if ($artikelaantal > 0) {
+							echo "<p>";
+						} else {
+							echo "<p class='muted'>";
+						} ?>
+						<input class="span1" type="text" id="artikelen" name="artikelaantal<?php echo $artikel['id'];?>" value="<?php echo $artikelaantal;?>"> <?php echo $artikel['naam']; ?>
+						</p>
+					<?php } ?> 
 					
 				</label>
 			</div>
 		</div>
+
+		<center><button type="submit" class="btn btn-primary">Opslaan</button></center>
+
+		<?php }?>
 
 	</form>
 

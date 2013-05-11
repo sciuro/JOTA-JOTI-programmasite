@@ -248,4 +248,125 @@
 			}
 
 		}
+
+		public function opslaan_spel() {
+			// Speldata opslaan
+			$data = array(
+				'titel' => $this->input->post('titel'),
+				'omschrijving' => $this->input->post('omschrijving'),
+				'voorbereiding' => $this->input->post('voorbereiding'),
+				'beschrijving' => $this->input->post('beschrijving'),
+				//'duur' => $this->input->post(''),
+				'min_spelers' => $this->input->post('min_spelers'),
+				'max_spelers' => $this->input->post('max_spelers'),
+				'leiding' => $this->input->post('leiding'),
+				'jota' => $this->input->post('jota'),
+				'joti' => $this->input->post('joti')
+				);
+
+			// Eerst controleren of er moet worden geupdate, of geinsert.
+			if ($this->input->post('spelid')) {
+				// Update van de data.
+				$this->db->where('id', $this->input->post('spelid'));
+				$this->db->update('spel', $data);
+			} else {
+				// Inserten van de data.
+				$this->db->insert('spel', $data);
+			}
+
+			if ($this->input->post('spelid')) {
+			// Totale opkomst lengte opslaan
+			// Eerst halen we alle verwijzingen weg.
+			// Dit is heel goor, maar wel gemakkelijk, aangezien 
+			// dit onderdeel niet intensief gebruikt word.
+			$this->db->where('spel_id', $this->input->post('spelid'));
+			$this->db->delete('spel_duur');
+
+			// Hierna inserten we weer de data
+			$this->db->select('duur.id');
+			$this->db->from('duur');
+			$query = $this->db->get();
+			$result = $query->result_array();
+
+			foreach ($result as $item) {
+				if ( $this->input->post('duur'.$item['id']) == '1') {
+					$data = array('spel_id' => $this->input->post('spelid'),
+						'duur_id' => $item['id']);
+					$this->db->insert('spel_duur', $data);
+				}
+			}
+
+			// Aandachtsgebieden opslaan
+			// Eerst halen we alle verwijzingen weg.
+			// Dit is heel goor, maar wel gemakkelijk, aangezien 
+			// dit onderdeel niet intensief gebruikt word.
+			$this->db->where('spel_id', $this->input->post('spelid'));
+			$this->db->delete('spel_gebied');
+
+			// Hierna inserten we weer de data
+			$this->db->select('gebied.id');
+			$this->db->from('gebied');
+			$query = $this->db->get();
+			$result = $query->result_array();
+
+			foreach ($result as $item) {
+				if ( $this->input->post('gebied'.$item['id']) == '1') {
+					$data = array('spel_id' => $this->input->post('spelid'),
+						'gebied_id' => $item['id']);
+					$this->db->insert('spel_gebied', $data);
+				}
+			}
+
+			// Spellokaties opslaan
+			// Eerst halen we alle verwijzingen weg.
+			// Dit is heel goor, maar wel gemakkelijk, aangezien 
+			// dit onderdeel niet intensief gebruikt word.
+			$this->db->where('spel_id', $this->input->post('spelid'));
+			$this->db->delete('spel_spellokatie');
+
+			// Hierna inserten we weer de data
+			$this->db->select('spellokatie.id');
+			$this->db->from('spellokatie');
+			$query = $this->db->get();
+			$result = $query->result_array();
+
+			foreach ($result as $item) {
+				if ( $this->input->post('lokatie'.$item['id']) == '1') {
+					$data = array('spel_id' => $this->input->post('spelid'),
+						'spellokatie_id' => $item['id']);
+					$this->db->insert('spel_spellokatie', $data);
+				}
+			}
+
+			// Spelartikelen opslaan
+			// Eerst halen we alle verwijzingen weg.
+			// Dit is heel goor, maar wel gemakkelijk, aangezien 
+			// dit onderdeel niet intensief gebruikt word.
+			$this->db->where('spel_id', $this->input->post('spelid'));
+			$this->db->delete('spel_artikel');
+
+			// Hierna inserten we weer de data
+			$this->db->select('artikel.id');
+			$this->db->from('artikel');
+			$query = $this->db->get();
+			$result = $query->result_array();
+
+			foreach ($result as $item) {
+				if ( $this->input->post('artikelaantal'.$item['id']) != '0') {
+					$data = array('spel_id' => $this->input->post('spelid'),
+						'artikel_id' => $item['id'],
+						'aantal' => $this->input->post('artikelaantal'.$item['id'])
+						);
+					$this->db->insert('spel_artikel', $data);
+				}
+			}
+			$return = $this->input->post('spelid');
+			} else {
+				$query = $this->db->query('SELECT LAST_INSERT_ID() as id');
+				$return = $query->row()->id;
+			}
+
+			return $return;
+
+		}
     }
