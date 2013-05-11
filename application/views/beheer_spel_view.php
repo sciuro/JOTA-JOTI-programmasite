@@ -31,8 +31,8 @@
 	</div>
 
 
-	<div class='row'>    
-		<table class="table table-hover span8 offset2">
+	<div class='row-fluid'>    
+		<table class="table table-hover span8 offset3">
         
         	<thead>
           		<tr>
