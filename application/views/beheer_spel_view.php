@@ -52,8 +52,8 @@
 					</td>
 					<td><?php echo $spel['titel'];?></td>
 					<td></td>
-					<td><?php echo $spel['jota'];?></td>
-					<td><?php echo $spel['joti'];?></td>
+					<td><?php if ($spel['jota'] > 0) { ?><i class="icon-ok"></i><?php } ;?></td>
+					<td><?php if ($spel['joti'] > 0) { ?><i class="icon-ok"></i><?php } ;?></td>
 
 				</tr>
 				<?php } ?>
