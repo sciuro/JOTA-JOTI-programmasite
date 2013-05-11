@@ -36,7 +36,7 @@
 		<div class="control-group">
 			<label class="control-label" for="beschrijving">Beschrijving</label>
 			<div class="controls">
-				<textarea class="span8" rows='5' id="beschrijving" name="beschrijving" placeholder="Beschrijving voor het spel"><?php echo $spel['beschrijving'];?></textarea>
+				<textarea class="span8" rows='10' id="beschrijving" name="beschrijving" placeholder="Beschrijving voor het spel"><?php echo $spel['beschrijving'];?></textarea>
 			</div>
 		</div>
 
