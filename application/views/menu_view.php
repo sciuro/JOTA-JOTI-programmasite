@@ -53,7 +53,9 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Beheer</a>
                         <ul class="dropdown-menu" role="menu">
                             <li><a tabindex="-1" href="<?php echo base_url();?>beheer">Instellingen</a></li>
+                            <li class="divider"></li>
                             <li><a tabindex="-1" href="<?php echo base_url();?>beheer/spel">Spelen</a></li>
+                            <li><a tabindex="-1" href="<?php echo base_url();?>beheer/spel/nieuw">Nieuw spel</a></li>
                         </ul>
                     </li>
                  
