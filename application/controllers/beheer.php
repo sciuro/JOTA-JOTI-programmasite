@@ -57,10 +57,19 @@
             if ($id) {
                 $speldata = $this->beheer_model->get_spel($id);
                 $data['spel'] = $speldata['0'];
+
                 $data['spel']['artikelen'] = $this->beheer_model->get_spel_artikelen($id);
+                $data['artikelen'] = $this->beheer_model->get_artikelen();
+
                 $data['spel']['duur'] = $this->beheer_model->get_spel_duur($id);
+                $data['duur'] = $this->beheer_model->get_duur();
+
                 $data['spel']['gebied'] = $this->beheer_model->get_spel_gebied($id);
+                $data['gebieden'] = $this->beheer_model->get_gebieden();
+
                 $data['spel']['lokatie'] = $this->beheer_model->get_spel_lokatie($id);
+                $data['spellokaties'] = $this->beheer_model->get_spellokaties();
+
                 $data['titel'] = "Spel ".$data['spel']['titel'];
             } else {
                 $data['spelen'] = $this->beheer_model->get_spelen($data['search']);
