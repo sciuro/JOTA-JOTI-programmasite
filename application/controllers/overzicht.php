@@ -118,4 +118,26 @@
              $this->load->view('footer_view', $data);
                     
         }
+
+        public function selectie() {
+
+            // Variabelen van de pagina zetten.
+            $data['page'] = "leiding";
+            $data['titel'] = "Selectie spelen";
+
+            // Modellen laden.
+
+            // Eerst de header laden.
+            $this->load->view('header_view', $data);
+            
+            // Menu laden.
+            $this->load->view('menu_view', $data);
+
+            // Pagina inhoud weergeven
+            //$this->load->view('overzicht_spelen_selectie', $data);
+
+             // Als laatste de footer laden.
+             $this->load->view('footer_view', $data);
+        }
     }
+    
