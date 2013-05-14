@@ -34,8 +34,6 @@
                     <?php } ?>
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Spelen</a>
 						<ul class="dropdown-menu" role="menu">
-							<li><a tabindex="-1" href="<?php echo base_url();?>info/pagina/spelen">Algemeen</a></li>
-                            <li class="divider"></li>
 							<li><a tabindex="-1" href="<?php echo base_url();?>overzicht/bevers/">Bevers</a></li>
                             <li><a tabindex="-1" href="<?php echo base_url();?>overzicht/welpen/">Welpen</a></li>
                             <li><a tabindex="-1" href="<?php echo base_url();?>overzicht/scouts/">Scouts</a></li>
@@ -44,6 +42,19 @@
 
 						</ul>
 					</li>
+
+                    <?php if ($page == "leiding"){ ?>
+                    <li class="dropdown active">
+                    <?php } else { ?>
+                    <li class="dropdown">
+                    <?php } ?>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Leiding</a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a tabindex="-1" href="<?php echo base_url();?>info/pagina/leiding">Uitleg</a></li>
+                            <li class="divider"></li>
+                            <li><a tabindex="-1" href="<?php echo base_url();?>overzicht/selectie">Spelselectie</a></li>
+                        </ul>
+                    </li>
 
                     <?php if ($page == "beheer"){ ?>
                     <li class="dropdown active">
