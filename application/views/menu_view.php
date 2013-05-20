@@ -27,19 +27,18 @@
                     <?php } ?>
                     <a href="<?php echo base_url();?>info/pagina/algemeen">Algemeen</a></li>
                     
-                    <?php if ($page == "spelen"){ ?>
+                    <?php if ($page == "spellen" || $page == "twitterhike"){ ?>
                     <li class="dropdown active">
                     <?php } else { ?>
                     <li class="dropdown">
                     <?php } ?>
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Spelen</a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Spellen</a>
 						<ul class="dropdown-menu" role="menu">
-							<li><a tabindex="-1" href="<?php echo base_url();?>overzicht/bevers/">Bevers</a></li>
-                            <li><a tabindex="-1" href="<?php echo base_url();?>overzicht/welpen/">Welpen</a></li>
-                            <li><a tabindex="-1" href="<?php echo base_url();?>overzicht/scouts/">Scouts</a></li>
-                            <li><a tabindex="-1" href="<?php echo base_url();?>overzicht/explorers/">Explorers</a></li>
-                            <li><a tabindex="-1" href="<?php echo base_url();?>overzicht/roverscouts/">Roverscouts</a></li>
-
+							<li><a tabindex="-1" href="<?php echo base_url();?>spellen/bevers/">Bevers</a></li>
+                            <li><a tabindex="-1" href="<?php echo base_url();?>spellen/welpen/">Welpen</a></li>
+                            <li><a tabindex="-1" href="<?php echo base_url();?>spellen/scouts/">Scouts</a></li>
+                            <li><a tabindex="-1" href="<?php echo base_url();?>info/pagina/twitterhike">Explorers</a></li>
+                            <li><a tabindex="-1" href="<?php echo base_url();?>info/pagina/twitterhike">Roverscouts</a></li>
 						</ul>
 					</li>
 
