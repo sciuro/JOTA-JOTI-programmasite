@@ -199,7 +199,7 @@ def("DOMPDF_DEFAULT_MEDIA_TYPE", "screen");
  *
  * @see CPDF_Adapter::PAPER_SIZES for valid sizes
  */
-def("DOMPDF_DEFAULT_PAPER_SIZE", "letter");
+def("DOMPDF_DEFAULT_PAPER_SIZE", "A4");
 
 /**
  * The default font family
@@ -285,7 +285,7 @@ def("DOMPDF_ENABLE_JAVASCRIPT", true);
  *
  * @var bool
  */
-def("DOMPDF_ENABLE_REMOTE", false);
+def("DOMPDF_ENABLE_REMOTE", true);
 
 /**
  * The debug output log
