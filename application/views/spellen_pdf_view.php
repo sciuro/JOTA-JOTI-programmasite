@@ -33,4 +33,3 @@
 	<button type="submit" class="btn btn-primary">Genereer</button>
 
 </div>
-<pre><?php print_r($spellen); ?></pre>
