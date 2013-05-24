@@ -107,4 +107,17 @@
 			return $query->result_array();
 		}
 
+		public function get_spellocaties($spelid){
+			$this->db->select('spellokatie.id, spellokatie.naam');
+			$this->db->from('spellokatie');
+
+			$this->db->join('spel_spellokatie', 'spellokatie.id=spel_spellokatie.spellokatie_id', 'left');
+			$this->db->where('spel_spellokatie.spel_id', $spelid);
+
+			$this->db->order_by('spellokatie.naam');
+
+			$query = $this->db->get();
+			return $query->result_array();
+		}
+
     }
