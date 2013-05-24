@@ -40,8 +40,9 @@
             $data['gebieden'] = $this->overzicht_model->get_gebieden($data['speltak']);
             $data['spellen'] = $this->overzicht_model->get_spelen($data['speltak'], $data['opkomstduur']);
 
-            for ($i=0; $i < count($data['spellen']); $i++) { 
-                if ($this->input->post('spel'.$data['spellen'][$i]['id']) != 1 ) {
+            $spelcount = count($data['spellen']);
+            for ($i=0; $i < $spelcount; $i++) { 
+                if ($this->input->post('spel'.$data['spellen'][$i]['id']) != '1') {
                     unset($data['spellen'][$i]);
                 }
             }
