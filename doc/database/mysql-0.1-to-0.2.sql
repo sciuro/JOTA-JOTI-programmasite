@@ -54,3 +54,6 @@ ALTER TABLE `spel` ADD `max_spelers` TINYINT( 4 ) NOT NULL AFTER `min_spelers`;
 
 -- Issue #6 en #7 Speltak implementatie
 ALTER TABLE `gebied` ADD `kaartloc` VARCHAR( 15 ) NOT NULL;
+
+-- Banner keuze bij pagina
+ALTER TABLE `pagina` ADD `banner` BOOL NOT NULL AFTER `tekst`;

@@ -1,4 +1,5 @@
 <div class='container pagina'>
+<?php if ($pagina['banner'] == 1) { ?>
 <div class='row'>
     <div id="myCarousel" class="span12 carousel slide">
 
@@ -17,7 +18,7 @@
     	<a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
     </div>
 </div>
-
+<?php } ?>
 	<div class='row tekst'>
 		<div class='span9'>
 			<header class="jumbotron subhead">
