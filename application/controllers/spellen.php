@@ -84,15 +84,16 @@
              $this->load->view('footer_view', $data);            
         }
 
-        private function web($speltak) {
+        private function web($speltak, $opkomstduur) {
             // Variabelen van de pagina zetten.
             $data['page'] = "spellen";
             $data['titel'] = "Spellen ".$speltak;
             $data['speltak'] = $speltak;
 
             // Modellen laden.
-            //$this->load->model('overzicht_model');
-            //$data['duur'] = $this->overzicht_model->get_duur($speltak);
+            $this->load->model('overzicht_model');
+            $data['gebieden'] = $this->overzicht_model->get_gebieden($speltak);
+            $data['duur'] = $this->overzicht_model->get_duur($speltak);
 
             // Eerst de header laden.
             $this->load->view('header_view', $data);
@@ -101,7 +102,7 @@
             $this->load->view('menu_view', $data);
 
             // Pagina weergeven
-            //$this->load->view('spellen_keuze_view', $data);
+            $this->load->view('spellen_web_view', $data);
 
              // Als laatste de footer laden.
              $this->load->view('footer_view', $data);   
