@@ -27,7 +27,13 @@
         }
 
         public function scouts($view = NULL) {
-            $this->keuze('scouts');
+            if ($view == 'web') {
+                $this->web('scouts', $opkomstduur);
+            } elseif ($view == 'pdf') {
+                $this->pdf('scouts', $opkomstduur);
+            } else {
+                $this->keuze('scouts');
+            }
         }
 
         public function draaiboekpdf() {
