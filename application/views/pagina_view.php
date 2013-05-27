@@ -28,6 +28,7 @@
 		</div>
 		
 		<div class='span2'>
+			<br>
 			<a href="http://www.jota-joti.nl"><img src="<?php echo base_url();?>images/logo_blauw.gif"></a>
 		</div>
 	</div>
