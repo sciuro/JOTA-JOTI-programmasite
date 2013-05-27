@@ -61,6 +61,31 @@
 
         }
 
+        public function gebied($gebied) {
+            // Modellen laden.
+            $this->load->model('overzicht_model');
+            $speltak = $this->overzicht_model->get_gebied_speltak($gebied)->naam;
+            $gebiednaam = $this->overzicht_model->get_gebied_naam($gebied)->naam;
+
+            // Variabelen van de pagina zetten.
+            $data['page'] = "spellen";
+            $data['titel'] = "Spellen van ".$gebiednaam." (".$speltak.")";
+            $data['speltak'] = $speltak;
+            $data['gebied'] = $gebiednaam;
+
+            // Eerst de header laden.
+            $this->load->view('header_view', $data);
+
+            // Menu laden.
+            $this->load->view('menu_view', $data);
+
+            // Pagina weergeven
+            $this->load->view('spellen_gebied_view', $data);
+
+             // Als laatste de footer laden.
+             $this->load->view('footer_view', $data);         
+        }
+
         private function keuze($speltak) {
             // Variabelen van de pagina zetten.
             $data['page'] = "spellen";
