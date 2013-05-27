@@ -20,12 +20,12 @@
                     <?php } ?>
                     <a href="<?php echo base_url();?>info/pagina/home">Home</a></li>
                       
-                    <?php if ($page == "algemeen"){ ?>
+                    <?php if ($page == "uitleg"){ ?>
                     <li class="active">
                     <?php } else { ?>
                     <li>
                     <?php } ?>
-                    <a href="<?php echo base_url();?>info/pagina/algemeen">Algemeen</a></li>
+                    <a href="<?php echo base_url();?>info/pagina/uitleg">Uitleg</a></li>
                     
                     <?php if ($page == "spellen" || $page == "twitterhike"){ ?>
                     <li class="dropdown active">
