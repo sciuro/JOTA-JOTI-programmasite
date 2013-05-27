@@ -1,7 +1,6 @@
 <div class='container pagina'>
 <?php if ($pagina['banner'] == 1) { ?>
-<div class='row'>
-    <div id="myCarousel" class="span12 carousel slide">
+    <div id="banner" class="carousel slide">
 
     	<!-- Carousel items -->
     	<div class="carousel-inner">
@@ -12,15 +11,13 @@
     			<center><img src="<?php echo base_url();?>images/carousel_2.png"></center>
     		</div>
     	</div>
-
     	<!-- Carousel nav -->
-    	<a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-    	<a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+    	<a class="carousel-control left" href="#banner" data-slide="prev">&lsaquo;</a>
+    	<a class="carousel-control right" href="#banner" data-slide="next">&rsaquo;</a>
     </div>
-</div>
 <?php } ?>
 	<div class='row tekst'>
-		<div class='span9'>
+		<div class='span7'>
 			<header class="jumbotron subhead">
 				<h1><?php echo $pagina['titel']; ?></h1>
 			</header>
@@ -33,9 +30,4 @@
 		</div>
 	</div>
 
-	<div class='row'>
-		<div class='span4 offset8'>
-			<small>Laatste aanpassing: <?php echo $pagina['timestamp']; ?></small>
-		</div>
-	</div>
 </div>
