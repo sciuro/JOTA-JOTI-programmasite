@@ -47,6 +47,18 @@
                 }
             }
 
+            $i=0;
+            foreach ($data['gebieden'] as $gebied) {
+                $j=0;
+                foreach ($data['spellen'] as $spel) {
+                    if ($spel['gebied'] == $gebied['id']) {
+                        $j++;
+                    }
+                }
+                $data['gebieden'][$i]['aantal'] = $j;
+                $i++;
+            }
+
             foreach ($data['spellen'] as $spel) {
                 $data['artikelen'][$spel['id']] = $this->overzicht_model->get_artikelen($spel['id']);
                 $data['spellocaties'][$spel['id']] = $this->overzicht_model->get_spellocaties($spel['id']);

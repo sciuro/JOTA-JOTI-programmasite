@@ -105,76 +105,92 @@
 		Algemene uitleg
 		<hr/>
 
-		<?php foreach ($spellen as $spel) { ?>
+		<?php foreach ($gebieden as $gebied) { ?>
+			<?php if ($gebied['aantal'] >= 1) { ?>
 
-			<h2><?php echo $spel['titel']; ?></h2>
-
-			<p>
-				<table id="spelgegevens">
-    				<tr>
-      					<td>Deelnemers</td>
-      					<td><?php echo $spel['min_spelers']; ?>-<?php echo $spel['max_spelers']; ?> spelers</td>
-    				</tr>
-    				<tr>
-      					<td>Leiding</td>
-      					<td><?php echo $spel['leiding']; ?></td>
-    				</tr>
-    				<tr>
-      					<td>Duur</td>
-      					<td><?php echo $spel['duur']; ?> minuten</td>
-    				</tr>
-    				<tr>
-      					<td>Jota</td>
-      					<td><?php if ($spel['jota'] == 1){echo "Ja";} else { echo "Nee";} ?></td>
-    				</tr>
-    				<tr>
-      					<td>Joti</td>
-      					<td><?php if ($spel['joti'] == 1){echo "Ja";} else { echo "Nee";} ?></td>
-    				</tr>
-    				<tr>
-      					<td>Spellocatie</td>
-      					<td>
-   							<?php foreach ($spellocaties[$spel['id']] as $spellocatie) { ?>
-   								<?php echo $spellocatie['naam']; ?>
-   							<?php } ?>
-      					</td>
-    				</tr>
-  				</table>
-  			</p>
-  			<br>
-
-			<p>
-				<b>Doel:</b><br>
-				<?php echo $spel['omschrijving']; ?>
-			</p>
-			<p>
-				<b>Benodigdheden:</b><br>
-				<ul>
-				<?php if (count($artikelen[$spel['id']]) == 0 ) { ?>
-					<li>Geen</li>
-				<?php } else { ?>
-					<?php foreach ($artikelen[$spel['id']] as $artikel) { ?>
-						<li>
-							<?php echo $artikel['aantal']." X "; ?>
-							<?php if ($artikel['aantal'] == 1) { echo $artikel['naam']; } else { echo $artikel['naammv']; } ?>
-						</li>
-					<?php } ?>
-				<?php } ?>
-				</ul>
-			</p>
-			<p>
-				<b>Voorbereiding:</b><br>
-				<?php echo $spel['voorbereiding']; ?>
-			</p>
-			<p>
-				<b>Beschrijving:</b><br>
-				<?php echo $spel['beschrijving']; ?>
-			</p>
-
-
-
-
+			<center>
+				<br>
+				<p>
+					<img src="<?php echo base_url();?>images/gebied_<?php echo $gebied['id']; ?>_logo.png">
+					<h1>Gebied<br>
+					<?php echo $gebied['naam']; ?></h1><br>
+				</p>
+			</center>
 			<hr/>
+
+			<?php foreach ($spellen as $spel) { ?>
+				<?php if ($spel['gebied'] == $gebied['id']) { ?>
+
+					<h2><?php echo $spel['titel']; ?></h2>
+
+					<p>
+						<table id="spelgegevens">
+    						<tr>
+      							<td>Deelnemers</td>
+      							<td><?php echo $spel['min_spelers']; ?>-<?php echo $spel['max_spelers']; ?> spelers</td>
+    						</tr>
+    						<tr>
+      							<td>Leiding</td>
+      							<td><?php echo $spel['leiding']; ?></td>
+    						</tr>
+    						<tr>
+      							<td>Duur</td>
+      							<td><?php echo $spel['duur']; ?> minuten</td>
+    						</tr>
+    						<tr>
+      							<td>Jota</td>
+      							<td><?php if ($spel['jota'] == 1){echo "Ja";} else { echo "Nee";} ?></td>
+    						</tr>
+    						<tr>
+      							<td>Joti</td>
+      							<td><?php if ($spel['joti'] == 1){echo "Ja";} else { echo "Nee";} ?></td>
+    						</tr>
+    						<tr>
+      							<td>Spellocatie</td>
+      							<td>
+   									<?php foreach ($spellocaties[$spel['id']] as $spellocatie) { ?>
+   										<?php echo $spellocatie['naam']; ?>
+   									<?php } ?>
+      							</td>
+    						</tr>
+  						</table>
+  					</p>
+  					<br>
+
+					<p>
+						<b>Doel:</b><br>
+						<?php echo $spel['omschrijving']; ?>
+					</p>
+					<p>
+						<b>Benodigdheden:</b><br>
+						<ul>
+						<?php if (count($artikelen[$spel['id']]) == 0 ) { ?>
+							<li>Geen</li>
+						<?php } else { ?>
+							<?php foreach ($artikelen[$spel['id']] as $artikel) { ?>
+								<li>
+									<?php echo $artikel['aantal']." X "; ?>
+									<?php if ($artikel['aantal'] == 1) { echo $artikel['naam']; } else { echo $artikel['naammv']; } ?>
+								</li>
+							<?php } ?>
+						<?php } ?>
+					</ul>
+					</p>
+					<p>
+						<b>Voorbereiding:</b><br>
+						<?php echo $spel['voorbereiding']; ?>
+					</p>
+					<p>
+						<b>Beschrijving:</b><br>
+						<?php echo $spel['beschrijving']; ?>
+					</p>
+
+					<hr/>
+
+				<?php }?>
+			<?php }?>
 		<?php }?>
+		<?php }?>
+
 	</body>
 </html>
