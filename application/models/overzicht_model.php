@@ -12,8 +12,8 @@
 			$this->db->join('speltak', 'gebied.speltak_id = speltak.id');
 
 			// Joins voor bepaling totale programmaduur.
-			$this->db->join('spel_duur', 'spel.id = spel_duur.spel_id');
-			$this->db->join('duur', 'spel_duur.duur_id = duur.id');
+			$this->db->join('opkomst_duur', 'spel.id = opkomst_duur.spel_id');
+			$this->db->join('duur', 'opkomst_duur.duur_id = duur.id');
 
 			// Controleer of er een speltak, of alles opgevraagd word.
 			if ($speltak != 'alles') {
@@ -62,8 +62,8 @@
 			$this->db->from('duur');
 
 			// Bepalen speltak
-			$this->db->join('spel_duur', 'spel_duur.duur_id = duur.id');
-			$this->db->join('spel_gebied', 'spel_duur.spel_id = spel_gebied.spel_id');
+			$this->db->join('opkomst_duur', 'opkomst_duur.duur_id = duur.id');
+			$this->db->join('spel_gebied', 'opkomst_duur.spel_id = spel_gebied.spel_id');
 			$this->db->join('gebied', 'spel_gebied.gebied_id = gebied.id');
 			$this->db->join('speltak', 'gebied.speltak_id = speltak.id');
 
