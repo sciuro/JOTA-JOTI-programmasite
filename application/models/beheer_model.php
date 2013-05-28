@@ -31,10 +31,10 @@
 		}
 
 		public function get_duur(){
-			$this->db->select('duur.id, duur.lengte, count(spel_duur.spel_id) AS aantal');
+			$this->db->select('duur.id, duur.lengte, count(opkomst_duur.spel_id) AS aantal');
 			$this->db->from('duur');
 
-			$this->db->join('spel_duur', 'duur.id=spel_duur.duur_id', 'left');
+			$this->db->join('opkomst_duur', 'duur.id=opkomst_duur.duur_id', 'left');
 			$this->db->group_by('duur.lengte');
 
 			$this->db->order_by('duur.lengte');
@@ -111,10 +111,10 @@
 		}
 
 		public function get_spel_duur($spelid){
-			$this->db->select('spel_duur.duur_id');
-			$this->db->from('spel_duur');
+			$this->db->select('opkomst_duur.duur_id');
+			$this->db->from('opkomst_duur');
 
-			$this->db->where('spel_duur.spel_id', $spelid);
+			$this->db->where('opkomst_duur.spel_id', $spelid);
 
 			$query = $this->db->get();
 			return $query->result_array();
@@ -306,7 +306,7 @@
 			// Dit is heel goor, maar wel gemakkelijk, aangezien 
 			// dit onderdeel niet intensief gebruikt word.
 			$this->db->where('spel_id', $this->input->post('spelid'));
-			$this->db->delete('spel_duur');
+			$this->db->delete('opkomst_duur');
 
 			// Hierna inserten we weer de data
 			$this->db->select('duur.id');
@@ -318,7 +318,7 @@
 				if ( $this->input->post('duur'.$item['id']) == '1') {
 					$data = array('spel_id' => $this->input->post('spelid'),
 						'duur_id' => $item['id']);
-					$this->db->insert('spel_duur', $data);
+					$this->db->insert('opkomst_duur', $data);
 				}
 			}
 
