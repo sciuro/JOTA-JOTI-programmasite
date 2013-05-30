@@ -11,6 +11,14 @@
     <input type="hidden" name="speltak" value="<?php echo $speltak; ?>">
     <input type="hidden" name="opkomstduur" value="<?php echo $opkomstduur; ?>">
 
+	<div class="control-group">
+		<div class="controls">
+			<label class="checkbox">
+				<input type="checkbox" name="select-all" id="select-all" />Selecteer alles
+			</label>
+		</div>
+	</div>
+
 	<?php foreach ($gebieden as $gebied) { ?>
 		<div class="control-group">
 			<label class="control-label" for="spelgebied<?php echo $gebied['id']; ?>"><em><?php echo $gebied['naam']; ?></em></label>
