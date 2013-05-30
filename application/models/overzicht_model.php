@@ -96,7 +96,7 @@
 		}
 
 		public function get_artikelen($spelid) {
-			$this->db->select('spel_artikel.aantal, artikel.naam, artikel.naammv');
+			$this->db->select('spel_artikel.aantal, artikel.naam, artikel.naammv, artikel.id');
 			$this->db->from('spel_artikel');
 
 			$this->db->join('artikel', 'spel_artikel.artikel_id=artikel.id', 'right');

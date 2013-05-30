@@ -68,9 +68,23 @@
             foreach ($data['spellen'] as $spel) {
                 $data['artikelen'][$spel['id']] = $this->overzicht_model->get_artikelen($spel['id']);
                 $data['spellocaties'][$spel['id']] = $this->overzicht_model->get_spellocaties($spel['id']);
-            }
-            
+                $spelartikelen = $this->overzicht_model->get_artikelen($spel['id']);
+                foreach ($spelartikelen as $artikel) {
+                    if (isset($data['nodiglijst'][$artikel['id']])) {
+                        $data['nodiglijst'][$artikel['id']]['aantal'] = $data['nodiglijst'][$artikel['id']]['aantal'] + $artikel['aantal'];
+                    } else {
+                        $data['nodiglijst'][$artikel['id']] = $artikel;
+                    }
+                }
 
+            }
+
+            // Order de lijst met spullen
+            function vergelijkartikel($a, $b) {
+            return strnatcmp($a['naam'], $b['naam']);
+            } // sort alphabetically by name
+            usort($data['nodiglijst'], 'vergelijkartikel');
+            
             // PDF genereren
             $this->load->library('pdf');
             $this->pdf->load_view('spellen_draaiboek_pdf', $data);

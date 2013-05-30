@@ -129,6 +129,18 @@ We zijn erg teleurgesteld dat het niet lukt. Maar Bagheera en Baloe hebben een n
 		Algemene uitleg
 		<hr/>
 
+		<h2>Benodigdheden</h2>
+		<p>De volgende artikelen zijn nodig voor de gekozen spelen. Dit is een verzamellijst!</p>
+
+		<?php foreach ($nodiglijst as $artikel) { ?>
+			<li>
+				[&nbsp;&nbsp;]&nbsp;<?php echo $artikel['aantal']." X "; ?>
+				<?php if ($artikel['aantal'] == 1) { echo $artikel['naam']; } else { echo $artikel['naammv']; } ?>
+			</li>
+		<?php } ?>
+
+		<hr/>
+
 		<?php foreach ($gebieden as $gebied) { ?>
 			<?php if ($gebied['aantal'] >= 1) { ?>
 
