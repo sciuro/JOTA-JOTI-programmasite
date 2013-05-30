@@ -58,7 +58,7 @@
 		}
 		
 		public function get_duur($speltak){
-			$this->db->select('duur.id, duur.lengte');
+			$this->db->select('duur.id, duur.lengte, count(duur.lengte) AS aantal');
 			$this->db->from('duur');
 
 			// Bepalen speltak
@@ -70,6 +70,7 @@
 			$this->db->where('speltak.naam', $speltak);
 			$this->db->group_by('duur.lengte');
 			$this->db->order_by('duur.lengte');
+			$this->db->having('aantal > 0');
 
 			$query = $this->db->get();
 			return $query->result_array();			
