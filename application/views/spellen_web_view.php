@@ -8,7 +8,7 @@
 	<center><img src="<?php echo base_url();?>images/kaart_<?php echo $speltak;?>.jpg" width="1000" border="0" usemap="#kaart"></center>
 	<map name="kaart">
 		<?php foreach ($gebieden as $gebied) { ?>
-  		<area shape="rect" coords="<?php echo $gebied['kaartloc']; ?>" href="<?php echo base_url();?>spellen/gebied/<?php echo $gebied['id']; ?>/<?php echo $opkomstduur; ?>" alt="<?php echo $gebied['naam']; ?>" title="<?php echo $gebied['naam']; ?>">
+  		<area shape="rect" coords="<?php echo $gebied['kaartloc']; ?>" href="<?php echo base_url();?>spellen/gebied/<?php echo $gebied['id']; ?>/<?php echo $opkomstduur; ?>/<?php echo $jjkeuze; ?>" alt="<?php echo $gebied['naam']; ?>" title="<?php echo $gebied['naam']; ?>">
   		<?php } ?>
 	</map>
 

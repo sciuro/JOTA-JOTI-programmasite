@@ -6,31 +6,31 @@
             redirect('info/pagina/spelen');
         }
 
-        public function bevers($view = NULL, $opkomstduur = NULL) {
+        public function bevers($view = NULL, $opkomstduur = NULL, $jjkeuze = NULL) {
             if ($view == 'web') {
-                $this->web('bevers', $opkomstduur);
+                $this->web('bevers', $opkomstduur, $jjkeuze);
             } elseif ($view == 'pdf') {
-                $this->pdf('bevers', $opkomstduur);
+                $this->pdf('bevers', $opkomstduur, $jjkeuze);
             } else {
                 $this->keuze('bevers');
             }
         }
 
-        public function welpen($view = NULL, $opkomstduur = NULL) {
+        public function welpen($view = NULL, $opkomstduur = NULL, $jjkeuze = NULL) {
             if ($view == 'web') {
-                $this->web('welpen', $opkomstduur);
+                $this->web('welpen', $opkomstduur, $jjkeuze);
             } elseif ($view == 'pdf') {
-                $this->pdf('welpen', $opkomstduur);
+                $this->pdf('welpen', $opkomstduur, $jjkeuze);
             } else {
                 $this->keuze('welpen');
             }
         }
 
-        public function scouts($view = NULL) {
+        public function scouts($view = NULL, $jjkeuze = NULL) {
             if ($view == 'web') {
-                $this->web('scouts', $opkomstduur);
+                $this->web('scouts', $opkomstduur, $jjkeuze);
             } elseif ($view == 'pdf') {
-                $this->pdf('scouts', $opkomstduur);
+                $this->pdf('scouts', $opkomstduur, $jjkeuze);
             } else {
                 $this->keuze('scouts');
             }
@@ -79,7 +79,7 @@
 
         }
 
-        public function gebied($gebied, $opkomstduur) {
+        public function gebied($gebied, $opkomstduur, $jjkeuze = NULL) {
             // Modellen laden.
             $this->load->model('overzicht_model');
             $speltak = $this->overzicht_model->get_gebied_speltak($gebied)->naam;
@@ -95,6 +95,21 @@
             $data['speltak'] = $speltak;
             $data['gebied'] = $gebiednaam;
             $data['gebiednr'] = $gebied;
+ 
+            $spelcount = count($data['spellen']);
+            if ($jjkeuze == "jota") {
+                for ($i=0; $i < $spelcount; $i++) { 
+                    if ($data['spellen'][$i]['jota'] == 0) { // Hier begrijp ik zelf de logica niet van. Maar het werkt.
+                        unset($data['spellen'][$i]);
+                    }
+                }
+            } elseif ($jjkeuze == "joti") {
+                for ($i=0; $i < $spelcount; $i++) { 
+                    if ($data['spellen'][$i]['joti'] == 0) { // Hier begrijp ik zelf de logica niet van. Maar het werkt.
+                        unset($data['spellen'][$i]);
+                    }
+                }
+            }
 
             // Eerst de header laden.
             $this->load->view('header_view', $data);
@@ -132,12 +147,13 @@
              $this->load->view('footer_view', $data);            
         }
 
-        private function web($speltak, $opkomstduur) {
+        private function web($speltak, $opkomstduur, $jjkeuze = NULL) {
             // Variabelen van de pagina zetten.
             $data['page'] = "spellen";
             $data['titel'] = "Spellen ".$speltak;
             $data['speltak'] = $speltak;
             $data['opkomstduur'] = $opkomstduur;
+            $data['jjkeuze'] = $jjkeuze;
 
             // Modellen laden.
             $this->load->model('overzicht_model');
