@@ -5,18 +5,26 @@
 		</div>
 	</header>
 
-	Online spelen inzien:
-	<ul>
-		<?php foreach ($duur as $opkomsttijd) { ?>
-			<li><a href="<?php echo base_url();?>spellen/<?php echo $speltak;?>/web/<?php echo $opkomsttijd['lengte'];?>">Totale opkomstduur van <?php echo $opkomsttijd['lengte'];?> uur.</a></li>
-		<?php }?>
-	</ul>
+	<div class='row-fluid'>
+		<div class='span10 offset1'>
+			<h4>Online spelen:</h4>
+			<ul>
+				<?php foreach ($duur as $opkomsttijd) { ?>
+					<li><a href="<?php echo base_url();?>spellen/<?php echo $speltak;?>/web/<?php echo $opkomsttijd['lengte'];?>">Totale opkomstduur van <?php echo $opkomsttijd['lengte'];?> uur.</a></li>
+				<?php }?>
+			</ul>
+		</div>
+	</div>
 
-	Spelen downloaden (pdf) voor offline gebruikt:
-	<ul>
-		<?php foreach ($duur as $opkomsttijd) { ?>
-			<li><a href="<?php echo base_url();?>spellen/<?php echo $speltak;?>/pdf/<?php echo $opkomsttijd['lengte'];?>">Totale opkomstduur van <?php echo $opkomsttijd['lengte']?> uur.</a></li>
-		<?php }?>
-	</ul>
+	<div class='row-fluid'>
+		<div class='span10 offset1'>
+			<h4>Spelen downloaden (pdf) voor offline gebruikt:</h4>
+			<ul>
+				<?php foreach ($duur as $opkomsttijd) { ?>
+					<li><a href="<?php echo base_url();?>spellen/<?php echo $speltak;?>/pdf/<?php echo $opkomsttijd['lengte'];?>">Totale opkomstduur van <?php echo $opkomsttijd['lengte']?> uur.</a></li>
+				<?php }?>
+			</ul>
+		</div>
+	</div>
 
 </div>
