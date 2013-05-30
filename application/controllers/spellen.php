@@ -142,7 +142,6 @@
             // Modellen laden.
             $this->load->model('overzicht_model');
             $data['gebieden'] = $this->overzicht_model->get_gebieden($speltak);
-            $data['duur'] = $this->overzicht_model->get_duur($speltak);
 
             // Eerst de header laden.
             $this->load->view('header_view', $data);
