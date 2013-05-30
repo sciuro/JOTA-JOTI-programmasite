@@ -17,20 +17,77 @@
 			<div class='row-fluid'>
 				<div class='span3 postit'>
 					<img src="<?php echo base_url();?>images/postit.png">
-					<div class='spelnaam'><h4><?php echo $spel['titel']; ?></h4></div>
+					<a href="#spel<?php echo $spel['id']; ?>" data-toggle="modal"><div class='spelnaam'><h4><?php echo $spel['titel']; ?></h4></div></a>
+
+					<!-- Berichtenscherm -->
+    				<div id="spel<?php echo $spel['id']; ?>" class="modal hide" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+        				<div class="modal-header">
+            				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        					<h3 id="myModalLabel"><?php echo $spel['titel']; ?></h3>
+        				</div>					
+
+						<div class="modal-body">
+							<p>Geheime code: <?php echo $spel['wincode']; ?></p>
+						</div>
+
+						<div class="modal-footer">
+							<button class="btn" data-dismiss="modal" aria-hidden="true">Sluiten</button>
+						</div>
+					</div>
+					<!-- Einde berichtenscherm -->
+
 				</div>
 			<?php $i++; ?>
 		<?php } elseif ($i == 3) { ?>
 				<div class='span3 postit'>
 					<img src="<?php echo base_url();?>images/postit.png">
-					<div class='spelnaam'><h4><?php echo $spel['titel']; ?></h4></div>
+					<a href="#spel<?php echo $spel['id']; ?>" data-toggle="modal"><div class='spelnaam'><h4><?php echo $spel['titel']; ?></h4></div></a>
+
+					<!-- Berichtenscherm -->
+    				<div id="spel<?php echo $spel['id']; ?>" class="modal hide" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+        				<div class="modal-header">
+            				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        					<h3 id="myModalLabel"><?php echo $spel['titel']; ?></h3>
+        				</div>					
+
+						<div class="modal-body">
+							<p>Geheime code: <?php echo $spel['wincode']; ?></p>
+						</div>
+
+						<div class="modal-footer">
+							<button class="btn" data-dismiss="modal" aria-hidden="true">Sluiten</button>
+						</div>
+					</div>
+					<!-- Einde berichtenscherm -->
+
 				</div>
 			</div>
 			<?php $i = 0; ?>
 		<?php } else { ?>
 				<div class='span3 postit'>
 					<img src="<?php echo base_url();?>images/postit.png">
-					<div class='spelnaam'><h4><?php echo $spel['titel']; ?></h4></div>
+					<a href="#spel<?php echo $spel['id']; ?>" data-toggle="modal"><div class='spelnaam'><h4><?php echo $spel['titel']; ?></h4></div></a>
+
+					<!-- Berichtenscherm -->
+    				<div id="spel<?php echo $spel['id']; ?>" class="modal hide" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+        				<div class="modal-header">
+            				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        					<h3 id="myModalLabel"><?php echo $spel['titel']; ?></h3>
+        				</div>					
+
+						<div class="modal-body">
+							<p>Geheime code: <?php echo $spel['wincode']; ?></p>
+						</div>
+
+						<div class="modal-footer">
+							<button class="btn" data-dismiss="modal" aria-hidden="true">Sluiten</button>
+						</div>
+					</div>
+					<!-- Einde berichtenscherm -->
+
 				</div>
 			<?php $i++; ?>
 		<?php } ?>
