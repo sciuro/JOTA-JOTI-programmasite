@@ -79,9 +79,13 @@
 
         }
 
-        public function gebied($gebied) {
+        public function gebied($gebied, $opkomstduur) {
             // Modellen laden.
             $this->load->model('overzicht_model');
+            $speltak = $this->overzicht_model->get_gebied_speltak($gebied)->naam;
+
+            $data['spellen'] = $this->overzicht_model->get_spelen($speltak, $opkomstduur);
+            
             $speltak = $this->overzicht_model->get_gebied_speltak($gebied)->naam;
             $gebiednaam = $this->overzicht_model->get_gebied_naam($gebied)->naam;
 
@@ -90,6 +94,7 @@
             $data['titel'] = "Spellen van ".$gebiednaam." (".$speltak.")";
             $data['speltak'] = $speltak;
             $data['gebied'] = $gebiednaam;
+            $data['gebiednr'] = $gebied;
 
             // Eerst de header laden.
             $this->load->view('header_view', $data);
@@ -132,6 +137,7 @@
             $data['page'] = "spellen";
             $data['titel'] = "Spellen ".$speltak;
             $data['speltak'] = $speltak;
+            $data['opkomstduur'] = $opkomstduur;
 
             // Modellen laden.
             $this->load->model('overzicht_model');

@@ -5,16 +5,36 @@
 		</div>
 	</header>
 
-	<?php
-	/*
-	Het volgende gedeelte moet mbv plaatjes gegenereerd worden.
-	<center><img src="<?php echo base_url();?>images/kaart_<?php echo $speltak;?>.jpg" width="1000" border="0" usemap="#kaart"></center>
-	<map name="kaart">
-		<?php foreach ($gebieden as $gebied) { ?>
-  		<area shape="rect" coords="<?php echo $gebied['kaartloc']; ?>" href="<?php echo base_url();?>spellen/gebied/<?php echo $gebied['id']; ?>" alt="<?php echo $gebied['naam']; ?>" title="<?php echo $gebied['naam']; ?>">
-  		<?php } ?>
-	</map>
-	*/
-	?>
+	<div class='row-fluid'>
+		<div class='span12'>
+			<center><img src="<?php echo base_url();?>images/gebied_<?php echo $gebiednr;?>_overzicht.png" width="800" border="0" usemap="#kaart"></center>
+		</div>
+	</div>
+	<?php $i = 0; ?>
+	<?php foreach ($spellen as $spel) { ?>
+	<?php if ($spel['gebied'] == $gebiednr) { ?>
+		<?php if ($i == 0) { ?>
+			<div class='row-fluid'>
+				<div class='span3 postit'>
+					<img src="<?php echo base_url();?>images/postit.png">
+					<div class='spelnaam'><h4><?php echo $spel['titel']; ?></h4></div>
+				</div>
+			<?php $i++; ?>
+		<?php } elseif ($i == 3) { ?>
+				<div class='span3 postit'>
+					<img src="<?php echo base_url();?>images/postit.png">
+					<div class='spelnaam'><h4><?php echo $spel['titel']; ?></h4></div>
+				</div>
+			</div>
+			<?php $i = 0; ?>
+		<?php } else { ?>
+				<div class='span3 postit'>
+					<img src="<?php echo base_url();?>images/postit.png">
+					<div class='spelnaam'><h4><?php echo $spel['titel']; ?></h4></div>
+				</div>
+			<?php $i++; ?>
+		<?php } ?>
+	<?php } ?>
+	<?php } ?>
 
 </div>
