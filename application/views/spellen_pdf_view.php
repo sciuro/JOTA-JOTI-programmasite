@@ -15,14 +15,15 @@
 		<div class="control-group">
 			<label class="control-label" for="spelgebied<?php echo $gebied['id']; ?>"><em><?php echo $gebied['naam']; ?></em></label>
 			<div class="controls">
-				<label class="checkbox inline">
+				
 					<?php foreach ($spellen as $spel) { ?>
 						<?php if ($spel['gebied'] == $gebied['id']) { ?>
-							<input type="checkbox" id="spelgebied<?php echo $gebied['id']; ?>" name="spel<?php echo $spel['id']; ?>" value="1" checked="yes"><?php echo $spel['titel'];?> <br>
+							<label class="checkbox">
+								<input type="checkbox" name="spel<?php echo $spel['id']; ?>" value="1" checked="yes"><?php echo $spel['titel'];?>
+							</label>
 						<?php } ?>
 					<?php } ?>
 
-				</label>
 			</div>
 		</div>
 
