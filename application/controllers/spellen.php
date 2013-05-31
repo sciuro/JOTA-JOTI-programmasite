@@ -26,7 +26,7 @@
             }
         }
 
-        public function scouts($view = NULL, $jjkeuze = NULL) {
+        public function scouts($view = NULL, $opkomstduur = NULL, $jjkeuze = NULL) {
             if ($view == 'web') {
                 $this->web('scouts', $opkomstduur, $jjkeuze);
             } elseif ($view == 'pdf') {
