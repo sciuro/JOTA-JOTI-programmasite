@@ -10,6 +10,18 @@
     		<div class="item">
     			<center><img src="<?php echo base_url();?>images/carousel_2.png"></center>
     		</div>
+            <div class="item">
+                <center><img src="<?php echo base_url();?>images/carousel_3.png"></center>
+            </div>
+            <div class="item">
+                <center><img src="<?php echo base_url();?>images/carousel_4.png"></center>
+            </div>
+            <div class="item">
+                <center><img src="<?php echo base_url();?>images/carousel_5.png"></center>
+            </div>
+            <div class="item">
+                <center><img src="<?php echo base_url();?>images/carousel_6.png"></center>
+            </div>
     	</div>
     	<!-- Carousel nav -->
     	<a class="carousel-control left" href="#banner" data-slide="prev">&lsaquo;</a>
