@@ -63,6 +63,7 @@
             foreach ($data['spellen'] as $spel) {
                 $filenaam = $filenaam."-".$spel['id'];
             }
+            $filenaam = $filenaam."S".$data['speltak']."D".$data['opkomstduur'];
 
             $filehash = "pdf/".md5($filenaam).".pdf";
 
