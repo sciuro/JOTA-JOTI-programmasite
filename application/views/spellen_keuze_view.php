@@ -9,6 +9,7 @@
 
 	<div class='row-fluid'>
 		<div class='span8 offset1'>
+			<?php if (($speltak == 'bevers') || ($speltak == 'welpen')) { ?>
 			<div>
 				<h4>Online spelen Jota & Joti:</h4>
 				<ul>
@@ -36,6 +37,17 @@
 				</ul>
 			</div>
 
+			<?php } else { ?>
+			<div>
+				<h4>Online spelen:</h4>
+				<ul>
+					<?php foreach ($duur as $opkomsttijd) { ?>
+						<li><a href="<?php echo base_url();?>spellen/<?php echo $speltak;?>/web/<?php echo $opkomsttijd['lengte'];?>">Totale opkomstduur van <?php echo $opkomsttijd['lengte'];?> uur.</a></li>
+					<?php }?>
+				</ul>
+			</div>
+			<?php } ?>
+
 			<div>
 				<h4>Spelen downloaden (pdf) voor offline gebruikt:</h4>
 				<ul>
@@ -44,7 +56,17 @@
 					<?php }?>
 				</ul>
 			</div>
-			
+
+		</div>
+
+		<div class='span2'>
+			<?php if ($speltak == 'bevers') { ?>
+            	<img src="<?php echo base_url();?>images/george_staat.png">
+            <?php } elseif ($speltak == 'welpen') { ?>
+            	<img src="<?php echo base_url();?>images/lucas_staat.png">
+            <?php } elseif ($speltak == 'scouts') { ?>
+            	<img src="<?php echo base_url();?>images/george_staat.png">
+            <?php } ?>
 		</div>
 
 </div>
