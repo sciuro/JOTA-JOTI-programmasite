@@ -108,6 +108,7 @@
                 $this->pdf->render();
                 $pdf = $this->pdf->output();
                 file_put_contents($filehash, $pdf);
+                chmod($filehash, 0664);
 
             }
 
