@@ -22,8 +22,9 @@ body {
 }
 
 .postit .spelnaam {
-	position:absolute; 
+	position:absolute;
 	text-align:center;
+	color: black; 
 	left: 30px;
 	right: 20px;
     top: 80px;

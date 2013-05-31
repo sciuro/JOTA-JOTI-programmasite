@@ -1,12 +1,14 @@
 <div class='container pagina'>
-	<header class="jumbotron subhead">
-		<div class="container">
-			<h1><?php echo $titel; ?></h1>
+	<div class='row-fluid tekst'>
+		<div class='span7 offset1'>
+			<header class="jumbotron subhead">
+				<h1><?php echo $titel; ?></h1>
+			</header>
 		</div>
-	</header>
+	</div>
 
 	<div class='row-fluid'>
-		<div class='span10 offset1'>
+		<div class='span8 offset1'>
 			<h4>Online spelen Jota & Joti:</h4>
 			<ul>
 				<?php foreach ($duur as $opkomsttijd) { ?>
@@ -17,7 +19,7 @@
 	</div>
 
 	<div class='row-fluid'>
-		<div class='span10 offset1'>
+		<div class='span8 offset1'>
 			<h4>Online spelen Jota:</h4>
 			<ul>
 				<?php foreach ($duur as $opkomsttijd) { ?>
@@ -28,7 +30,7 @@
 	</div>
 
 	<div class='row-fluid'>
-		<div class='span10 offset1'>
+		<div class='span8 offset1'>
 			<h4>Online spelen Joti:</h4>
 			<ul>
 				<?php foreach ($duur as $opkomsttijd) { ?>
@@ -39,7 +41,7 @@
 	</div>
 
 	<div class='row-fluid'>
-		<div class='span10 offset1'>
+		<div class='span8 offset1'>
 			<h4>Spelen downloaden (pdf) voor offline gebruikt:</h4>
 			<ul>
 				<?php foreach ($duur as $opkomsttijd) { ?>

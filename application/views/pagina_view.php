@@ -16,16 +16,18 @@
     	<a class="carousel-control right" href="#banner" data-slide="next">&rsaquo;</a>
     </div>
 <?php } ?>
-	<div class='row tekst'>
-		<div class='span7'>
+	<div class='row-fluid tekst'>
+		<div class='span7 offset1'>
 			<header class="jumbotron subhead">
 				<h1><?php echo $pagina['titel']; ?></h1>
 			</header>
+        </div>
+    </div>
+    <div class='row-fluid'>
+        <div class='span8 offset1'>
 			<?php echo $pagina['tekst']; ?>
 		</div>
-		
 		<div class='span2'>
-			<br>
 			<a href="http://www.jota-joti.nl"><img src="<?php echo base_url();?>images/logo_blauw.gif"></a>
 		</div>
 	</div>
