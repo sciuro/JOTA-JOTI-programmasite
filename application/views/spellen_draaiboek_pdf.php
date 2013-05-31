@@ -136,10 +136,6 @@
         <?php } else echo "FOUT, geen speltak gevonden" ?>
 		<hr/>
 
-		<h2>Inhoud</h2>
-		Inhoud tekst
-		<hr/>
-
 		<h2>Algemene uitleg</h2>
 		Algemene uitleg
 		<hr/>
