@@ -81,9 +81,11 @@
 
             // Order de lijst met spullen
             function vergelijkartikel($a, $b) {
-            return strnatcmp($a['naam'], $b['naam']);
+                return strnatcmp($a['naam'], $b['naam']);
             } // sort alphabetically by name
-            usort($data['nodiglijst'], 'vergelijkartikel');
+            if (isset($data['nodiglijst'])) {
+                usort($data['nodiglijst'], 'vergelijkartikel');
+            }
             
             // PDF genereren
             $this->load->library('pdf');

@@ -129,6 +129,7 @@ We zijn erg teleurgesteld dat het niet lukt. Maar Bagheera en Baloe hebben een n
 		Algemene uitleg
 		<hr/>
 
+		<?php if (isset($nodiglijst)) { ?>
 		<h2>Benodigdheden</h2>
 		<p>De volgende artikelen zijn nodig voor de gekozen spelen. Dit is een verzamellijst!</p>
 
@@ -140,6 +141,7 @@ We zijn erg teleurgesteld dat het niet lukt. Maar Bagheera en Baloe hebben een n
 		<?php } ?>
 
 		<hr/>
+		<?php } ?>
 
 		<?php foreach ($gebieden as $gebied) { ?>
 			<?php if ($gebied['aantal'] >= 1) { ?>
