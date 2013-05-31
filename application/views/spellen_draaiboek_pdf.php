@@ -97,23 +97,38 @@
         
         <?php //TODO Mogelijk omharken naar een tabel met teksten en daaruit harken. Dit is wat gevoelig voor aanpassing van speltaknamen.
         if ($speltak == 'bevers') { ?>
-        Rozemarijn : In Hotsjietonia is iets geks aan de hand. Overal hangen briefjes met opdrachten erop. Wij, de bewoners van Hotsjietonia, weten niet zo goed wat ze van deze briefjes moeten denken. In de krant heb ik een advertentie van een detectivebureau gelezen. Ik heb de speurneuzen opgebeld en gevraagd of ze willen komen kijken. <br>
-Als de detectives binnen komen blijken het George en Lucas te zijn, de jongens die vorig jaar Professor Plof hebben geholpen om de reismachine weer in elkaar te zetten. 
-Ik heb met hen afgesproken dat ze zo lang ze met het onderzoek bezig zijn bij mij en Professor Plof mogen logeren.<br>
-George en Lucas hebben een groot prikbord gemaakt waar ze alle informatie die ze verzamelen ophangen. Samen met George en Lucas heb ik bedacht dat we alle opdrachten in Hotsjietonia gaan doen en als we de opdrachten hebben gedaan hangen we dit op het prikbord. Misschien dat we er dan achter komen wat de geheimzinnige briefjes ophanger van plan is.
-Helaas, George, Lucas en ik hebben hard gewerkt om alle opdrachten op te lossen, maar in plaats van minder briefjes lijkt het wel of er alleen maar briefjes bij gekomen zijn. 
-Ik heb een goed idee, zei ik toen tegen George en Lucas. Zouden de Bevers die jullie vorig jaar geholpen hebben niet weer kunnen helpen? Dan zijn veel sneller alle opdrachten opgelost. Iedereen vindt dat een goed idee. <p>Helpen jullie mee om alle opdrachten op te lossen? 
+
+        <p><b>Rozemarijn</b> : In Hotsjietonia is iets geks aan de hand. Overal hangen briefjes met opdrachten erop. Wij, de bewoners van Hotsjietonia, weten niet zo goed wat ze van deze briefjes moeten denken. In de krant heb ik een advertentie van een detectivebureau gelezen. Ik heb de speurneuzen opgebeld en gevraagd of ze willen komen kijken.</p>
+		<p>Als de detectives binnen komen blijken het George en Lucas te zijn, de jongens die vorig jaar Professor Plof hebben geholpen om de reismachine weer in elkaar te zetten. Ik heb met hen afgesproken dat ze zo lang ze met het onderzoek bezig zijn bij mij en Professor Plof mogen logeren.</p>
+		<p>George en Lucas hebben een groot prikbord gemaakt waar ze alle informatie die ze verzamelen ophangen. Samen met George en Lucas heb ik bedacht dat we alle opdrachten in Hotsjietonia gaan doen en als we de opdrachten hebben gedaan hangen we dit op het prikbord. Misschien dat we er dan achter komen wat de geheimzinnige briefjes ophanger van plan is.</p>
+		<p>Helaas, George, Lucas en ik hebben hard gewerkt om alle opdrachten op te lossen, maar in plaats van minder briefjes lijkt het wel of er alleen maar briefjes bij gekomen zijn. Ik heb een goed idee, zei ik toen tegen George en Lucas. Zouden de Bevers die jullie vorig jaar geholpen hebben niet weer kunnen helpen? Dan zijn veel sneller alle opdrachten opgelost. Iedereen vindt dat een goed idee.</p>
+		<p>Helpen jullie mee om alle opdrachten op te lossen?</p>
+
         <?php } elseif ($speltak == 'welpen') { ?>
-        Shanti : Mowgli heeft mij verteld dat er in de jungle iets geks aan de hand is. Overal hangen briefjes met opdrachten erop. De dieren weten niet zo goed wat ze van deze briefjes moeten denken. Akela heeft alle dieren bij elkaar geroepen bij de Raadsrots voor een vergadering. Ik mag ook komen.
-Chil vertelt dat hij heeft gehoord dat er in Haveli twee speurneuzen wonen. Ik vertel dat deze speurneuzen George en Lucas heten. Ik wil wel aan deze speurneuzen vragen of zij eens naar de mysterieuze briefjes willen komen kijken. Dat vinden de andere dieren een goed idee. 
-Ik heb na deze vergadering met George en Lucas gepraat en ze meegenomen naar de vergadering bij de Raadsrots. Eerst zijn de andere dieren nog een beetje schuw, omdat ze de speurneuzen nog niet kennen. Maar als ik hen laat zien dat het dezelfde jongens zijn die vorig jaar een reismachine hadden geknutseld komen we toch dichterbij.
-Met zijn allen bedenken we een plan om de geheime briefjes ophanger te ontmaskeren. Om alle informatie die we al hebben te verzamelen, komt bij de Raadsrots een groot prikbord te hangen. 
-Daarnaast hebben we bedacht dat we alle opdrachten gaan oplossen. We willen kijken of we er op die manier achter kunnen komen wie de geheimzinnige briefjes ophanger is. Misschien komen we er zo ook achter wat hij of zij van plan is. 
-Maar helaas, we hebben geprobeerd om alle opdrachten op te lossen. Maar het lijkt wel of er steeds meer opdrachten bij komen. Dit plannetje werkt niet. 
-Akela heeft iedereen weer bij elkaar geroepen bij de Raadsrots.
-We zijn erg teleurgesteld dat het niet lukt. Maar Bagheera en Baloe hebben een nieuw idee. Waarom vragen we alle Welpen niet om ons te helpen? Als alle Welpen dit tegelijkertijd doen, dan moet het toch lukken om de geheimzinnige briefjes ophanger op te sporen. Iedereen vindt dit een goed idee. Doen jullie mee?
+
+        <p><b>Shanti</b> : Mowgli heeft mij verteld dat er in de jungle iets geks aan de hand is. Overal hangen briefjes met opdrachten erop. De dieren weten niet zo goed wat ze van deze briefjes moeten denken. Akela heeft alle dieren bij elkaar geroepen bij de Raadsrots voor een vergadering. Ik mag ook komen.</p>
+		<p>Chil vertelt dat hij heeft gehoord dat er in Haveli twee speurneuzen wonen. Ik vertel dat deze speurneuzen George en Lucas heten. Ik wil wel aan deze speurneuzen vragen of zij eens naar de mysterieuze briefjes willen komen kijken. Dat vinden de andere dieren een goed idee.</p>
+		<p>Ik heb na deze vergadering met George en Lucas gepraat en ze meegenomen naar de vergadering bij de Raadsrots. Eerst zijn de andere dieren nog een beetje schuw, omdat ze de speurneuzen nog niet kennen. Maar als ik hen laat zien dat het dezelfde jongens zijn die vorig jaar een reismachine hadden geknutseld komen we toch dichterbij.</p>
+		<p>Met zijn allen bedenken we een plan om de geheime briefjes ophanger te ontmaskeren. Om alle informatie die we al hebben te verzamelen, komt bij de Raadsrots een groot prikbord te hangen.</p>
+		<p>Daarnaast hebben we bedacht dat we alle opdrachten gaan oplossen. We willen kijken of we er op die manier achter kunnen komen wie de geheimzinnige briefjes ophanger is. Misschien komen we er zo ook achter wat hij of zij van plan is.</p>
+		<p>Maar helaas, we hebben geprobeerd om alle opdrachten op te lossen. Maar het lijkt wel of er steeds meer opdrachten bij komen. Dit plannetje werkt niet.</p>
+		<p>Akela heeft iedereen weer bij elkaar geroepen bij de Raadsrots.</p>
+		<p>We zijn erg teleurgesteld dat het niet lukt. Maar Bagheera en Baloe hebben een nieuw idee. Waarom vragen we alle Welpen niet om ons te helpen? Als alle Welpen dit tegelijkertijd doen, dan moet het toch lukken om de geheimzinnige briefjes ophanger op te sporen. Iedereen vindt dit een goed idee. Doen jullie mee?</p>
+
         <?php } elseif ($speltak == 'scouts') { ?>
-        Scouts Inleidingtekst
+
+        <p><b>Lucas</b> : Hé George, heb je dat in de krant gelezen?</p>
+		<p><b>George</b> : Wat?</p>
+		<p><b>Lucas</b> : Er is weer een mysterieuze wijze een moord gepleegd. Omdat de politie er niet uitkomt hebben ze een oproep geplaatst of er misschien mensen zijn die gespecialiseerd zijn in cybercrime om hen te helpen. Misschien kunnen wij ze wel helpen...</p>
+		<p><b>George</b> : Misschien moeten we even contact met ze opnemen en kijken of wij ze inderdaad ergens mee kunnen helpen. Staat erbij hoe we contact op kunnen nemen?</p>
+		<p><b>Lucas</b> : Ja, er staat een telefoonnummer en een emailadres. Laten we een mailtje sturen.</p>
+		<p><i>Een paar dagen later....</i></p>
+		<p><b>Lucas</b> : George, we hebben een emailtje terug gekregen. Ze schrijven dat ze graag nader kennis zouden maken om te kijken of we ze kunnen helpen. Morgen komt het hen goed uit. Zullen we eens gaan kijken wat ze ons te vertellen hebben?</p>
+		<p><b>George</b> : Ik heb dan al een JOTA-vergadering, maar als jij er nu naar toe gaat. Dan weten we zo snel mogelijk of we hen kunnen helpen met iets.</p>
+		<p><i>Na een aantal weken....</i></p>
+		<p><b>Lucas</b> : Het lukt helaas ons ook niet om de moord op te lossen. Het lijkt wel of er steeds meer bewijs bij komt, waardoor iedereen verdacht is maar we nog steeds geen dader kunnen ontmaskeren. Misschien moeten er mensen met een onbevooroordeelde blik naar kijken? We zien vast iets over het hoofd.</p>
+		<p><b>George</b> : Laten we de Scouts eens vragen met ons mee te kijken. Misschien dat zij ons kunnen helpen.</p>
+
         <?php }  elseif ($speltak == 'explorers') { ?>
         Explorers Inleidingstekst 
         <?php } elseif ($speltak == 'roverscouts') { ?>
