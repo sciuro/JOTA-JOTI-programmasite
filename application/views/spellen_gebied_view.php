@@ -1,9 +1,11 @@
 <div class='container pagina'>
-	<header class="jumbotron subhead">
-		<div class="container">
-			<h1><?php echo $gebied; ?></h1>
+	<div class='row-fluid tekst'>
+		<div class='span7 offset1'>
+			<header class="jumbotron subhead">
+				<h1><?php echo $gebied; ?></h1>
+			</header>
 		</div>
-	</header>
+	</div>
 
 	<div class='row-fluid'>
 		<div class='span12'>
