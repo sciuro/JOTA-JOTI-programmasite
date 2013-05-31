@@ -28,7 +28,7 @@
     	<a class="carousel-control right" href="#banner" data-slide="next">&rsaquo;</a>
     </div>
 <?php } ?>
-	<div class='row-fluid tekst'>
+	<div class='row-fluid'>
 		<div class='span7 offset1'>
 			<header class="jumbotron subhead">
 				<h1><?php echo $pagina['titel']; ?></h1>
@@ -37,10 +37,10 @@
     </div>
     <div class='row-fluid'>
         <div class='span8 offset1'>
-			<?php echo $pagina['tekst']; ?>
+            <?php echo $pagina['tekst']; ?>
 		</div>
-		<div class='span2'>
-			<a href="http://www.jota-joti.nl"><img src="<?php echo base_url();?>images/logo_blauw.gif"></a>
+		<div class='span3'>
+            <img src="<?php echo base_url();?>images/logo_blauw.gif">
 		</div>
 	</div>
 
