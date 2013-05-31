@@ -3,3 +3,6 @@ application/config/database.php
 
 # De site specifieke config buiten beschouwing laten
 application/config/config.php
+
+# PDF's welke in de cache zitten mogen niet meegenomen worden.
+pdf/*.pdf

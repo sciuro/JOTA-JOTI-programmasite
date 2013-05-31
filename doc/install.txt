@@ -17,3 +17,7 @@ $config['base_url']     = 'http://www.mijnsite.nl';
 
 5. Vul de database met de schema's. Bij een lege database, pak het versienummer welke je installeert.
    Bij een upgrade, pak de upgrade scripts.
+
+6. Maak de volgende directories writable voor de webserver. Dit kan op verschillende manieren,
+   afhankelijk van je installatie.
+   - /pdf

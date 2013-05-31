@@ -37,6 +37,11 @@
         }
 
         public function draaiboekpdf() {
+
+            // We hebben de file en download helper nodig
+            $this->load->helper('file');
+            $this->load->helper('download');
+
             // Variabelen van de pagina zetten.
             $data['speltak'] = $this->input->post('speltak');
             $data['opkomstduur'] = $this->input->post('opkomstduur');
@@ -53,45 +58,61 @@
                 }
             }
 
-            $i=0;
-            foreach ($data['gebieden'] as $gebied) {
-                $j=0;
-                foreach ($data['spellen'] as $spel) {
-                    if ($spel['gebied'] == $gebied['id']) {
-                        $j++;
-                    }
-                }
-                $data['gebieden'][$i]['aantal'] = $j;
-                $i++;
-            }
-
+            // Genereer filenaam
+            $filenaam = "0";
             foreach ($data['spellen'] as $spel) {
-                $data['artikelen'][$spel['id']] = $this->overzicht_model->get_artikelen($spel['id']);
-                $data['spellocaties'][$spel['id']] = $this->overzicht_model->get_spellocaties($spel['id']);
-                $spelartikelen = $this->overzicht_model->get_artikelen($spel['id']);
-                foreach ($spelartikelen as $artikel) {
-                    if (isset($data['nodiglijst'][$artikel['id']])) {
-                        $data['nodiglijst'][$artikel['id']]['aantal'] = $data['nodiglijst'][$artikel['id']]['aantal'] + $artikel['aantal'];
-                    } else {
-                        $data['nodiglijst'][$artikel['id']] = $artikel;
+                $filenaam = $filenaam."-".$spel['id'];
+            }
+
+            $filehash = "pdf/".md5($filenaam).".pdf";
+
+            if (!file_exists($filehash)) {
+
+                $i=0;
+                foreach ($data['gebieden'] as $gebied) {
+                    $j=0;
+                    foreach ($data['spellen'] as $spel) {
+                        if ($spel['gebied'] == $gebied['id']) {
+                            $j++;
+                        }
                     }
+                    $data['gebieden'][$i]['aantal'] = $j;
+                    $i++;
                 }
 
+                foreach ($data['spellen'] as $spel) {
+                    $data['artikelen'][$spel['id']] = $this->overzicht_model->get_artikelen($spel['id']);
+                    $data['spellocaties'][$spel['id']] = $this->overzicht_model->get_spellocaties($spel['id']);
+                    $spelartikelen = $this->overzicht_model->get_artikelen($spel['id']);
+                    foreach ($spelartikelen as $artikel) {
+                        if (isset($data['nodiglijst'][$artikel['id']])) {
+                            $data['nodiglijst'][$artikel['id']]['aantal'] = $data['nodiglijst'][$artikel['id']]['aantal'] + $artikel['aantal'];
+                        } else {
+                            $data['nodiglijst'][$artikel['id']] = $artikel;
+                        }
+                    }
+
+                }
+
+                // Order de lijst met spullen
+                function vergelijkartikel($a, $b) {
+                    return strnatcmp($a['naam'], $b['naam']);
+                } // sort alphabetically by name
+                if (isset($data['nodiglijst'])) {
+                    usort($data['nodiglijst'], 'vergelijkartikel');
+                }
+            
+                // PDF genereren
+                $this->load->library('pdf');
+                $this->pdf->load_view('spellen_draaiboek_pdf', $data);
+                $this->pdf->render();
+                $pdf = $this->pdf->output();
+                file_put_contents($filehash, $pdf);
+
             }
 
-            // Order de lijst met spullen
-            function vergelijkartikel($a, $b) {
-                return strnatcmp($a['naam'], $b['naam']);
-            } // sort alphabetically by name
-            if (isset($data['nodiglijst'])) {
-                usort($data['nodiglijst'], 'vergelijkartikel');
-            }
-            
-            // PDF genereren
-            $this->load->library('pdf');
-            $this->pdf->load_view('spellen_draaiboek_pdf', $data);
-            $this->pdf->render();
-            $this->pdf->stream("JOTA-JOTI-spellen-".$data['speltak']."-".$data['opkomstduur']."uur.pdf");
+            $pdffile = read_file($filehash);
+            force_download("JOTA-JOTI-spellen-".$data['speltak']."-".$data['opkomstduur']."uur.pdf", $pdffile);
 
         }
 
