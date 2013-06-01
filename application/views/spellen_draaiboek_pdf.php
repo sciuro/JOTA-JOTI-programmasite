@@ -218,7 +218,7 @@
 						<?php } else { ?>
 							<?php foreach ($artikelen[$spel['id']] as $artikel) { ?>
 								<li>
-									<?php echo $artikel['aantal']." X "; ?>
+									<?php echo $artikel['aantal']." "; ?>
 									<?php if ($artikel['aantal'] == 1) { echo $artikel['naam']; } else { echo $artikel['naammv']; } ?>
 								</li>
 							<?php } ?>
