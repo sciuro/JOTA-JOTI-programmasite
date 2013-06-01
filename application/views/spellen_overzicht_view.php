@@ -20,27 +20,42 @@
 				<h4><?php echo $speltak['naam'];?></h4>
 				<h5> Jota & Joti:</h5>
 				<ul>
+					<?php $i=0; ?>
 					<?php foreach ($duur[$speltak['naam']] as $opkomsttijd) { ?>
 						<li><a href="<?php echo base_url();?>spellen/<?php echo $speltak['naam'];?>/overzicht/<?php echo $opkomsttijd['lengte'];?>"><?php echo $opkomsttijd['lengte'];?> uur</a></li>
+						<?php $i++; ?>
 					<?php }?>
+					<?php $j=3-$i; for ($k=0; $k < $j; $k++) { 
+						echo "<br>";
+					}?>
 				</ul>
 			</div>
 
 			<div>
 				<h5> Jota:</h5>
 				<ul>
+					<?php $i=0; ?>
 					<?php foreach ($duur[$speltak['naam']] as $opkomsttijd) { ?>
 						<li><a href="<?php echo base_url();?>spellen/<?php echo $speltak['naam'];?>/overzicht/<?php echo $opkomsttijd['lengte'];?>/jota"><?php echo $opkomsttijd['lengte'];?> uur</a></li>
+						<?php $i++; ?>
 					<?php }?>
+					<?php $j=3-$i; for ($k=0; $k < $j; $k++) { 
+						echo "<br>";
+					}?>
 				</ul>
 			</div>
 
 			<div>
 				<h5> Joti:</h5>
 				<ul>
+					<?php $i=0; ?>
 					<?php foreach ($duur[$speltak['naam']] as $opkomsttijd) { ?>
 						<li><a href="<?php echo base_url();?>spellen/<?php echo $speltak['naam'];?>/overzicht/<?php echo $opkomsttijd['lengte'];?>/joti"><?php echo $opkomsttijd['lengte'];?> uur</a></li>
+						<?php $i++; ?>
 					<?php }?>
+					<?php $j=3-$i; for ($k=0; $k < $j; $k++) { 
+						echo "<br>";
+					}?>
 				</ul>
 			</div>
 			</div>
