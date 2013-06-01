@@ -51,21 +51,18 @@
                         <ul class="dropdown-menu" role="menu">
                             <li><a tabindex="-1" href="<?php echo base_url();?>info/pagina/leiding">Uitleg</a></li>
                             <li class="divider"></li>
-                            <li><a tabindex="-1" href="<?php echo base_url();?>overzicht/selectie">Spelselectie</a></li>
+                            <li><a tabindex="-1" href="<?php echo base_url();?>overzicht/selectie">Speloverzicht</a></li>
                         </ul>
                     </li>
 
-                    <?php if ($page == "beheer"){ ?>
+                    <?php if ($page == "login"){ ?>
                     <li class="dropdown active">
                     <?php } else { ?>
                     <li class="dropdown">
                     <?php } ?>
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Beheer</a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Login</a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a tabindex="-1" href="<?php echo base_url();?>beheer">Instellingen</a></li>
-                            <li class="divider"></li>
-                            <li><a tabindex="-1" href="<?php echo base_url();?>beheer/spel">Spelen</a></li>
-                            <li><a tabindex="-1" href="<?php echo base_url();?>beheer/spel/nieuw">Nieuw spel</a></li>
+                            <li><a tabindex="-1" href="<?php echo base_url();?>login">Groepen</a></li>
                         </ul>
                     </li>
                  
