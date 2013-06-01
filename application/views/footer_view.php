@@ -19,7 +19,7 @@ if ($pagina['banner'] == 1) { ?>
 <?php } } ?>
 
 <?php if (isset($page)) {
-if ($page == "spellen") { ?>
+if ($page == "leiding") { ?>
 	<!-- selecteer alles -->
 	<script type="text/javascript">
 	// Listen for click on toggle checkbox
