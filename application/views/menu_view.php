@@ -70,7 +70,8 @@
                     <?php } ?>
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Login</a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a tabindex="-1" href="<?php echo base_url();?>login">Groepen</a></li>
+                            <li><a tabindex="-1" href="<?php echo base_url();?>login/groep">Groepen</a></li>
+                            <li><a tabindex="-1" href="<?php echo base_url();?>login/persoon">Personen</a></li>
                         </ul>
                     </li>
                  
