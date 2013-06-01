@@ -146,7 +146,7 @@
 
 		<?php foreach ($nodiglijst as $artikel) { ?>
 			<li>
-				[&nbsp;&nbsp;]&nbsp;<?php echo $artikel['aantal']." X "; ?>
+				[&nbsp;&nbsp;]&nbsp;<?php echo $artikel['aantal']." "; ?>
 				<?php if ($artikel['aantal'] == 1) { echo $artikel['naam']; } else { echo $artikel['naammv']; } ?>
 			</li>
 		<?php } ?>

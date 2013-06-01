@@ -326,7 +326,7 @@
 
         private function pdf($speltak, $opkomstduur) {
             // Variabelen van de pagina zetten.
-            $data['page'] = "spellen";
+            $data['page'] = "leiding";
             $data['titel'] = "Spellen ".$speltak;
             $data['speltak'] = $speltak;
             $data['opkomstduur'] = $opkomstduur;
