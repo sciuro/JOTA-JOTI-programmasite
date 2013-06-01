@@ -100,8 +100,10 @@
 		<div class="control-group">
 			<label class="control-label" for="onderdeel">Onderdeel</label>
 			<div class="controls">
-				<label class="checkbox inline">
-					<input type="checkbox" id="onderdeel" name="jota" value="1" <?php if ($spel['jota'] != 0){?>checked="yes"<?php }?> > Jota <br>
+				<label class="checkbox">
+					<input type="checkbox" id="onderdeel" name="jota" value="1" <?php if ($spel['jota'] != 0){?>checked="yes"<?php }?> > Jota
+				</label>
+				<label class="checkbox">
 					<input type="checkbox" id="onderdeel" name="joti" value="1" <?php if ($spel['joti'] != 0){?>checked="yes"<?php }?> > Joti
 				</label>
 			</div>
@@ -115,7 +117,6 @@
 		<div class="control-group">
 			<label class="control-label" for="duur">Opkomst lengte</label>
 			<div class="controls">
-				<label class="checkbox inline">
 					<?php foreach ($duur as $progln) {
 						$checked=0;
 						foreach ($spel['duur'] as $item) {
@@ -123,17 +124,17 @@
 								$checked=1;
 							}
 						} ?>
-						<input type="checkbox" id="duur" name="duur<?php echo $progln['id'];?>" value="1" <?php if ($checked != 0){?>checked="yes"<?php }?> > <?php echo $progln['lengte'];?> uur<br>
+						<label class="checkbox">
+							<input type="checkbox" id="duur" name="duur<?php echo $progln['id'];?>" value="1" <?php if ($checked != 0){?>checked="yes"<?php }?> > <?php echo $progln['lengte'];?> uur
+						</label>
 					<?php } ?>
 					
-				</label>
 			</div>
 		</div>
 
 		<div class="control-group">
 			<label class="control-label" for="gebieden">Aandachts gebieden</label>
 			<div class="controls">
-				<label class="checkbox inline">
 					<?php
 					$speltak="geen";
 					foreach ($gebieden as $gebied) {
@@ -148,17 +149,17 @@
 							$speltak=$gebied['speltak'];
 						}
 						?>
-						<input type="checkbox" id="gebieden" name="gebied<?php echo $gebied['id'];?>" value="1" <?php if ($checked != 0){?>checked="yes"<?php }?> > <?php echo $gebied['naam'];?> <br>
+						<label class="checkbox">
+							<input type="checkbox" id="gebieden" name="gebied<?php echo $gebied['id'];?>" value="1" <?php if ($checked != 0){?>checked="yes"<?php }?> > <?php echo $gebied['naam'];?>
+						</label>
 					<?php } ?>
 					
-				</label>
 			</div>
 		</div>
 
 		<div class="control-group">
 			<label class="control-label" for="spellokatie">Spellocaties</label>
 			<div class="controls">
-				<label class="checkbox inline">
 					<?php foreach ($spellokaties as $spellokatie) {
 						$checked=0;
 						foreach ($spel['lokatie'] as $item) {
@@ -166,7 +167,9 @@
 								$checked=1;
 							}
 						} ?>
-						<input type="checkbox" id="spellokatie" name="lokatie<?php echo $spellokatie['id'];?>" value="1" <?php if ($checked != 0){?>checked="yes"<?php }?> > <?php echo $spellokatie['naam'];?> <br>
+						<label class="checkbox">
+							<input type="checkbox" id="spellokatie" name="lokatie<?php echo $spellokatie['id'];?>" value="1" <?php if ($checked != 0){?>checked="yes"<?php }?> > <?php echo $spellokatie['naam'];?>
+						</label>
 					<?php } ?>
 					
 				</label>
@@ -180,7 +183,6 @@
 		<div class="control-group">
 			<label class="control-label" for="artikelen">Artikelen</label>
 			<div class="controls">
-				<label class="checkbox inline">
 					<?php foreach ($artikelen as $artikel) {
 						$artikelaantal=0;
 						foreach ($spel['artikelen'] as $item) {
@@ -193,8 +195,9 @@
 						} else {
 							echo "<p class='muted'>";
 						} ?>
-						<input class="span1" type="text" id="artikelen" name="artikelaantal<?php echo $artikel['id'];?>" value="<?php echo $artikelaantal;?>"> <?php echo $artikel['naam']; ?>
-						</p>
+						<label class="checkbox">
+							<input class="span1" type="text" id="artikelen" name="artikelaantal<?php echo $artikel['id'];?>" value="<?php echo $artikelaantal;?>"> <?php echo $artikel['naam']; ?>
+						</label>
 					<?php } ?> 
 					
 				</label>
