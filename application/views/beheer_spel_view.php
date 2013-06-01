@@ -1,14 +1,13 @@
 <div class='container pagina'>
-
-	<div class='row tekst'>
-		<div class='span9'>
+	<div class='row-fluid tekst'>
+		<div class='span7 offset1'>
 			<header class="jumbotron subhead">
 				<h1><?php echo $titel; ?></h1>
 			</header>
 		</div>
 	</div>
 
-	<div class='row'>
+	<div class='row-fluid'>
 		<div class='span4 offset3 form-search'>
 			<?php $attributes = array('class' => 'form-horizontal');
 			echo form_open('beheer/spel', $attributes); ?>
@@ -31,8 +30,9 @@
 	</div>
 
 
-	<div class='row-fluid'>    
-		<table class="table table-hover span8 offset3">
+	<div class='row-fluid'>
+		<div class='span10 offset1'>
+		<table class="table table-hover">
         
         	<thead>
           		<tr>
@@ -61,5 +61,8 @@
 			</tbody>
 
     	</table>
+    	</div>
+
+    </div>
 
 </div>
