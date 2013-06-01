@@ -55,6 +55,13 @@
                         </ul>
                     </li>
 
+                    <?php if ($page == "contact"){ ?>
+                    <li class="active">
+                    <?php } else { ?>
+                    <li>
+                    <?php } ?>
+                    <a href="<?php echo base_url();?>info/pagina/contact">Contact</a></li>
+
                     <?php if ($page == "login"){ ?>
                     <li class="dropdown active">
                     <?php } else { ?>
