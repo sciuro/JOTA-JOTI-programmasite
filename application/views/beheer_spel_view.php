@@ -51,7 +51,7 @@
 						<a href="<?php echo base_url(); ?>beheer/verwijder/spel/<?php echo $spel['id']; ?>"><span class="badge badge-important"><i class="icon-remove icon-white"></i></span></a>
 					</td>
 					<td><?php echo $spel['titel'];?></td>
-					<td><?php echo $speltakken[$spel['id']];?></td>
+					<td><?php if (isset($speltakken[$spel['id']])) { echo $speltakken[$spel['id']]; } else { echo "-"; }?></td>
 					<td><?php if ($spel['jota'] > 0) { ?><i class="icon-ok"></i><?php } ;?></td>
 					<td><?php if ($spel['joti'] > 0) { ?><i class="icon-ok"></i><?php } ;?></td>
 
