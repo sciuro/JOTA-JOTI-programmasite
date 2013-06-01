@@ -8,9 +8,10 @@
   </div>
 
 
-	<div class="row">
-		<div class="span12">
-    		<ul class="nav nav-tabs">
+	<div class="row-fluid">
+		<div class="span10 offset1">
+
+    	<ul class="nav nav-tabs">
         	<?php if ($tab == "algemeen"){ ?>
         	<li class="active">
         	<?php } else { ?>
@@ -59,23 +60,28 @@
             <a href="<?php echo base_url();?>beheer/opties/duur">Duur</a>
           </li>
 
-    		</ul>
-    	</div>
+          <li class="span2"></li>
+          <li><button href="#nieuw" role="button" class="btn btn-primary" data-toggle="modal">Nieuw</button></li>
+    	</ul>
+
     </div>
+  </div>
+
+  <div class="row-fluid">
+    <div class="span10 offset1">
 
     <?php if ($tab == "algemeen"){ ?>
-    <h3>Algemene instellingen</h3>
+    Algemene instellingen
 
     <?php // Artikelen tabblad. ?>
    	<?php } elseif ($tab == "artikelen") { ?>
 
-    <div class='row'>    
-      <table class="table table-hover span5 offset3">
+      <table class="table table-hover">
         
         <thead>
           <tr>
-            <th></th>
-            <th>Artikel</th>
+            <th class="span2"></th>
+            <th class="span4">Artikel</th>
             <th>Meervoud</th>
           </tr>
         </thead>
@@ -126,14 +132,10 @@
           <?php } ?>
         </tbody>
       </table>
-    </div>
 
-    <div class='row'>
-      <div class='span1 offset6'>
-        <a href="#nieuwartikel" role="button" class="btn" data-toggle="modal">Nieuw</a>
 
         <?php // De overlay voor het toevoegen van nieuwe artikelen. ?>
-        <div id="nieuwartikel" class="modal hide" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div id="nieuw" class="modal hide" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             <h3 id="myModalLabel">Nieuw artikel</h3>
@@ -159,24 +161,19 @@
             </div>
 
           </form>
-
         </div>
-
-      </div>
-    </div>
 
 
     <?php // Gebieden tabblad. ?>
     <?php } elseif ($tab == "gebieden") { ?>
 
-    <div class='row'>    
-      <table class="table table-hover span5 offset3">
+      <table class="table table-hover">
         
         <thead>
           <tr>
-            <th></th>
+            <th class="span2"></th>
+            <th class="span4">Gebieden</th>
             <th>Speltak</th>
-            <th>Gebieden</th>
           </tr>
         </thead>
         
@@ -228,20 +225,15 @@
                 </form>
 
                 </td>
-            <td><?php echo $gebied['speltak'];?></td>
             <td><?php echo $gebied['naam'];?></td>
+            <td><?php echo $gebied['speltak'];?></td>
           </tr>
           <?php } ?>
         </tbody>
       </table>
-    </div>
-
-    <div class='row'>
-      <div class='span1 offset6'>
-        <a href="#nieuwgebied" role="button" class="btn" data-toggle="modal">Nieuw</a>
 
         <?php // De overlay voor het toevoegen van nieuwe gebieden. ?>
-        <div id="nieuwgebied" class="modal hide" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div id="nieuw" class="modal hide" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             <h3 id="myModalLabel">Nieuw gebied</h3>
@@ -274,21 +266,16 @@
             </div>
 
           </form>
-
         </div>
-
-      </div>
-    </div>
 
 <?php // Spellokaties tabblad ?>
     <?php } elseif ($tab == "spellokaties") { ?>
 
-    <div class='row'>    
-      <table class="table table-hover span5 offset3">
+      <table class="table table-hover">
         
         <thead>
           <tr>
-            <th></th>
+            <th class="span2"></th>
             <th>Spellokatie</th>
           </tr>
         </thead>
@@ -337,14 +324,9 @@
           <?php } ?>
         </tbody>
       </table>
-    </div>
-
-    <div class='row'>
-      <div class='span1 offset6'>
-        <a href="#nieuwspellokatie" role="button" class="btn" data-toggle="modal">Nieuw</a>
 
         <?php // De overlay voor het toevoegen van nieuwe speltakken. ?>
-        <div id="nieuwspellokatie" class="modal hide" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div id="nieuw" class="modal hide" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             <h3 id="myModalLabel">Nieuwe spellokatie</h3>
@@ -369,22 +351,16 @@
             </div>
 
           </form>
-
         </div>
-
-      </div>
-    </div>
-
 
     <?php // Speltakken tabblad ?>
     <?php } elseif ($tab == "speltakken") { ?>
 
-    <div class='row'>    
-      <table class="table table-hover span5 offset3">
+      <table class="table table-hover">
         
         <thead>
           <tr>
-            <th></th>
+            <th class="span2"></th>
             <th>Speltak</th>
           </tr>
         </thead>
@@ -433,14 +409,9 @@
           <?php } ?>
         </tbody>
       </table>
-    </div>
-
-    <div class='row'>
-      <div class='span1 offset6'>
-        <a href="#nieuwspeltak" role="button" class="btn" data-toggle="modal">Nieuw</a>
 
         <?php // De overlay voor het toevoegen van nieuwe speltakken. ?>
-        <div id="nieuwspeltak" class="modal hide" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div id="nieuw" class="modal hide" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             <h3 id="myModalLabel">Nieuwe speltak</h3>
@@ -468,22 +439,13 @@
 
         </div>
 
-      </div>
-    </div>
-
-
-
-
-
-
     <?php } elseif ($tab == "duur") { ?>
 
-    <div class='row'>    
-      <table class="table table-hover span5 offset3">
+      <table class="table table-hover">
         
         <thead>
           <tr>
-            <th></th>
+            <th class="span2"></th>
             <th>Programmaduur</th>
           </tr>
         </thead>
@@ -532,14 +494,9 @@
           <?php } ?>
         </tbody>
       </table>
-    </div>
-
-    <div class='row'>
-      <div class='span1 offset6'>
-        <a href="#nieuwduur" role="button" class="btn" data-toggle="modal">Nieuw</a>
 
         <?php // De overlay voor het toevoegen van nieuwe programmaduur. ?>
-        <div id="nieuwduur" class="modal hide" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div id="nieuw" class="modal hide" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             <h3 id="myModalLabel">Nieuw programmaduur</h3>
@@ -564,13 +521,10 @@
             </div>
 
           </form>
-
         </div>
-
-      </div>
-    </div>
-
 
     <?php } ?>
 
+    </div>
+  </div>
 </div>

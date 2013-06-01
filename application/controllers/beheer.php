@@ -26,7 +26,7 @@
 
             // Variabelen goedzetten
             $data['page'] = 'beheer';
-            $data['titel'] = "Algemene instellingen";
+            $data['titel'] = "Beheer themateam website";
             $data['tab'] = $tab;
 
             // Eerst de header laden.
@@ -67,11 +67,11 @@
                     $data['spel']['leiding'] = '';
                     $data['spel']['jota'] = '';
                     $data['spel']['joti'] = '';
-                    //$data['spel']['artikelen']['0']['artikel_id'] = '';
-                    //$data['spel']['artikelen']['0']['aantal'] = '';
-                    //$data['spel']['duur']['0']['duur_id'] = '';
-                    //$data['spel']['gebied']['0']['gebied_id'] = '';
-                    //$data['spel']['lokatie']['0']['spellokatie_id'] = '';
+                    $data['spel']['artikelen']['0']['artikel_id'] = '';
+                    $data['spel']['artikelen']['0']['aantal'] = '';
+                    $data['spel']['duur']['0']['duur_id'] = '';
+                    $data['spel']['gebied']['0']['gebied_id'] = '';
+                    $data['spel']['lokatie']['0']['spellokatie_id'] = '';
 
                 } else {
                     $speldata = $this->beheer_model->get_spel($id);
