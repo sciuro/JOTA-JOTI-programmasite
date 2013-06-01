@@ -11,6 +11,8 @@
                 $this->web('bevers', $opkomstduur, $jjkeuze);
             } elseif ($view == 'pdf') {
                 $this->pdf('bevers', $opkomstduur, $jjkeuze);
+            } elseif ($view == 'eindspel') {
+                $this->eindspel('bevers', $opkomstduur);
             } else {
                 $this->keuze('bevers');
             }
@@ -21,6 +23,8 @@
                 $this->web('welpen', $opkomstduur, $jjkeuze);
             } elseif ($view == 'pdf') {
                 $this->pdf('welpen', $opkomstduur, $jjkeuze);
+            } elseif ($view == 'eindspel') {
+                $this->eindspel('welpen', $opkomstduur);
             } else {
                 $this->keuze('welpen');
             }
@@ -206,6 +210,28 @@
 
             // Pagina weergeven
             $this->load->view('spellen_web_view', $data);
+
+             // Als laatste de footer laden.
+             $this->load->view('footer_view', $data);   
+        }
+
+        private function eindspel($speltak, $opkomstduur) {
+            // Variabelen van de pagina zetten.
+            $data['page'] = "spellen";
+            $data['titel'] = "Eindspel ".$speltak;
+            $data['speltak'] = $speltak;
+            $data['opkomstduur'] = $opkomstduur;
+
+            // Modellen laden.
+
+            // Eerst de header laden.
+            $this->load->view('header_view', $data);
+
+            // Menu laden.
+            $this->load->view('menu_view', $data);
+
+            // Pagina weergeven
+            $this->load->view('spellen_eindspel_view', $data);
 
              // Als laatste de footer laden.
              $this->load->view('footer_view', $data);   
