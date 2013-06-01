@@ -9,8 +9,21 @@
 
 	<div class='row-fluid'>
 		<div class='span8 offset1'>
-		<?php echo form_open('login/process'); ?>
-			<?php if(! is_null($msg)) echo $msg;?>
+			<p>Hieronder kunnen jullie inloggen met het voor de JOTA-JOTI gekregen groepsnummer. Hierna is er toegang tot diverse extra items,
+				zoals het uploaden van foto's en het invoeren van punten voor de scouts.</p>
+			<br>
+
+			<?php $attributes = array('class' => 'form-horizontal');
+			echo form_open('login/process', $attributes); ?>
+
+			<?php if(! is_null($msg)) { ?>
+				<div class="control-group">
+					<label></label>
+					<div class="controls">
+						<font color=red><?php echo $msg; ?></font>
+					</div>
+				</div>
+			<?php } ?>
 
 			<div class="control-group">
 				<label class="control-label" for="groepsnummer"><em>Nummer</em></label>
@@ -46,8 +59,9 @@
 
 		</form>
 		</div>
-	<div class='span3'>
-        <img src="<?php echo base_url();?>images/logo_blauw.gif">
-	</div>
+		<div class='span3'>
+        	<img src="<?php echo base_url();?>images/logo_blauw.gif">
+		</div>
 
+	</div>
 </div>
