@@ -8,7 +8,7 @@
 	</div>
 
 	<div class='row-fluid'>
-		<div class='span8 offset1'>
+		<div class='span6 offset1'>
 			<?php if (($speltak == 'bevers') || ($speltak == 'welpen')) { ?>
 			<div>
 				<h4>Online spelen Jota & Joti:</h4>
@@ -67,6 +67,9 @@
             <?php } elseif ($speltak == 'scouts') { ?>
             	<img src="<?php echo base_url();?>images/george_staat.png">
             <?php } ?>
+		</div>
+		<div class='span3'>
+            <img src="<?php echo base_url();?>images/logo_blauw.gif">
 		</div>
 
 </div>
