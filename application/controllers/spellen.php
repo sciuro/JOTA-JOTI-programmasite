@@ -39,7 +39,7 @@
                 $this->web('scouts', $opkomstduur, $jjkeuze);
             } elseif ($view == 'pdf') {
                 $this->pdf('scouts', $opkomstduur, $jjkeuze);
-            } elseif ($view == 'overzicht') {
+            } elseif ($view == 'eindspel') {
                 $this->eindspel('scouts', $opkomstduur);
             } elseif ($view == 'overzicht') {
                 $this->spellenoverzicht('scouts', $opkomstduur, $jjkeuze);
