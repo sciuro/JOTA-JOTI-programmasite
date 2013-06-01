@@ -111,6 +111,7 @@
             $data['spel'] = $tmp['0'];
             $data['artikelen'] = $this->overzicht_model->get_artikelen($spelid);
             $data['spellocaties'] = $this->overzicht_model->get_spellocaties($spelid);
+            $data['bijlagen'] = $this->overzicht_model->get_bijlagen($spelid);
 
             // Eerst de header laden.
             $this->load->view('header_view', $data);
@@ -173,6 +174,7 @@
                 foreach ($data['spellen'] as $spel) {
                     $data['artikelen'][$spel['id']] = $this->overzicht_model->get_artikelen($spel['id']);
                     $data['spellocaties'][$spel['id']] = $this->overzicht_model->get_spellocaties($spel['id']);
+                    $data['bijlagen'][$spel['id']] = $this->overzicht_model->get_bijlagen($spel['id']);
                     $spelartikelen = $this->overzicht_model->get_artikelen($spel['id']);
                     foreach ($spelartikelen as $artikel) {
                         if (isset($data['nodiglijst'][$artikel['id']])) {

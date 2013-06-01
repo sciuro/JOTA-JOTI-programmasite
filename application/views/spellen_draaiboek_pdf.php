@@ -225,6 +225,18 @@
 						<?php } ?>
 					</ul>
 					</p>
+					<?php if (count($bijlagen[$spel['id']]) != 0 ) { ?>
+					<p>
+						<b>Bijlagen:</b><br>
+						<ul>
+							<?php foreach ($bijlagen[$spel['id']] as $bijlage) { ?>
+							<li>
+								<a href="<?php echo base_url();?>bijlage/download/<?php echo $bijlage['id']; ?>"><?php echo $bijlage['omschrijving']; ?></a>
+							</li>
+							<?php } ?>
+						</ul>
+					</p>
+					<?php } ?>
 					<p>
 						<b>Voorbereiding:</b><br>
 						<?php echo $spel['voorbereiding']; ?>

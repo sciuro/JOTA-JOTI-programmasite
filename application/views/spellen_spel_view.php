@@ -57,6 +57,17 @@
 					<?php } ?>
 				</ul>
 			</p>
+			<?php if (count($bijlagen) > 0) {?>
+			<p>
+				<b>Bijlagen:</b><br>
+				Dit spel bevat de volgende bijlage:
+				<ul>
+				<?php foreach ($bijlagen as $bijlage) { ?>
+					<li><a href="<?php echo base_url();?>bijlage/download/<?php echo $bijlage['id']; ?>"><?php echo $bijlage['filename']; ?></a> - <?php echo $bijlage['omschrijving']; ?></li>			
+				<?php } ?>
+				</ul>
+			</p>
+			<?php } ?>
 			<p>
 				<b>Voorbereiding:</b><br>
 				<?php echo $spel['voorbereiding']; ?>

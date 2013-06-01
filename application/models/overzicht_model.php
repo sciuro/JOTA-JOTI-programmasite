@@ -127,6 +127,19 @@
 			return $query->result_array();
 		}
 
+		public function get_bijlagen($spelid) {
+			$this->db->select('bijlage.id, bijlage.omschrijving, bijlage.filename');
+			$this->db->from('spel_bijlage');
+
+			$this->db->join('bijlage', 'spel_bijlage.bijlage_id=bijlage.id', 'right');
+			$this->db->where('spel_bijlage.spel_id', $spelid);
+
+			$this->db->order_by('bijlage.filename');
+
+			$query = $this->db->get();
+			return $query->result_array();
+		}
+
 		public function get_spellocaties($spelid){
 			$this->db->select('spellokatie.id, spellokatie.naam');
 			$this->db->from('spellokatie');

@@ -60,3 +60,6 @@ ALTER TABLE `pagina` ADD `banner` BOOL NOT NULL AFTER `tekst`;
 
 -- Issue 8
 ALTER TABLE `spel_duur` rename opkomst_duur;
+
+-- Bijlage tabel gaat niet meer met blobs
+ALTER TABLE `bijlage` DROP `type` , DROP `file` ;
