@@ -51,7 +51,7 @@
                         <ul class="dropdown-menu" role="menu">
                             <li><a tabindex="-1" href="<?php echo base_url();?>info/pagina/leiding">Uitleg</a></li>
                             <li class="divider"></li>
-                            <li><a tabindex="-1" href="<?php echo base_url();?>overzicht/selectie">Speloverzicht</a></li>
+                            <li><a tabindex="-1" href="<?php echo base_url();?>spellen/overzicht">Speloverzicht</a></li>
                             <li><a tabindex="-1" href="<?php echo base_url();?>spellen/download">Downloaden</a></li>
                         </ul>
                     </li>

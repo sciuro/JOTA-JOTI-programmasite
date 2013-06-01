@@ -32,6 +32,16 @@
 			return $query->result_array();
 		}
 
+		public function get_spel($id){
+			$this->db->select('spel.id, spel.titel, spel.omschrijving, spel.voorbereiding, spel.beschrijving, spel.duur as spelduur, spel.min_spelers, spel.max_spelers, spel.leiding, spel.jota, spel.joti');
+			$this->db->from('spel');
+
+			$this->db->where('spel.id', $id);
+
+			$query = $this->db->get();
+			return $query->result_array();
+		}
+
 		public function get_gebied($gebied) {
 			$this->db->select('spel.id, spel.titel, spel.omschrijving, spel.voorbereiding, spel.beschrijving, spel.duur, spel.min_spelers, spel.max_spelers, spel.leiding, spel.jota, spel.joti');
 			$this->db->from('spel');

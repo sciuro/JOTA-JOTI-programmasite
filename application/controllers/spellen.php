@@ -13,6 +13,8 @@
                 $this->pdf('bevers', $opkomstduur, $jjkeuze);
             } elseif ($view == 'eindspel') {
                 $this->eindspel('bevers', $opkomstduur);
+            } elseif ($view == 'overzicht') {
+                $this->spellenoverzicht('bevers', $opkomstduur, $jjkeuze);
             } else {
                 $this->keuze('bevers');
             }
@@ -25,6 +27,8 @@
                 $this->pdf('welpen', $opkomstduur, $jjkeuze);
             } elseif ($view == 'eindspel') {
                 $this->eindspel('welpen', $opkomstduur);
+            } elseif ($view == 'overzicht') {
+                $this->spellenoverzicht('welpen', $opkomstduur, $jjkeuze);
             } else {
                 $this->keuze('welpen');
             }
@@ -35,6 +39,10 @@
                 $this->web('scouts', $opkomstduur, $jjkeuze);
             } elseif ($view == 'pdf') {
                 $this->pdf('scouts', $opkomstduur, $jjkeuze);
+            } elseif ($view == 'overzicht') {
+                $this->eindspel('scouts', $opkomstduur);
+            } elseif ($view == 'overzicht') {
+                $this->spellenoverzicht('scouts', $opkomstduur, $jjkeuze);
             } else {
                 $this->keuze('scouts');
             }
@@ -61,6 +69,57 @@
 
             // Pagina weergeven
             $this->load->view('spellen_download_view', $data);
+
+             // Als laatste de footer laden.
+             $this->load->view('footer_view', $data);   
+        }
+
+        public function overzicht() {
+            // Variabelen van de pagina zetten.
+            $data['page'] = "leiding";
+            $data['titel'] = "Spellen overzicht";
+
+            // Modellen laden.
+            $this->load->model('overzicht_model');
+            $data['speltakken'] = $this->overzicht_model->get_speltakken();
+
+            foreach ($data['speltakken'] as $speltak) {
+                $data['duur'][$speltak['naam']] = $this->overzicht_model->get_duur($speltak['naam']);
+            }
+
+            // Eerst de header laden.
+            $this->load->view('header_view', $data);
+
+            // Menu laden.
+            $this->load->view('menu_view', $data);
+
+            // Pagina weergeven
+            $this->load->view('spellen_overzicht_view', $data);
+
+             // Als laatste de footer laden.
+             $this->load->view('footer_view', $data);   
+        }
+
+        public function spel($spelid) {
+            // Variabelen van de pagina zetten.
+            $data['page'] = "leiding";
+            $data['titel'] = "Spelbeschrijving";
+
+            // Modellen laden.
+            $this->load->model('overzicht_model');
+            $tmp = $this->overzicht_model->get_spel($spelid);
+            $data['spel'] = $tmp['0'];
+            $data['artikelen'] = $this->overzicht_model->get_artikelen($spelid);
+            $data['spellocaties'] = $this->overzicht_model->get_spellocaties($spelid);
+
+            // Eerst de header laden.
+            $this->load->view('header_view', $data);
+
+            // Menu laden.
+            $this->load->view('menu_view', $data);
+
+            // Pagina weergeven
+            $this->load->view('spellen_spel_view', $data);
 
              // Als laatste de footer laden.
              $this->load->view('footer_view', $data);   
@@ -287,5 +346,45 @@
 
              // Als laatste de footer laden.
              $this->load->view('footer_view', $data);   
+        }
+
+        private function spellenoverzicht($speltak, $opkomstduur, $jjkeuze = NULL) {
+            // Variabelen van de pagina zetten.
+            $data['page'] = "leiding";
+            $data['titel'] = "Spellen ".$speltak;
+            $data['speltak'] = $speltak;
+            $data['opkomstduur'] = $opkomstduur;
+
+            // Modellen laden.
+            $this->load->model('overzicht_model');
+            $data['gebieden'] = $this->overzicht_model->get_gebieden($speltak);
+            $data['spellen'] = $this->overzicht_model->get_spelen($speltak, $opkomstduur);
+
+            $spelcount = count($data['spellen']);
+            if ($jjkeuze == "jota") {
+                for ($i=0; $i < $spelcount; $i++) { 
+                    if ($data['spellen'][$i]['jota'] == 0) { // Hier begrijp ik zelf de logica niet van. Maar het werkt.
+                        unset($data['spellen'][$i]);
+                    }
+                }
+            } elseif ($jjkeuze == "joti") {
+                for ($i=0; $i < $spelcount; $i++) { 
+                    if ($data['spellen'][$i]['joti'] == 0) { // Hier begrijp ik zelf de logica niet van. Maar het werkt.
+                        unset($data['spellen'][$i]);
+                    }
+                }
+            }
+
+            // Eerst de header laden.
+            $this->load->view('header_view', $data);
+
+            // Menu laden.
+            $this->load->view('menu_view', $data);
+
+            // Pagina weergeven
+            $this->load->view('spellen_spellenoverzicht_view', $data);
+
+             // Als laatste de footer laden.
+             $this->load->view('footer_view', $data);  
         }
     }
