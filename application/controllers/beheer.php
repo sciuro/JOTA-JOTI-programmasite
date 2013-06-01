@@ -194,7 +194,7 @@
                 // item aanpassen
                 $spelid = $this->beheer_model->opslaan_spel();
 
-                redirect('beheer/spel/'.$spelid);
+                redirect('beheer/spel/');
             } else {
                 // Anders loopt iemand te klooien.
                 redirect('beheer/opties');
