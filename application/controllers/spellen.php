@@ -40,6 +40,32 @@
             }
         }
 
+        public function download() {
+            // Variabelen van de pagina zetten.
+            $data['page'] = "leiding";
+            $data['titel'] = "Spellen downloaden";
+
+            // Modellen laden.
+            $this->load->model('overzicht_model');
+            $data['speltakken'] = $this->overzicht_model->get_speltakken();
+
+            foreach ($data['speltakken'] as $speltak) {
+                $data['duur'][$speltak['naam']] = $this->overzicht_model->get_duur($speltak['naam']);
+            }
+
+            // Eerst de header laden.
+            $this->load->view('header_view', $data);
+
+            // Menu laden.
+            $this->load->view('menu_view', $data);
+
+            // Pagina weergeven
+            $this->load->view('spellen_download_view', $data);
+
+             // Als laatste de footer laden.
+             $this->load->view('footer_view', $data);   
+        }
+
         public function draaiboekpdf() {
 
             // We hebben de file en download helper nodig

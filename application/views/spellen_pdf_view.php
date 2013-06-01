@@ -40,6 +40,11 @@
 				</div>
 			<?php } ?>
 		</div>
+
+		<div class='span3'>
+            <img src="<?php echo base_url();?>images/logo_blauw.gif">
+		</div>
+
 	</div>
 
 	<div class='row-fluid'>

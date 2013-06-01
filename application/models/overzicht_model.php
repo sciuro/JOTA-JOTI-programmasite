@@ -56,6 +56,15 @@
 			$query = $this->db->get();
 			return $query->result_array();			
 		}
+
+		public function get_speltakken() {
+			$this->db->select('speltak.id, speltak.naam');
+			$this->db->from('speltak');
+			$this->db->order_by('speltak.id');
+
+			$query = $this->db->get();
+			return $query->result_array();
+		}
 		
 		public function get_duur($speltak){
 			$this->db->select('duur.id, duur.lengte, count(duur.lengte) AS aantal');
