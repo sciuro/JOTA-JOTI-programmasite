@@ -7,6 +7,11 @@
 		</div>
 	</div>
 
+<script type="text/javascript" src="<?php echo base_url(); ?>assets/nicedit/nicEdit.js"></script>
+<script type="text/javascript">
+	bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });
+</script>
+
 	<?php $attributes = array('class' => 'form-horizontal');
                 echo form_open('beheer/opslaan/spel', $attributes); ?>
     <?php if (isset($spel['id'])) {?><input type="hidden" name="spelid" value="<?php echo $spel['id']; ?>"> <?php }?>
@@ -22,6 +27,11 @@
             	<li class='span2'></li>
             	<li><button type="submit" class="btn btn-primary">Opslaan</button></li>
             </ul>
+        </div>
+    </div>
+
+    <div class='row-fluid'>
+		<div class='span10 offset1'>
 
             <div id="myTabContent" class="tab-content">
 
@@ -132,14 +142,14 @@
 					<div class="control-group">
 						<label class="control-label" for="voorbereiding">Voorbereiding</label>
 						<div class="controls">
-							<textarea class="span8" rows='5' id="voorbereiding" name="voorbereiding" placeholder="Voorbereiding voor het spel"><?php echo $spel['voorbereiding'];?></textarea>
+							<textarea style="width: 500px; height: 200px;" id="voorbereiding" name="voorbereiding" placeholder="Voorbereiding voor het spel"><?php echo $spel['voorbereiding'];?></textarea>
 						</div>
 					</div>
 
 					<div class="control-group">
 						<label class="control-label" for="beschrijving">Beschrijving</label>
 						<div class="controls">
-							<textarea class="span8" rows='10' id="beschrijving" name="beschrijving" placeholder="Beschrijving voor het spel"><?php echo $spel['beschrijving'];?></textarea>
+							<textarea style="width: 500px; height: 200px;" id="beschrijving" name="beschrijving" placeholder="Beschrijving voor het spel"><?php echo $spel['beschrijving'];?></textarea>
 						</div>
 					</div>
 
