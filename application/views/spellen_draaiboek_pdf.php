@@ -144,12 +144,14 @@
 		<h2>Benodigdheden</h2>
 		<p>De volgende artikelen zijn nodig voor de gekozen spelen. Dit is een verzamellijst!</p>
 
+		<ul>
 		<?php foreach ($nodiglijst as $artikel) { ?>
 			<li>
 				[&nbsp;&nbsp;]&nbsp;<?php echo $artikel['aantal']." "; ?>
 				<?php if ($artikel['aantal'] == 1) { echo $artikel['naam']; } else { echo $artikel['naammv']; } ?>
 			</li>
 		<?php } ?>
+		</ul>
 
 		<hr/>
 		<?php } ?>
