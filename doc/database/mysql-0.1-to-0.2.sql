@@ -63,3 +63,6 @@ ALTER TABLE `spel_duur` rename opkomst_duur;
 
 -- Bijlage tabel gaat niet meer met blobs
 ALTER TABLE `bijlage` DROP `type` , DROP `file` ;
+
+-- Issue #18
+ALTER TABLE `spellokatie` CHANGE `naam` `naam` VARCHAR( 64 ) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL;
