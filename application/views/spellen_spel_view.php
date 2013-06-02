@@ -8,6 +8,61 @@
 	</div>
 
 	<div class='row-fluid'>
+		<div class='span1 offset7'>
+			<button href="#feedback" role="button" class="btn btn-info" data-toggle="modal">Feedback</button>
+		</div>
+	</div>
+
+	<div id="feedback" class="modal hide" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h3 id="myModalLabel">Feedback</h3>
+		</div>
+		<?php $attributes = array('class' => 'form-horizontal');
+		echo form_open('feedback', $attributes); ?>
+		<input type="hidden" name="spel" value="<?php echo $spel['id']; ?>">
+		<?php if (isset($groepsnr)) { ?>
+			<input type="hidden" name="groepsnr" value="<?php echo $groepsnr; ?>">
+		<?php } ?>
+
+		<div class="modal-body">
+
+			<div class="control-group">
+				<label class="control-label" for="feedback">Was deze informatie bruikbaar?</label>
+				<div class="controls">
+					<div class="btn-group" data-toggle="buttons-radio">
+						<button type="button" name="feedback" class="btn btn-success">Ja</button>
+						<button type="button" name="feedback" class="btn btn-danger">Nee</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="control-group">
+				<label class="control-label" for="opmerking">Wat was goed/slecht?</label>
+				<div class="controls">
+					<textarea id="opmerking" rows="3" name="opmerkingen" placeholder="Opmerkingen"></textarea>
+				</div>
+			</div>
+
+			<div class="control-group">
+				<label class="control-label" for="email">Wil je weten wat er mee gebeurd is?</label>
+				<div class="controls">
+					<input type="text" id="email" name="email" placeholder="E-Mail adres">
+				</div>
+			</div>
+
+		</div>
+
+		<div class="modal-footer">
+			<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+			<button type="submit" class="btn btn-primary">Opslaan</button>
+		</div>
+
+		</form>
+	</div>
+
+
+	<div class='row-fluid'>
 		<div class='span8 offset1'>
 
 			<br>
