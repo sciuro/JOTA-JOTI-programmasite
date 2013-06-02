@@ -169,7 +169,7 @@
 			$this->db->delete('spel_bijlage');
 
 			$this->db->where('spel_id', $id);
-			$this->db->delete('spel_duur');
+			$this->db->delete('opkomst_duur');
 
 			$this->db->where('spel_id', $id);
 			$this->db->delete('spel_gebied');
