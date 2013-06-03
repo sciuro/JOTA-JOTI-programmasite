@@ -6,7 +6,7 @@
         }
         
         public function index() {
-
+            redirect('/login/groep');
         }
 
         public function groep($msg = NULL)
@@ -39,7 +39,7 @@
 
             // Eventueel errorbericht laden.
             $data['msg'] = $msg;
-            
+
             // Eerst de header laden.
             $this->load->view('header_view', $data);
             
