@@ -54,21 +54,19 @@
         }
         
         public function process(){
-            // Load the model
+            // Model laden.
             $this->load->model('login_model');
             
-            // Validate the user can login
+            // Is de gebruiker bekend?
             $result = $this->login_model->validate();
             
-            // Now we verify the result
             if(! $result){
-                // If user did not validate, then show them login page again
-                $msg = '<font color=red>Invalid username and/or password.</font><br />';
+                // De gebruiker is niet bekend.
+                $msg = 'Verkeerde e-mail en/of wachtwoord.';
                 $this->index($msg);
             }else{
-                // If user did validate,
-                // Send them to members area
-                redirect('home');
+                // De gebruiker mag verder.
+                redirect('/');
             }
         }
 		
