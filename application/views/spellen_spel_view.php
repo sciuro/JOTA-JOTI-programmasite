@@ -59,7 +59,11 @@
 			<div class="control-group">
 				<label class="control-label" for="email">Wil je weten wat er mee gebeurd is?</label>
 				<div class="controls">
-					<input type="text" id="email" name="email" placeholder="E-Mail adres">
+					<?php if ($this->session->userdata('email') != '') { ?>
+						<span class="input-xlarge uneditable-input"><?php echo $this->session->userdata('email'); ?></span>
+					<?php } else { ?>
+						<input type="text" id="email" name="email" placeholder="E-Mail adres">
+					<?php } ?>
 				</div>
 			</div>
 
