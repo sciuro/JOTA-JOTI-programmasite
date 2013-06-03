@@ -59,7 +59,7 @@
             if(! $result){
                 // De gebruiker is niet bekend.
                 $msg = 'Verkeerde e-mail en/of wachtwoord.';
-                $this->index($msg);
+                $this->persoon($msg);
             }else{
                 // De gebruiker mag verder.
                 redirect('/');
