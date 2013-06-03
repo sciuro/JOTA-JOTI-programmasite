@@ -63,6 +63,35 @@
                     <?php } ?>
                     <a href="<?php echo base_url();?>info/pagina/contact">Contact</a></li>
 
+                    <?php if ($this->session->userdata('validated')) { ?>
+
+                    <?php if ($page == "beheer"){ ?>
+                    <li class="dropdown active">
+                    <?php } else { ?>
+                    <li class="dropdown">
+                    <?php } ?>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Beheer</a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a tabindex="-1" href="#">Overzicht</a></li>
+                            <li class="divider"></li>
+                            <li><a tabindex="-1" href="<?php echo base_url();?>beheer/spel">Spelen</a></li>
+                            <li><a tabindex="-1" href="<?php echo base_url();?>beheer">Onderdelen</a></li>
+                        </ul>
+                    </li>
+
+                    <?php if ($page == "user"){ ?>
+                    <li class="dropdown active">
+                    <?php } else { ?>
+                    <li class="dropdown">
+                    <?php } ?>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $this->session->userdata('voornaam'); ?></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a tabindex="-1" href="<?php echo base_url();?>login/logout">Uitloggen</a></li>
+                        </ul>
+                    </li>
+
+                    <?php } else { ?>
+                    
                     <?php if ($page == "login"){ ?>
                     <li class="dropdown active">
                     <?php } else { ?>
@@ -74,6 +103,8 @@
                             <li><a tabindex="-1" href="<?php echo base_url();?>login/persoon">Personen</a></li>
                         </ul>
                     </li>
+                    
+                    <?php } ?>
                  
                 </ul>
             </div>
