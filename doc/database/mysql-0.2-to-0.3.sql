@@ -1,4 +1,3 @@
-
 -- Upgradescript database van versie 0.2 naar 0.3
 
 -- Aanmaken usertabel
