@@ -9,7 +9,11 @@
 
 	<div class='row-fluid'>
 		<div class='span1 offset7'>
-			<button href="#feedback" role="button" class="btn btn-info" data-toggle="modal">Feedback</button>
+			<?php if ($this->session->flashdata('submit')) { ?>
+				<button href="#feedback" role="button" class="btn btn-success" data-toggle="modal">Feedback</button>
+			<?php } else { ?>
+				<button href="#feedback" role="button" class="btn btn-info" data-toggle="modal">Feedback</button>
+			<?php } ?>
 		</div>
 	</div>
 
@@ -30,17 +34,25 @@
 			<div class="control-group">
 				<label class="control-label" for="feedback">Was deze informatie bruikbaar?</label>
 				<div class="controls">
+					<label class="radio">
+						<input type="radio" name="bruikbaar" value="1">Ja
+					</label>
+					<label class="radio">
+						<input type="radio" name="bruikbaar" value="2">Nee
+					</label>
+					<!--
 					<div class="btn-group" data-toggle="buttons-radio">
-						<button type="button" name="feedback" class="btn btn-success">Ja</button>
-						<button type="button" name="feedback" class="btn btn-danger">Nee</button>
+						<button type="button" name="bruikbaar" value="1" class="btn btn-success">Ja</button>
+						<button type="button" name="bruikbaar" value="2" class="btn btn-danger">Nee</button>
 					</div>
+					-->
 				</div>
 			</div>
 
 			<div class="control-group">
 				<label class="control-label" for="opmerking">Wat was goed/slecht?</label>
 				<div class="controls">
-					<textarea id="opmerking" rows="3" name="opmerkingen" placeholder="Opmerkingen"></textarea>
+					<textarea id="opmerking" rows="3" name="opmerking" placeholder="Opmerkingen"></textarea>
 				</div>
 			</div>
 

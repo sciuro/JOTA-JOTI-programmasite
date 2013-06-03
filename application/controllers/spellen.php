@@ -100,11 +100,19 @@
              $this->load->view('footer_view', $data);   
         }
 
-        public function spel($spelid) {
+        public function spel($spelid, $feedback = NULL) {
+            // Helpers laden
+            $this->load->library('user_agent');
+
             // Variabelen van de pagina zetten.
             $data['page'] = "leiding";
             $data['titel'] = "Spelbeschrijving";
-
+            if ($feedback == 'feedback') {
+                $data['feedback'] = 1;
+            } else {
+                $data['feedback'] = 0;
+            }
+            
             // Modellen laden.
             $this->load->model('overzicht_model');
             $tmp = $this->overzicht_model->get_spel($spelid);
