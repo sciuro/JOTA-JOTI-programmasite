@@ -86,6 +86,8 @@
                     <?php } ?>
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $this->session->userdata('voornaam'); ?></a>
                         <ul class="dropdown-menu" role="menu">
+                            <li><a tabindex="-1" href="<?php echo base_url();?>user/">Instellingen</a></li>
+                            <li class="divider"></li>
                             <li><a tabindex="-1" href="<?php echo base_url();?>login/logout">Uitloggen</a></li>
                         </ul>
                     </li>
