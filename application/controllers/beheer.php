@@ -1,6 +1,12 @@
 <?php
     class beheer extends CI_Controller {
 
+        function __construct(){
+            parent::__construct();
+            if(! $this->session->userdata('validated')){
+                redirect('/info/pagina/404');
+            }        }
+
         public function index()
         {
             redirect('beheer/opties');
