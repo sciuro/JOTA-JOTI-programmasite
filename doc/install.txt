@@ -11,13 +11,38 @@ $db['default']['database'] = 'databasenaam';
 $db['default']['dbdriver'] = 'mysql';
 
 4. Configureer de site zelf in /application/config/config.php.
-   Hier hoeft eigenlijk alleen de base_url aangepast te worden:
+   Let erop dat er hier tijdens upgrades dingen in veranderd zijn!
+   Controleer deze: (diff config.php config-default.php)
+   Hier moeten iig volgende dingen aangepast worden:
 
-$config['base_url']     = 'http://www.mijnsite.nl';
+	Vul de sitenaam van de website in. Vergeet vooral de laatste slash niet.
+	$config['base_url']     = 'http://www.mijnsite.nl';
+
+	Ten behoeven van de beveiliging moet er een encryptie key worden ingevult.
+	Bij meerdere servers, vul hier dezelfde key in.
+	$config['encryption_key'] = 'vulhierietsrandomsin';
 
 5. Vul de database met de schema's. Bij een lege database, pak het versienummer welke je installeert.
    Bij een upgrade, pak de upgrade scripts.
 
+6. Als je eventueel cookies ook serversite wil opslaan in database, voer dan ook onderstaande code uit
+   op de database:
+
+   CREATE TABLE IF NOT EXISTS  `sessions` (
+	session_id varchar(40) DEFAULT '0' NOT NULL,
+	ip_address varchar(45) DEFAULT '0' NOT NULL,
+	user_agent varchar(120) NOT NULL,
+	last_activity int(10) unsigned DEFAULT 0 NOT NULL,
+	user_data text NOT NULL,
+	PRIMARY KEY (session_id),
+	KEY `last_activity_idx` (`last_activity`)
+   );
+
+   Pas daarna in /application/config/config.php de volgende waarde aan:
+
+   $config['sess_use_database']	= TRUE;
+
 6. Maak de volgende directories writable voor de webserver. Dit kan op verschillende manieren,
    afhankelijk van je installatie.
    - /pdf
+   
