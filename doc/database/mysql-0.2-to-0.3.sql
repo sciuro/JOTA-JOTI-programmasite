@@ -29,3 +29,14 @@ CREATE TABLE IF NOT EXISTS `statistics` (
   `session` varchar(32) NOT NULL,
   KEY `timestamp` (`timestamp`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- Feedback formulier
+
+CREATE TABLE IF NOT EXISTS `feedback` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `spel` int(11) NOT NULL,
+  `bruikbaar` tinyint(1) NOT NULL,
+  `opmerking` text NOT NULL,
+  `email` varchar(64) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
