@@ -1,0 +1,8 @@
+2013-06-04  Rogier Neeleman  <rogier.neeleman@jota-joti.nl>
+
+* Authenticatie:
+		Bestaat nu, gezamelijk met rollen. Beheer gaat nog via de database.
+* Statistieken:
+		Worden nu verzameld in de database.
+* Feedback:
+		Mogelijkheid om feedback te geven op een spel.
