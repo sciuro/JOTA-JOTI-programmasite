@@ -67,7 +67,17 @@
         }
 		
 		public function logout(){
-            $this->session->sess_destroy();
+            $data = array(
+                'uid' => '',
+                'voornaam' => '',
+                'achternaam' => '',
+                'email' => '',
+                'validated' => '',
+                'admin' => '',
+                'pagina' => '',
+                'spellen' => ''
+                              );
+            $this->session->unset_userdata($data);
             redirect('/');
         }
         
