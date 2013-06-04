@@ -18,12 +18,37 @@
                 // Creeren van een sessie
                 $row = $query->row();
                 $data = array(
+                              'uid' => $row->id,
                               'voornaam' => $row->voornaam,
                               'achternaam' => $row->achternaam,
                               'email' => $row->email,
                               'validated' => true
                               );
                 $this->session->set_userdata($data);
+
+                // Zetten van de rollen
+                $rollen = array();
+
+                $gidbin = decbin($row->rol);
+                $c=8-(strlen($gidbin));
+                for ($i=0; $i < $c; $i++) { 
+                  $gidbin = "0".$gidbin;
+                }
+                $rol = str_split($gidbin);
+
+                if ($gidbin == 255) {
+                  $rollen['admin'] = true;
+                } else {
+                  if ($rol['7'] == 1) {
+                    $rollen['pagina'] = true;
+                  }
+                  if ($rol['6'] == 1) {
+                    $rollen['spellen'] = true;
+                  }
+                }
+
+                $this->session->set_userdata($rollen);
+
                 return true;
             }
             // De persoon is niet bekend.
