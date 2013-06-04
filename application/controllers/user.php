@@ -47,10 +47,10 @@
             $userdata = array(
                 'voornaam' => $voornaam,
                 'achternaam' => $achternaam,
-                'email' => $email,
-                'submit' => true
+                'email' => $email
             );
             $this->session->set_userdata($userdata);
+            $this->session->set_flashdata('submit', true);
 
             // Redirect naar de vorige pagina
             redirect('/user');

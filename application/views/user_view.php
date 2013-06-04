@@ -16,9 +16,8 @@
             	<li class="active"><a href="#algemeen" data-toggle="tab">Algemeen</a></li>
             	<li><a href="#wachtwoord" data-toggle="tab">Wachtwoord</a></li>
             	<li class='span5'></li>
-            	<?php if ($this->session->userdata('submit')) { ?>
+            	<?php if ($this->session->flashdata('submit')) { ?>
             		<li><button type="submit" class="btn btn-success">Opslaan</button></li>
-            		<?php $this->session->unset_userdata('submit'); ?>
             	<?php } else { ?>
             		<li><button type="submit" class="btn btn-primary">Opslaan</button></li>
             	<?php } ?>
