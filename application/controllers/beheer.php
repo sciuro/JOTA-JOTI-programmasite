@@ -5,7 +5,12 @@
             parent::__construct();
             if(! $this->session->userdata('validated')){
                 redirect('/info/pagina/404');
-            }        
+            }
+
+            if(! $this->session->userdata('spellen')){
+                redirect('/info/pagina/404');
+            }
+            
         }
 
         public function index()

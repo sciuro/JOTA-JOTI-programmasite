@@ -65,6 +65,8 @@
 
                     <?php if ($this->session->userdata('validated')) { ?>
 
+                    <?php if ($this->session->userdata('spellen')) { ?>
+
                     <?php if ($page == "beheer"){ ?>
                     <li class="dropdown active">
                     <?php } else { ?>
@@ -78,6 +80,8 @@
                             <li><a tabindex="-1" href="<?php echo base_url();?>beheer">Onderdelen</a></li>
                         </ul>
                     </li>
+
+                    <?php } ?>
 
                     <?php if ($page == "user"){ ?>
                     <li class="dropdown active">
