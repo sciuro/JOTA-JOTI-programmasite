@@ -180,33 +180,34 @@
             if($item == 'speltakken') {
                 // item aanpassen
                 $this->beheer_model->opslaan_speltak();
-
+                
                 redirect('beheer/opties/speltakken');
             } elseif ($item == 'gebieden') {
                 // item aanpassen
                 $this->beheer_model->opslaan_gebied();
-
+                
                 redirect('beheer/opties/gebieden');
             } elseif ($item == 'duur') {
                 // item aanpassen
                 $this->beheer_model->opslaan_duur();
-
+                
                 redirect('beheer/opties/duur');
             } elseif ($item == 'spellokaties') {
                 // item aanpassen
                 $this->beheer_model->opslaan_spellokatie();
-
+                
                 redirect('beheer/opties/spellokaties');
             } elseif ($item == 'artikelen') {
                 // item aanpassen
                 $this->beheer_model->opslaan_artikel();
-
+                
                 redirect('beheer/opties/artikelen');
             } elseif ($item == 'spel') {
                 // item aanpassen
                 $spelid = $this->beheer_model->opslaan_spel();
+                $this->session->set_flashdata('submit', true);
 
-                redirect('beheer/spel/');
+                redirect('beheer/spel/'.$this->input->post('spelid'));
             } else {
                 // Anders loopt iemand te klooien.
                 redirect('beheer/opties');

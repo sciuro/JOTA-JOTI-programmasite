@@ -25,7 +25,11 @@
             	<li><a href="#lokatie" data-toggle="tab">Lokatie</a></li>
             	<li><a href="#artikelen" data-toggle="tab">Artikelen</a></li>
             	<li class='span2'></li>
-            	<li><button type="submit" class="btn btn-primary">Opslaan</button></li>
+            	<?php if ($this->session->flashdata('submit')) { ?>
+            		<li><button type="submit" class="btn btn-success">Opslaan</button></li>
+            	<?php } else { ?>
+            		<li><button type="submit" class="btn btn-primary">Opslaan</button></li>
+            	<?php } ?>
             </ul>
         </div>
     </div>
