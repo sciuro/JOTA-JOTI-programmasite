@@ -8,7 +8,11 @@
 	</div>
 
 	<div class='row-fluid'>
-		<div class='span1 offset7'>
+		<div class='span2 offset5'>
+			<a href="https://twitter.com/share" class="twitter-share-button" data-url="<?php echo base_url();?>spellen/spel/<?php echo $spel['id'];?>" data-text="Heeft het spel '<?php echo $spel['titel']; ?>' ontdekt op de themasite." data-lang="nl" data-size="large" data-hashtags="jotajoti">Tweeten</a>
+		</div>
+
+		<div class='span1'>
 			<?php if ($this->session->flashdata('submit')) { ?>
 				<button href="#feedback" role="button" class="btn btn-success" data-toggle="modal">Feedback</button>
 			<?php } else { ?>
