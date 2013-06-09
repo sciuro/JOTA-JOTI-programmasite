@@ -31,6 +31,7 @@
 
 						<div class="modal-body">
 							<p>Geheime code: <?php echo $spel['wincode']; ?></p>
+							<a href="https://twitter.com/share" class="twitter-share-button" data-url="<?php echo base_url();?>spellen/spel/<?php echo $spel['id']; ?>" data-text="De <?php echo $speltak; ?> hebben de code van <?php echo $gebied; ?> gevonden!" data-lang="nl" data-size="large" data-hashtags="jotajoti">Tweeten</a>
 						</div>
 
 						<div class="modal-footer">
@@ -56,6 +57,7 @@
 
 						<div class="modal-body">
 							<p>Geheime code: <?php echo $spel['wincode']; ?></p>
+							<a href="https://twitter.com/share" class="twitter-share-button" data-url="<?php echo base_url();?>spellen/spel/<?php echo $spel['id']; ?>" data-text="De <?php echo $speltak; ?> hebben de code van <?php echo $gebied; ?> gevonden!" data-lang="nl" data-size="large" data-hashtags="jotajoti">Tweeten</a>
 						</div>
 
 						<div class="modal-footer">
@@ -82,6 +84,7 @@
 
 						<div class="modal-body">
 							<p>Geheime code: <?php echo $spel['wincode']; ?></p>
+							<a href="https://twitter.com/share" class="twitter-share-button" data-url="<?php echo base_url();?>spellen/spel/<?php echo $spel['id']; ?>" data-text="De <?php echo $speltak; ?> hebben de code van <?php echo $gebied; ?> gevonden!" data-lang="nl" data-size="large" data-hashtags="jotajoti">Tweeten</a>
 						</div>
 
 						<div class="modal-footer">
