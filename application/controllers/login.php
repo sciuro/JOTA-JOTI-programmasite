@@ -49,12 +49,12 @@
             $this->load->view('footer_view', $data);
         }
         
-        public function process(){
+        public function process_user(){
             // Model laden.
             $this->load->model('login_model');
             
             // Is de gebruiker bekend?
-            $result = $this->login_model->validate();
+            $result = $this->login_model->validate_user();
             
             if(! $result){
                 // De gebruiker is niet bekend.

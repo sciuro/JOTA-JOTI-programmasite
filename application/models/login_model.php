@@ -2,7 +2,7 @@
 
     class Login_model extends CI_Model{
         
-        public function validate(){
+        public function validate_user(){
             // Inhoud ophalen
             $email = $this->security->xss_clean($this->input->post('email'));
             $password = $this->security->xss_clean($this->input->post('password'));

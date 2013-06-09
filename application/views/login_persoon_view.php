@@ -18,7 +18,7 @@
 			<br>
 
 			<?php $attributes = array('class' => 'form-horizontal');
-			echo form_open('login/process', $attributes); ?>
+			echo form_open('login/process_user', $attributes); ?>
 
 			<?php if(! is_null($msg)) { ?>
 				<div class="control-group">
