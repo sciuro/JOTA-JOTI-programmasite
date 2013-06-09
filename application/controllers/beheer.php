@@ -7,10 +7,6 @@
                 redirect('/info/pagina/404');
             }
 
-            if(! $this->session->userdata('spellen')){
-                redirect('/info/pagina/404');
-            }
-            
         }
 
         public function index()
@@ -20,6 +16,11 @@
 
         public function opties($tab = 'algemeen')
         {
+            // Controle rollen
+            if(! $this->session->userdata('spellen')){
+                redirect('/info/pagina/404');
+            }
+
             // Modellen laden
             $this->load->model('beheer_model');
 
@@ -57,6 +58,11 @@
         
         public function spel($id = NULL)
         {
+            // Controle rollen
+            if(! $this->session->userdata('spellen')){
+                redirect('/info/pagina/404');
+            }
+
             $this->load->model('beheer_model');
             if ($this->input->post('search')) {
                 $data['search'] = $this->input->post('search');
@@ -133,6 +139,11 @@
 
         public function verwijder($item, $id)
         {
+            // Controle rollen
+            if(! $this->session->userdata('spellen')){
+                redirect('/info/pagina/404');
+            }
+
             // Model laden
             $this->load->model('beheer_model');
             
@@ -174,6 +185,11 @@
 
         public function opslaan($item)
         {
+            // Controle rollen
+            if(! $this->session->userdata('spellen')){
+                redirect('/info/pagina/404');
+            }
+            
             // Model laden
             $this->load->model('beheer_model');
 
