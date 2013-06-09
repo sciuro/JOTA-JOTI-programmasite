@@ -7,6 +7,10 @@
 
         public function groep($msg = NULL)
         {
+            if($this->session->userdata('validated')){
+                redirect('/info/pagina/404');
+            }
+
             // Variabelen van de pagina zetten.
             $data['page'] = "login";
             $data['titel'] = "Inloggen groepen";
@@ -29,6 +33,10 @@
 
         public function persoon($msg = NULL)
         {
+            if($this->session->userdata('groep')){
+                redirect('/info/pagina/404');
+            }
+
             // Variabelen van de pagina zetten.
             $data['page'] = "login";
             $data['titel'] = "Inloggen persoon";
@@ -50,6 +58,10 @@
         }
         
         public function process_user(){
+            if($this->session->userdata('groep')){
+                redirect('/info/pagina/404');
+            }
+
             // Model laden.
             $this->load->model('login_model');
             
