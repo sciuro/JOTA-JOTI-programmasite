@@ -65,8 +65,6 @@
 
                     <?php if ($this->session->userdata('validated')) { ?>
 
-                    <?php if ($this->session->userdata('spellen')) { ?>
-
                     <?php if ($page == "beheer"){ ?>
                     <li class="dropdown active">
                     <?php } else { ?>
@@ -75,13 +73,19 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Beheer</a>
                         <ul class="dropdown-menu" role="menu">
                             <li><a tabindex="-1" href="#">Overzicht</a></li>
-                            <li class="divider"></li>
-                            <li><a tabindex="-1" href="<?php echo base_url();?>beheer/spel">Spelen</a></li>
-                            <li><a tabindex="-1" href="<?php echo base_url();?>beheer">Onderdelen</a></li>
+                            
+                            <?php if ($this->session->userdata('spellen')) { ?>
+                                <li class="divider"></li>
+                                <li><a tabindex="-1" href="<?php echo base_url();?>beheer/spel">Spelen</a></li>
+                                <li><a tabindex="-1" href="<?php echo base_url();?>beheer">Onderdelen</a></li>
+                            <?php } ?>
+
+                            <?php if ($this->session->userdata('pagina')) { ?>
+                                <li class="divider"></li>
+                                <li><a tabindex="-1" href="<?php echo base_url();?>beheer/pagina">Pagina's</a></li>
+                            <?php } ?>
                         </ul>
                     </li>
-
-                    <?php } ?>
 
                     <?php if ($page == "user"){ ?>
                     <li class="dropdown active">
