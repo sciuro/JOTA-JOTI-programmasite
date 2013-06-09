@@ -4,7 +4,7 @@
         function __construct(){
             parent::__construct();
             if(! $this->session->userdata('validated')){
-                redirect('/info/pagina/404');
+                show_404();
             }        
         }
 

@@ -8,7 +8,7 @@
         public function groep($msg = NULL)
         {
             if($this->session->userdata('validated')){
-                redirect('/info/pagina/404');
+                show_404();
             }
 
             // Variabelen van de pagina zetten.
@@ -34,7 +34,7 @@
         public function persoon($msg = NULL)
         {
             if($this->session->userdata('groep')){
-                redirect('/info/pagina/404');
+                show_404();
             }
 
             // Variabelen van de pagina zetten.
@@ -59,7 +59,7 @@
         
         public function process_user(){
             if($this->session->userdata('groep')){
-                redirect('/info/pagina/404');
+                show_404();
             }
 
             // Model laden.
@@ -80,7 +80,7 @@
 
         public function process_group(){
             if($this->session->userdata('validated')){
-                redirect('/info/pagina/404');
+                show_404();
             }
 
             // Model laden.

@@ -3,7 +3,7 @@
 
         public function index()
         {
-            redirect('info/pagina/404');
+            show_404();
         }
         
         public function pagina($urlnaam)
@@ -15,7 +15,7 @@
             $data['pagina'] = $this->pagina_model->get_pagina($urlnaam);
 
             if (!$data['pagina']) {
-                redirect('info/pagina/404');
+                show_404();
             }
             $data['page'] = $urlnaam;
             $data['titel'] = $data['pagina']['titel'];

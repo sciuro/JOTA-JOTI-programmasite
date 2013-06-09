@@ -3,13 +3,13 @@
 
         public function index()
         {
-            redirect('info/pagina/404');
+            show_404();
         }
 
         public function view($naam = NULL)
         {
             if (!$naam) {
-                redirect('info/pagina/404');
+                show_404();
             }
 
             // Model laden
@@ -19,7 +19,7 @@
             $data = $this->bijlage_model->get_bijlage($naam);
 
             if (!$data) {
-                redirect('info/pagina/404');
+                show_404();
             }
 
             // Download opzetten
@@ -31,7 +31,7 @@
         public function download($id = NULL)
         {
              if (!$id) {
-                redirect('info/pagina/404');
+                show_404();
             }
 
             // Helpers laden
@@ -45,7 +45,7 @@
             $bijlage = $this->bijlage_model->get_bijlage($id);
 
             if (!$bijlage) {
-                redirect('info/pagina/404');
+                show_404();
             }
 
             // Data ophalen
@@ -53,7 +53,7 @@
             $file = read_file($filename);
 
             if (!$file) {
-                redirect('info/pagina/404');
+                show_404();
             }
 
             // Download opzetten

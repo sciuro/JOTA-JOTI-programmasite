@@ -5,7 +5,7 @@
         {
             // Controleren of er wel iets binnenkomt.
             if ($this->input->post('spel') == '') {
-                redirect('info/pagina/404');
+                show_404();
             }
 
             // Model laden

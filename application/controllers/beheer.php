@@ -4,7 +4,7 @@
         function __construct(){
             parent::__construct();
             if(! $this->session->userdata('validated')){
-                redirect('/info/pagina/404');
+                show_404();
             }
 
         }
@@ -18,7 +18,7 @@
         {
             // Controle rollen
             if(! $this->session->userdata('spellen')){
-                redirect('/info/pagina/404');
+                show_404();
             }
 
             // Modellen laden
@@ -60,7 +60,7 @@
         {
             // Controle rollen
             if(! $this->session->userdata('spellen')){
-                redirect('/info/pagina/404');
+                
             }
 
             $this->load->model('beheer_model');
@@ -141,7 +141,7 @@
         {
             // Controle rollen
             if(! $this->session->userdata('spellen')){
-                redirect('/info/pagina/404');
+                show_404();
             }
 
             // Model laden
@@ -187,7 +187,7 @@
         {
             // Controle rollen
             if(! $this->session->userdata('spellen')){
-                redirect('/info/pagina/404');
+                show_404();
             }
             
             // Model laden
