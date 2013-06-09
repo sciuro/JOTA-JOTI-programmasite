@@ -40,3 +40,7 @@ CREATE TABLE IF NOT EXISTS `feedback` (
   `email` varchar(64) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- Groepsid is niet meer opvolgend en wachtwoorden doen we niet  meer aan.
+ALTER TABLE `groep` CHANGE `id` `id` INT( 6 ) NOT NULL;
+ALTER TABLE `groep` DROP `wachtwoord`;
