@@ -18,6 +18,7 @@ class Statistics {
 
 		// Usergegevens
 		$data['user'] = $CI->session->userdata('uid');
+		$data['group'] = $CI->session->userdata('gid');
 		$data['session'] = $CI->session->userdata('cookie_id');
 
 		// Browsergegevens
