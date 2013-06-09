@@ -34,26 +34,7 @@
 			<div class="control-group">
 				<div class="controls">
 					<label></label>
-					<a href="#login" data-toggle="modal"><button type="submit" class="btn btn-primary">Login</button></a>
-
-					<!-- Berichtenscherm -->
-    				<div id="login" class="modal hide" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-
-        				<div class="modal-header">
-            				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        					<h3 id="myModalLabel">Inloggen</h3>
-        				</div>					
-
-						<div class="modal-body">
-							<p>Helaas, op dit moment is dit nog niet opengesteld.</p>
-						</div>
-
-						<div class="modal-footer">
-							<button class="btn" data-dismiss="modal" aria-hidden="true">Sluiten</button>
-						</div>
-					</div>
-					<!-- Einde berichtenscherm -->
-
+					<button type="submit" class="btn btn-primary">Login</button>
 				</div>
 			</div>
 

@@ -77,18 +77,49 @@
                 redirect('/');
             }
         }
+
+        public function process_group(){
+            if($this->session->userdata('validated')){
+                redirect('/info/pagina/404');
+            }
+
+            // Model laden.
+            $this->load->model('login_model');
+            
+            // Is de gebruiker bekend?
+            $result = $this->login_model->validate_group();
+            
+            if(! $result){
+                // De gebruiker is niet bekend.
+                $msg = 'Verkeerde groepsnummer.';
+                $this->groep($msg);
+            }else{
+                // De gebruiker mag verder.
+                redirect('/');
+            }
+        }
 		
 		public function logout(){
-            $data = array(
-                'uid' => '',
-                'voornaam' => '',
-                'achternaam' => '',
-                'email' => '',
-                'validated' => '',
-                'admin' => '',
-                'pagina' => '',
-                'spellen' => ''
-                              );
+            if ($this->session->userdata('groep')) {
+                $data = array(
+                    'gid' => '',
+                    'groepsnaam' => '',
+                    'email' => '',
+                    'groep' => ''
+                );
+            } else {
+                $data = array(
+                    'uid' => '',
+                    'voornaam' => '',
+                    'achternaam' => '',
+                    'email' => '',
+                    'validated' => '',
+                    'admin' => '',
+                    'pagina' => '',
+                    'spellen' => ''
+                );
+            }
+            
             $this->session->unset_userdata($data);
             redirect('/');
         }

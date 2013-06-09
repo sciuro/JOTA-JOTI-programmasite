@@ -54,4 +54,30 @@
             // De persoon is niet bekend.
             return false;
         }
+
+        public function validate_group(){
+            // Inhoud ophalen
+            $groepsnummer = $this->security->xss_clean($this->input->post('groepsnummer'));
+            
+            // Zoek de gebruiker
+            $this->db->where('id', $groepsnummer);
+            $query = $this->db->get('groep');
+            
+            // Is er 1 resultaat?
+            if($query->num_rows == 1)
+            {
+                // Creeren van een sessie
+                $row = $query->row();
+                $data = array(
+                              'gid' => $row->id,
+                              'groepsnaam' => $row->naam,
+                              'email' => $row->email,
+                              'groep' => true
+                              );
+                $this->session->set_userdata($data);
+                return true;
+            }
+            // De groep is niet bekend.
+            return false;
+        }
     }
