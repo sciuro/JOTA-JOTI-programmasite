@@ -256,7 +256,11 @@
             $this->load->view('menu_view', $data);
 
             // Pagina weergeven
-            $this->load->view('spellen_gebied_view', $data);
+            if ($speltak == 'scouts') {
+                $this->load->view('spellen_gebied_scouts_view', $data);
+            } else {
+                $this->load->view('spellen_gebied_view', $data);
+            }
 
              // Als laatste de footer laden.
              $this->load->view('footer_view', $data);         
