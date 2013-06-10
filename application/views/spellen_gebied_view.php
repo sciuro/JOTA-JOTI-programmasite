@@ -30,11 +30,24 @@
         				</div>					
 
 						<div class="modal-body">
-							<p>Geheime code: <?php echo $spel['wincode']; ?></p>
+							<table>
+								<tbody>
+									<tr>
+										<td><strong>Uitleg:</strong></td>
+										<td><?php echo $spel['omschrijving']; ?></td>
+									</tr>
+									<tr>
+										<td><strong>Geheime code:</strong></td>
+										<td><?php echo $spel['wincode']; ?></td>
+									</tr>
+								</tbody>
+							</table>
+							<br>
 							<a href="https://twitter.com/share" class="twitter-share-button" data-url="<?php echo base_url();?>spellen/spel/<?php echo $spel['id']; ?>" data-text="De <?php echo $speltak; ?> hebben de code van <?php echo $gebied; ?> gevonden!" data-lang="nl" data-hashtags="jotajoti">Tweeten</a>
 						</div>
 
 						<div class="modal-footer">
+							<a href="<?php echo base_url();?>spellen/spel/<?php echo $spel['id']; ?>"><button role="button" class="btn btn-info">Spelbeschrijving</button></a>
 							<button class="btn" data-dismiss="modal" aria-hidden="true">Sluiten</button>
 						</div>
 					</div>
@@ -56,11 +69,24 @@
         				</div>					
 
 						<div class="modal-body">
-							<p>Geheime code: <?php echo $spel['wincode']; ?></p>
+							<table>
+								<tbody>
+									<tr>
+										<td><strong>Uitleg:</strong></td>
+										<td><?php echo $spel['omschrijving']; ?></td>
+									</tr>
+									<tr>
+										<td><strong>Geheime code:</strong></td>
+										<td><?php echo $spel['wincode']; ?></td>
+									</tr>
+								</tbody>
+							</table>
+							<br>
 							<a href="https://twitter.com/share" class="twitter-share-button" data-url="<?php echo base_url();?>spellen/spel/<?php echo $spel['id']; ?>" data-text="De <?php echo $speltak; ?> hebben de code van <?php echo $gebied; ?> gevonden!" data-lang="nl" data-hashtags="jotajoti">Tweeten</a>
 						</div>
 
 						<div class="modal-footer">
+							<a href="<?php echo base_url();?>spellen/spel/<?php echo $spel['id']; ?>"><button role="button" class="btn btn-info">Spelbeschrijving</button></a>
 							<button class="btn" data-dismiss="modal" aria-hidden="true">Sluiten</button>
 						</div>
 					</div>
@@ -83,11 +109,24 @@
         				</div>					
 
 						<div class="modal-body">
-							<p>Geheime code: <?php echo $spel['wincode']; ?></p>
+							<table>
+								<tbody>
+									<tr>
+										<td><strong>Uitleg:</strong></td>
+										<td><?php echo $spel['omschrijving']; ?></td>
+									</tr>
+									<tr>
+										<td><strong>Geheime code:</strong></td>
+										<td><?php echo $spel['wincode']; ?></td>
+									</tr>
+								</tbody>
+							</table>
+							<br>
 							<a href="https://twitter.com/share" class="twitter-share-button" data-url="<?php echo base_url();?>spellen/spel/<?php echo $spel['id']; ?>" data-text="De <?php echo $speltak; ?> hebben de code van <?php echo $gebied; ?> gevonden!" data-lang="nl" data-hashtags="jotajoti">Tweeten</a>
 						</div>
 
 						<div class="modal-footer">
+							<a href="<?php echo base_url();?>spellen/spel/<?php echo $spel['id']; ?>"><button role="button" class="btn btn-info">Spelbeschrijving</button></a>
 							<button class="btn" data-dismiss="modal" aria-hidden="true">Sluiten</button>
 						</div>
 					</div>
