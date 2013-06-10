@@ -8,8 +8,12 @@
 	</div>
 
 	<div class='row-fluid'>
-		<div class='span2 offset5'>
-			<a href="https://twitter.com/share" class="twitter-share-button" data-url="<?php echo base_url();?>spellen/spel/<?php echo $spel['id'];?>" data-text="Heeft het spel '<?php echo $spel['titel']; ?>' ontdekt op de themasite." data-lang="nl" data-size="large" data-hashtags="jotajoti">Tweeten</a>
+		<div class='span1 offset4'>
+			<div class="fb-like" data-href="<?php echo base_url();?>spellen/spel/<?php echo $spel['id'];?>" data-send="false" data-layout="button_count" data-width="450" data-show-faces="true"></div>
+		</div>
+
+		<div class='span2'>
+			<a href="https://twitter.com/share" class="twitter-share-button" data-url="<?php echo base_url();?>spellen/spel/<?php echo $spel['id'];?>" data-text="Heeft het spel '<?php echo $spel['titel']; ?>' ontdekt op de themasite." data-lang="nl"  data-hashtags="jotajoti">Tweeten</a>
 		</div>
 
 		<div class='span1'>
