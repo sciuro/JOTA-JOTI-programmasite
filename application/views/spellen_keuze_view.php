@@ -10,8 +10,12 @@
 	<div class='row-fluid'>
 		<div class='span6 offset1'>
 			<div>
+				<?php if (isset($bericht)) { echo $bericht; } ?>
+			</div>
+			<div>
 				Hieronder vinden jullie het deelnemersgedeelte voor het online spelen. Voor het bekijken en/of downloaden van de spelen zelf, kijk in <a href='<?php echo base_url();?>info/pagina/leiding'>leiding</a>.
 			</div>
+
 			<?php if (($speltak == 'bevers') || ($speltak == 'welpen')) { ?>
 			<div>
 				<h4>Jota & Joti:</h4>

@@ -153,4 +153,16 @@
 			return $query->result_array();
 		}
 
+		public function get_spelbericht($speltak){
+			$this->db->select('bericht');
+			$this->db->from('spelberichten');
+			$this->db->join('speltak', 'spelberichten.speltak_id = speltak.id');
+			$this->db->where('speltak.naam', $speltak);
+			$this->db->where('van <= CURDATE()');
+			$this->db->where('tot > CURDATE()');
+
+			$query = $this->db->get();
+			return $query->result_array();
+		}
+
     }

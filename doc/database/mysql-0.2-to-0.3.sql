@@ -67,3 +67,10 @@ CREATE TABLE IF NOT EXISTS `score` (
   KEY `spel_id` (`spel_id`,`groep_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
+-- Berichten van de themafiguren
+CREATE TABLE IF NOT EXISTS `spelberichten` (
+  `speltak_id` int(4) NOT NULL,
+  `bericht` text NOT NULL,
+  `van` date NOT NULL,
+  `tot` date NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;

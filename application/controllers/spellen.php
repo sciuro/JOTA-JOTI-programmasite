@@ -275,6 +275,12 @@
             // Modellen laden.
             $this->load->model('overzicht_model');
             $data['duur'] = $this->overzicht_model->get_duur($speltak);
+            $spelbericht = $this->overzicht_model->get_spelbericht($speltak);
+            if (isset($spelbericht[0])) {
+                $data['bericht'] = $spelbericht[0]['bericht'];
+            } else {
+                $data['bericht'] = '';
+            }
 
             // Eerst de header laden.
             $this->load->view('header_view', $data);
