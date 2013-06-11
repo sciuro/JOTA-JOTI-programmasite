@@ -77,3 +77,7 @@ CREATE TABLE IF NOT EXISTS `spelberichten` (
 
 -- Pagina timestamp automatisch updaten
 ALTER TABLE `pagina` CHANGE `timestamp` `timestamp` TIMESTAMP ON UPDATE CURRENT_TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ;
+
+-- Spellen timesptam automatisch updaten
+ALTER TABLE `spel` CHANGE `timestamp` `timestamp` TIMESTAMP ON UPDATE CURRENT_TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ;
+
