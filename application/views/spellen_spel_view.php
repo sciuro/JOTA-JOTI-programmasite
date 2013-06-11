@@ -17,10 +17,14 @@
 		</div>
 
 		<div class='span1'>
-			<?php if ($this->session->flashdata('submit')) { ?>
-				<button href="#feedback" role="button" class="btn btn-success" data-toggle="modal">Feedback</button>
+			<?php if ( ($this->session->userdata('validated')) && ($this->session->userdata('spellen')) ) { ?>
+				<a href="<?php echo base_url();?>beheer/spel/<?php echo $spel['id'];?>"><button role="button" class="btn btn-info">Edit</button></a>
 			<?php } else { ?>
-				<button href="#feedback" role="button" class="btn btn-info" data-toggle="modal">Feedback</button>
+				<?php if ($this->session->flashdata('submit')) { ?>
+					<button href="#feedback" role="button" class="btn btn-success" data-toggle="modal">Feedback</button>
+				<?php } else { ?>
+					<button href="#feedback" role="button" class="btn btn-info" data-toggle="modal">Feedback</button>
+				<?php } ?>
 			<?php } ?>
 		</div>
 	</div>
