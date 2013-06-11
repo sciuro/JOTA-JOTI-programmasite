@@ -74,3 +74,6 @@ CREATE TABLE IF NOT EXISTS `spelberichten` (
   `van` date NOT NULL,
   `tot` date NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- Pagina timestamp automatisch updaten
+ALTER TABLE `pagina` CHANGE `timestamp` `timestamp` TIMESTAMP ON UPDATE CURRENT_TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ;
