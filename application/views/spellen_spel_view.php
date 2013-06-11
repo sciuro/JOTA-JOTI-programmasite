@@ -117,6 +117,12 @@
    						<?php } ?>
       					</th>
     				</tr>
+    				<?php if ($spel['copyright'] != '') { ?>
+    				<tr>
+      					<th>Copyright</th>
+      					<th>&copy; <?php echo $spel['copyright']; ?></th>
+    				</tr>
+    				<?php } ?>
 				</tbody>
 			</table>
 

@@ -91,7 +91,7 @@
 		}
 
 		public function get_spel($id){
-			$this->db->select('spel.id, spel.titel, spel.omschrijving, spel.voorbereiding, spel.beschrijving, spel.duur as spelduur, spel.min_spelers, spel.max_spelers, spel.leiding, spel.jota, spel.joti');
+			$this->db->select('spel.id, spel.titel, spel.omschrijving, spel.voorbereiding, spel.beschrijving, spel.copyright, spel.duur as spelduur, spel.min_spelers, spel.max_spelers, spel.leiding, spel.jota, spel.joti');
 			$this->db->from('spel');
 
 			$this->db->where('spel.id', $id);
@@ -296,6 +296,7 @@
 				'omschrijving' => $this->input->post('omschrijving'),
 				'voorbereiding' => $this->input->post('voorbereiding'),
 				'beschrijving' => $this->input->post('beschrijving'),
+				'copyright' => $this->input->post('copyright'),
 				'duur' => $this->input->post('spelduur'),
 				'min_spelers' => $this->input->post('min_spelers'),
 				'max_spelers' => $this->input->post('max_spelers'),

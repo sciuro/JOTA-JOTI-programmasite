@@ -79,6 +79,7 @@
                     $data['spel']['omschrijving'] = '';
                     $data['spel']['voorbereiding'] = '';
                     $data['spel']['beschrijving'] = '';
+                    $data['spel']['copyright'] = '';
                     $data['spel']['spelduur'] = '';
                     $data['spel']['min_spelers'] = '';
                     $data['spel']['max_spelers'] = '';

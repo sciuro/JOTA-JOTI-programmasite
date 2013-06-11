@@ -204,6 +204,12 @@
    									<?php } ?>
       							</td>
     						</tr>
+    						<?php if ($spel['copyright'] != '') { ?>
+    						<tr>
+      							<td>Copyright</td>
+      							<td>&copy; <?php echo $spel['copyright']; ?></td>
+    						</tr>
+    						<?php } ?>
   						</table>
   					</p>
   					<br>

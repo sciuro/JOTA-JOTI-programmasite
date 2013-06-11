@@ -24,7 +24,8 @@
             	<li><a href="#gebieden" data-toggle="tab">Gebieden</a></li>
             	<li><a href="#lokatie" data-toggle="tab">Lokatie</a></li>
             	<li><a href="#artikelen" data-toggle="tab">Artikelen</a></li>
-            	<li class='span2'></li>
+            	<li><a href="#copyright" data-toggle="tab">Copyright</a></li>
+            	<li class='span1'></li>
             	<?php if ($this->session->flashdata('submit')) { ?>
             		<li><button type="submit" class="btn btn-success">Opslaan</button></li>
             	<?php } else { ?>
@@ -226,6 +227,15 @@
 								</label>
 							<?php } ?> 
 					
+						</div>
+					</div>
+				</div>
+
+				<div class="tab-pane fade" id="copyright">
+					<div class="control-group">
+						<label class="control-label" for="copyright">Copyright</label>
+						<div class="controls">
+							<input type="text" id="copyright" name="copyright" placeholder="Copyright owner" value="<?php echo $spel['copyright'];?>">
 						</div>
 					</div>
 				</div>
