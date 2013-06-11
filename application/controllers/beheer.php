@@ -137,6 +137,43 @@
 
         }
 
+        public function pagina($id = NULL)
+        {
+            // Controle rollen
+            if(! $this->session->userdata('pagina')){
+                show_404();
+            }
+
+            // Variabelen goedzetten
+            $data['page'] = 'beheer';
+            $data['titel'] = "Beheer pagina teksten";
+
+            // Modellen laden
+            $this->load->model('beheer_model');
+            if (isset($id)) {
+                $pagina = $this->beheer_model->get_paginas($id);
+                $data['pagina'] = $pagina[0];
+            } else {
+                $data['paginas'] = $this->beheer_model->get_paginas();
+            }
+
+            // Eerst de header laden.
+            $this->load->view('header_view', $data);
+            
+            // Menu laden.
+            $this->load->view('menu_view', $data);
+
+            // Pagina inhoud weergeven
+            if ($id) {
+                $this->load->view('beheer_pagina_edit_view', $data);
+            } else {
+                $this->load->view('beheer_pagina_view', $data);
+            }
+                        
+            // Als laatste de footer laden.
+            $this->load->view('footer_view', $data);
+        }
+
         public function verwijder($item, $id)
         {
             // Controle rollen
@@ -224,6 +261,12 @@
                 $this->session->set_flashdata('submit', true);
 
                 redirect('beheer/spel/'.$this->input->post('spelid'));
+            } elseif ($item == 'pagina') {
+                // item aanpassen
+                $this->beheer_model->opslaan_pagina();
+                $this->session->set_flashdata('submit', true);
+
+                redirect('beheer/pagina/'.$this->input->post('paginaid'));
             } else {
                 // Anders loopt iemand te klooien.
                 redirect('beheer/opties');

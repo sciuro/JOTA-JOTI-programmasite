@@ -34,7 +34,13 @@
 				<h1><?php echo $pagina['titel']; ?></h1>
 			</header>
         </div>
+        <div class='span1'>
+            <?php if ( ($this->session->userdata('validated')) && ($this->session->userdata('pagina')) ) { ?>
+                <a href="<?php echo base_url();?>beheer/pagina/<?php echo $pagina['id'];?>"><button role="button" class="btn btn-info">Edit</button></a>
+            <?php } ?>
+        </div>
     </div>
+    
     <div class='row-fluid'>
         <div class='span8 offset1'>
             <?php echo $pagina['tekst']; ?>

@@ -140,6 +140,20 @@
 			return $query->result_array();
 		}
 
+		public function get_paginas($id = NULL){
+			$this->db->select('id, urlnaam, titel, tekst, banner, timestamp');
+			$this->db->from('pagina');
+
+			if (isset($id)) {
+				$this->db->where('id', $id);
+			} else {
+				$this->db->order_by('id');
+			}
+
+			$query = $this->db->get();
+			return $query->result_array();
+		}
+
 		public function verwijder_speltak($id) {
 			$this->db->where('id', $id);
 			$this->db->delete('speltak');
@@ -393,6 +407,18 @@
 			}
 
 			return $return;
+
+		}
+
+		public function opslaan_pagina() {
+			$data = array('urlnaam' => $this->input->post('urlnaam'),
+				'tekst' => $this->input->post('tekst'),
+				'banner' => $this->input->post('banner')
+				);
+
+			//Update van de data.
+			$this->db->where('id', $this->input->post('paginaid'));
+			$this->db->update('pagina', $data);
 
 		}
     }
