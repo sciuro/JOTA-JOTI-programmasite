@@ -162,8 +162,9 @@
                 $filenaam = $filenaam."-".$spel['id'];
             }
             $filenaam = $filenaam."S".$data['speltak']."D".$data['opkomstduur'];
+            $currentdir = exec('pwd');
 
-            $filehash = "pdf/".md5($filenaam).".pdf";
+            $filehash = $currentdir."/pdf/".md5($filenaam).".pdf";
 
             if (!file_exists($filehash)) {
 
@@ -207,12 +208,18 @@
                 $this->pdf->load_view('spellen_draaiboek_pdf', $data);
                 $this->pdf->render();
                 $pdf = $this->pdf->output();
-                file_put_contents($filehash, $pdf);
-                chmod($filehash, 0664);
+                $write = file_put_contents($filehash, $pdf);
+                if ($write === FALSE) {
+                    $pdffile = $pdf;
+                } else {
+                    chmod($filehash, 0666);
+                }
 
             }
 
-            $pdffile = read_file($filehash);
+            if (!isset($pdffile)) {
+                $pdffile = read_file($filehash);
+            }
             force_download("JOTA-JOTI-spellen-".$data['speltak']."-".$data['opkomstduur']."uur.pdf", $pdffile);
 
         }
