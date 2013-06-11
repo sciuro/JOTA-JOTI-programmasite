@@ -1,4 +1,5 @@
 2013-06-04  Rogier Neeleman  <rogier.neeleman@jota-joti.nl>
+Versie: 0.2.1
 
 * Authenticatie:
 		Bestaat nu, gezamelijk met rollen. Beheer gaat nog via de database.
@@ -6,3 +7,23 @@
 		Worden nu verzameld in de database.
 * Feedback:
 		Mogelijkheid om feedback te geven op een spel.
+
+2013-06-11  Rogier Neeleman  <rogier.neeleman@jota-joti.nl>
+versie: 0.2.2
+
+* Authenticatie:
+		Groepen kunnen nu inloggen met hun gekregen groepsnummer.
+		Groepen kunnen hun instellingen aanpassen.
+		Rollen zijn nu doorgevoerd voor alle opties en mogelijkheden.
+* Pagina's:
+		De pagina's kunnen nu bewerkt worden, mits de goede rechten. Puntje van aandacht zijn wel diakrieten, Deze werken hierin niet lekker.
+		De 404 pagina is nu voor de browser ook een 404 pagina en geen redirect.
+		Vanuit de diverse pagina's is er direct te twitteren en te facebooken.
+		Tekst en copyright op foto's op de banner is mogelijk.
+* Spellen:
+		Bij de spellen van de deelnemers is nu een korte beschrijving van het spel te vinden en een link naar de beschrijving.
+		De Feedback knop op de speluitleg veranderd in een edit knop als je beheerder bent.
+		Bij het niet kunnen schrijven van de PDF cache zal er geen foutmelding meer plaatsvinden en de PDF word gewoon aangeboden.
+		Er is een mogelijkheid erbij gekomen om de copyright op spelen in te stellen.
+		Bij de speltakken krijg je nu een themaverhaaltje te lezen. Deze staat in de database en werkt automatisch op tijd.
+		Er is een begin gemaakt met het bijhouden van scores voor de scouts.
