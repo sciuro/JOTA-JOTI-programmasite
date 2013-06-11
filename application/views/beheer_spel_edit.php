@@ -243,25 +243,6 @@
 
 			</div>
 
-
-
-
-
-
-
-
-
-		<?php if ($titel != 'Nieuw spel') { ?>
-		<hr>
-
-
-
-
-
-		<hr>
-
-
-<?php } ?>
 		</div>
 	</div>
 	</form>
