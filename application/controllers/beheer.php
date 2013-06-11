@@ -222,52 +222,86 @@
 
         public function opslaan($item)
         {
-            // Controle rollen
-            if(! $this->session->userdata('spellen')){
-                show_404();
-            }
-            
             // Model laden
             $this->load->model('beheer_model');
 
             if($item == 'speltakken') {
+                // Controle rollen
+                if(! $this->session->userdata('spellen')){
+                    show_404();
+                }
+
                 // item aanpassen
                 $this->beheer_model->opslaan_speltak();
                 
                 redirect('beheer/opties/speltakken');
             } elseif ($item == 'gebieden') {
+                // Controle rollen
+                if(! $this->session->userdata('spellen')){
+                    show_404();
+                }
+
                 // item aanpassen
                 $this->beheer_model->opslaan_gebied();
                 
                 redirect('beheer/opties/gebieden');
             } elseif ($item == 'duur') {
+                // Controle rollen
+                if(! $this->session->userdata('spellen')){
+                    show_404();
+                }
+
                 // item aanpassen
                 $this->beheer_model->opslaan_duur();
                 
                 redirect('beheer/opties/duur');
             } elseif ($item == 'spellokaties') {
+                // Controle rollen
+                if(! $this->session->userdata('spellen')){
+                    show_404();
+                }
+
                 // item aanpassen
                 $this->beheer_model->opslaan_spellokatie();
                 
                 redirect('beheer/opties/spellokaties');
             } elseif ($item == 'artikelen') {
+                // Controle rollen
+                if(! $this->session->userdata('spellen')){
+                    show_404();
+                }
+
                 // item aanpassen
                 $this->beheer_model->opslaan_artikel();
                 
                 redirect('beheer/opties/artikelen');
             } elseif ($item == 'spel') {
+                // Controle rollen
+                if(! $this->session->userdata('spellen')){
+                    show_404();
+                }
+
                 // item aanpassen
                 $spelid = $this->beheer_model->opslaan_spel();
                 $this->session->set_flashdata('submit', true);
 
                 redirect('beheer/spel/'.$this->input->post('spelid'));
             } elseif ($item == 'pagina') {
+                // Controle rollen
+                if(! $this->session->userdata('pagina')){
+                    show_404();
+                }
+
                 // item aanpassen
                 $this->beheer_model->opslaan_pagina();
                 $this->session->set_flashdata('submit', true);
 
                 redirect('beheer/pagina/'.$this->input->post('paginaid'));
             } else {
+                // Controle rollen
+                if(! $this->session->userdata('validated')){
+                    show_404();
+                }
                 // Anders loopt iemand te klooien.
                 redirect('beheer/opties');
             }
