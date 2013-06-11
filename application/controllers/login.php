@@ -74,7 +74,7 @@
                 $this->persoon($msg);
             }else{
                 // De gebruiker mag verder.
-                redirect('/');
+                redirect('/beheer/overzicht');
             }
         }
 
