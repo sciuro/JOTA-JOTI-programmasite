@@ -18,7 +18,7 @@
 			<div class="control-group">
 				<div class="controls">
 					<label class="checkbox">
-						<input type="checkbox" name="select-all" id="select-all" />Selecteer alles
+						<input type="checkbox" name="select-all" id="select-all" checked="yes" />Selecteer alles
 					</label>
 				</div>
 			</div>
