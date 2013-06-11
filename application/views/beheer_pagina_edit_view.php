@@ -21,11 +21,12 @@
             <ul id="myTab" class="nav nav-tabs">
             	<li class="active"><a href="#algemeen" data-toggle="tab">Algemeen</a></li>
             	<li><a href="#tekst" data-toggle="tab">Tekst</a></li>
-            	<li class='span6'></li>
+            	<li class='span4'></li>
+            	<a class="btn btn-info" href="<?php echo base_url();?>info/pagina/<?php echo $pagina['urlnaam'];?>">Naar pagina</a>
             	<?php if ($this->session->flashdata('submit')) { ?>
-            		<li><button type="submit" class="btn btn-success">Opslaan</button></li>
+            		<button type="submit" class="btn btn-success">Opslaan</button>
             	<?php } else { ?>
-            		<li><button type="submit" class="btn btn-primary">Opslaan</button></li>
+            		<button type="submit" class="btn btn-primary">Opslaan</button>
             	<?php } ?>
             </ul>
         </div>
