@@ -307,5 +307,27 @@
                 redirect('beheer/opties');
             }
         }
+
+        public function overzicht(){
+            // Modellen laden
+            $this->load->model('statistics_model');
+
+            // Variabelen goedzetten
+            $data['page'] = 'beheer';
+            $data['titel'] = "Beheermodule";
+
+            // Eerst de header laden.
+            $this->load->view('header_view', $data);
+            
+            // Menu laden.
+            $this->load->view('menu_view', $data);
+
+            // Pagina inhoud weergeven
+            $this->load->view('beheer_overzicht_view', $data);
+                        
+            // Als laatste de footer laden.
+            $this->load->view('footer_view', $data);
+        }
         
     }
+    

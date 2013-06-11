@@ -72,7 +72,7 @@
                     <?php } ?>
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Beheer</a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a tabindex="-1" href="#">Overzicht</a></li>
+                            <li><a tabindex="-1" href="<?php echo base_url();?>beheer/overzicht">Overzicht</a></li>
                             
                             <?php if ($this->session->userdata('spellen')) { ?>
                                 <li class="divider"></li>
