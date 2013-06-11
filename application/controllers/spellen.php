@@ -207,19 +207,18 @@
                 $this->load->library('pdf');
                 $this->pdf->load_view('spellen_draaiboek_pdf', $data);
                 $this->pdf->render();
-                $pdf = $this->pdf->output();
-                $write = file_put_contents($filehash, $pdf);
-                if ($write === FALSE) {
-                    $pdffile = $pdf;
-                } else {
+                                
+                if (is_writable($currentdir."/pdf/")) {
+                    $pdf = $this->pdf->output();
+                    $write = file_put_contents($filehash, $pdf);
                     chmod($filehash, 0666);
+                } else {
+                    $this->pdf->stream("JOTA-JOTI-spellen-".$data['speltak']."-".$data['opkomstduur']."uur.pdf");
                 }
 
             }
 
-            if (!isset($pdffile)) {
-                $pdffile = read_file($filehash);
-            }
+            $pdffile = read_file($filehash);
             force_download("JOTA-JOTI-spellen-".$data['speltak']."-".$data['opkomstduur']."uur.pdf", $pdffile);
 
         }
