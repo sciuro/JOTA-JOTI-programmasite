@@ -5,22 +5,40 @@
     	<!-- Carousel items -->
     	<div class="carousel-inner">
     		<div class="item active">
-    			<center><img src="<?php echo base_url();?>images/carousel_1.png"></center>
+    			<center><img src="<?php echo base_url();?>images/carousel_1.png" alt="&copy; R. Welling" title="&copy; R. Welling"></center>
+                <div class="carousel-caption">
+                    <p>Opening JOTA-JOTI 2012 door Andre Kuipers</p>
+                </div>
       		</div>
     		<div class="item">
-    			<center><img src="<?php echo base_url();?>images/carousel_2.png"></center>
+    			<center><img src="<?php echo base_url();?>images/carousel_2.png" alt="&copy; R. Welling" title="&copy; R. Welling"></center>
+                <div class="carousel-caption">
+                    <p>Toetsenbord in elkaar zetten</p>
+                </div>
     		</div>
             <div class="item">
-                <center><img src="<?php echo base_url();?>images/carousel_3.png"></center>
+                <center><img src="<?php echo base_url();?>images/carousel_3.png" alt="&copy; R. Welling" title="&copy; R. Welling"></center>
+                <div class="carousel-caption">
+                    <p>Joti Control Center 2012</p>
+                </div>
             </div>
             <div class="item">
-                <center><img src="<?php echo base_url();?>images/carousel_4.png"></center>
+                <center><img src="<?php echo base_url();?>images/carousel_4.png" alt="&copy; R. Welling" title="&copy; R. Welling"></center>
+                <div class="carousel-caption">
+                    <p>Joti Control Center 2012</p>
+                </div>
             </div>
             <div class="item">
-                <center><img src="<?php echo base_url();?>images/carousel_5.png"></center>
+                <center><img src="<?php echo base_url();?>images/carousel_5.png" alt="&copy; R. Welling" title="&copy; R. Welling"></center>
+                <div class="carousel-caption">
+                    <p>Zenden op het landelijk station JOTA-JOTI 2012</p>
+                </div>
             </div>
             <div class="item">
-                <center><img src="<?php echo base_url();?>images/carousel_6.png"></center>
+                <center><img src="<?php echo base_url();?>images/carousel_6.png" alt="&copy; R. Welling" title="&copy; R. Welling"></center>
+                <div class="carousel-caption">
+                    <p>PA6/JAM 2012</p>
+                </div>
             </div>
     	</div>
     	<!-- Carousel nav -->
