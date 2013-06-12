@@ -23,6 +23,14 @@
         <link rel="apple-touch-icon-precomposed" href="<?php echo base_url();?>assets/ico/apple-touch-icon-57-precomposed.png">
         <link rel="shortcut icon" href="<?php echo base_url();?>assets/ico/favicon.ico">
 
+        <!-- Java scripting -->
+        <script src="<?php echo base_url();?>assets/jquery/jquery.js"></script>
+        
+        <script src="<?php echo base_url();?>assets/flot/excanvas.min.js"></script>
+        <script src="<?php echo base_url();?>assets/flot/jquery.flot.js"></script>
+        <script src="<?php echo base_url();?>assets/flot/jquery.flot.time.js"></script>
+
+        <script src="<?php echo base_url();?>assets/bootstrap/js/bootstrap.js"></script>
     </head>
 
     <body>
