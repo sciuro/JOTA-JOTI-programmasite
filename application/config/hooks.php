@@ -10,7 +10,7 @@
 |
 */
 
-$hook['post_controller_constructor'] = array(
+$hook['post_controller'] = array(
 	'class'    => 'statistics',
 	'function' => 'log_activity',
 	'filename' => 'statistics.php',

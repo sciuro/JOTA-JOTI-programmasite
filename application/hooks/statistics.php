@@ -51,6 +51,7 @@ class Statistics {
 
 		// We don't need it, but we'll log the URI just in case
 		$data['uri'] = uri_string();
+		$data['error_code'] = "200";
 
 		// And write it to the database
 		$CI->db->insert('statistics', $data);

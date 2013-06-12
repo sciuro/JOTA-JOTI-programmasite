@@ -86,3 +86,5 @@ ALTER TABLE `spel` ADD `copyright` VARCHAR( 64 ) NOT NULL AFTER `beschrijving`;
 
 -- Tabel uitbreiding statistics
 ALTER TABLE `statistics` ADD `tracking` VARCHAR( 32 ) NOT NULL ;
+ALTER TABLE `statistics` ADD `error_code` INT( 3 ) NOT NULL AFTER `uri` ;
+
