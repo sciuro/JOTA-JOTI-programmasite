@@ -311,6 +311,7 @@
         public function overzicht(){
             // Modellen laden
             $this->load->model('statistics_model');
+            $data['hits_ph'] = $this->statistics_model->get_hits();
 
             // Variabelen goedzetten
             $data['page'] = 'beheer';
