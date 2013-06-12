@@ -7,10 +7,19 @@ class Statistics {
 
 		// Enable classes
 		$CI->load->library('user_agent');
+		$CI->load->helper('cookie');
 
 		// Tracking cookie goedzetten
-		if ($CI->session->userdata('cookie_id') === FALSE ) {
-			$CI->session->set_userdata('cookie_id', $CI->session->userdata('session_id') );
+		if ($CI->input->cookie('jj_thema2') === FALSE ) {
+			$cookie_array = array (
+				'name' => 'jj_thema2',
+				'value' => $CI->session->userdata('session_id'),
+				'expire' => 94608000
+				);
+			$CI->input->set_cookie($cookie_array);
+			$tracking = $CI->session->userdata('session_id');
+		} else {
+			$tracking = $CI->input->cookie('jj_thema2');
 		}
 
 		// Alle data verzamelen
@@ -19,7 +28,8 @@ class Statistics {
 		// Usergegevens
 		$data['user'] = $CI->session->userdata('uid');
 		$data['group'] = $CI->session->userdata('gid');
-		$data['session'] = $CI->session->userdata('cookie_id');
+		$data['session'] = $CI->session->userdata('session_id');
+		$data['tracking'] = $tracking;
 
 		// Browsergegevens
 		$data['agent'] = $CI->agent->agent_string();

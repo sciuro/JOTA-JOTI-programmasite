@@ -245,8 +245,8 @@ $config['encryption_key'] = '';
 |
 */
 $config['sess_cookie_name']		= 'jj_thema';
-$config['sess_expiration']		= 0;
-$config['sess_expire_on_close']	= FALSE;
+$config['sess_expiration']		= 7200;
+$config['sess_expire_on_close']	= TRUE;
 $config['sess_encrypt_cookie']	= TRUE;
 $config['sess_use_database']	= FALSE;
 $config['sess_table_name']		= 'sessions';

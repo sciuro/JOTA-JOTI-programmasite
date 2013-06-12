@@ -83,3 +83,6 @@ ALTER TABLE `spel` CHANGE `timestamp` `timestamp` TIMESTAMP ON UPDATE CURRENT_TI
 
 -- Copyright bij Spellen
 ALTER TABLE `spel` ADD `copyright` VARCHAR( 64 ) NOT NULL AFTER `beschrijving`;
+
+-- Tabel uitbreiding statistics
+ALTER TABLE `statistics` ADD `tracking` VARCHAR( 32 ) NOT NULL ;
