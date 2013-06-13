@@ -112,7 +112,7 @@
 								<tr>
 									<td><?php echo $browser['browser'].' '.$browser['version'] ?></td>
 									<td><?php echo $browser['hits'] ?></td>
-									<td><?php echo round(($browser['hits']/$totalhits)*100, 1, PHP_ROUND_HALF_UP) ?></td>
+									<td><?php echo round(($browser['hits']/$totalhits)*100, 1) ?></td>
 								</tr>
 							<?php } ?>
 						</tbody>
@@ -132,7 +132,7 @@
 								<tr>
 									<td><?php echo $os['platform'].' '.$os['mobile'] ?></td>
 									<td><?php echo $os['hits'] ?></td>
-									<td><?php echo round(($os['hits']/$totalhits)*100, 1, PHP_ROUND_HALF_UP) ?></td>
+									<td><?php echo round(($os['hits']/$totalhits)*100, 1) ?></td>
 								</tr>
 							<?php } ?>
 						</tbody>
