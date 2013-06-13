@@ -10,7 +10,12 @@
 	<div class='row-fluid'>
 		<div class='span6 offset1'>
 			<div>
-				Via deze pagina zijn alle spellen in te zien.
+				<p>Op deze pagina kun je alle spellen bekijken.
+					Zo kun je een keuze maken welke spellen je tijdens de JOTA-JOTI-opkomst wilt gebruiken.
+					Via de menuoptie download kun je dan het gewenste spelaanbod selecteren.</p>
+				<p>Hiervan wordt een PDF-bestand gegenereerd die je daarna kunt downloaden.
+					Bij deze PDF krijg je ook een benodigdhedenlijst zodat je gelijk een lijstje
+					hebt waarmee je op clubhuis alle spullen kunt verzamelen.</p>
 			</div>
 			<div class='row-fluid'>
 			<?php foreach ($speltakken as $speltak) { ?>
