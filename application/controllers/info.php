@@ -6,8 +6,12 @@
             show_404();
         }
         
-        public function pagina($urlnaam)
+        public function pagina($urlnaam = NULL)
         {
+            if (!isset($urlnaam)) {
+                show_404();
+            }
+            
             // Modellen laden.
             $this->load->model('pagina_model');
 
