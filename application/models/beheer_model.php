@@ -413,6 +413,7 @@
 
 		public function opslaan_pagina() {
 			$data = array('urlnaam' => $this->input->post('urlnaam'),
+				'titel' => $this->input->post('titel'),
 				'tekst' => $this->input->post('tekst'),
 				'banner' => $this->input->post('banner')
 				);
