@@ -8,10 +8,8 @@
 	</div>
 
 	<div class='row-fluid'>
-		<div class='span8 offset1'>
-			<div class="embed-container">
- 				<iframe width="853" height="480" src="http://www.youtube.com/embed/78WbVavIQ78" frameborder="0" allowfullscreen></iframe>
-			</div>
+		<div class='span8 offset2'>
+			<center><img src="<?php echo base_url();?>images/kluis.png"></center>
 		</div>
 	</div>
 
