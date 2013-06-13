@@ -22,13 +22,18 @@ class Statistics {
 			$tracking = $CI->input->cookie('jj_thema2');
 		}
 
+		// Sessiecookie goedzetten
+		if ($CI->session->userdata('cookie_id') === FALSE ) {
+			$CI->session->set_userdata('cookie_id', $CI->session->userdata('session_id') );
+		} 
+
 		// Alle data verzamelen
 		$data = array();
 
 		// Usergegevens
 		$data['user'] = $CI->session->userdata('uid');
 		$data['group'] = $CI->session->userdata('gid');
-		$data['session'] = $CI->session->userdata('session_id');
+		$data['session'] = $CI->session->userdata('cookie_id');
 		$data['tracking'] = $tracking;
 
 		// Browsergegevens
