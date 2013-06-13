@@ -68,7 +68,7 @@
 
 		<div class='span2'>
 			<?php if ($speltak == 'bevers') { ?>
-            	<img src="<?php echo base_url();?>images/rozemarijn.jpg">
+            	<img src="<?php echo base_url();?>images/rozemarijn.png">
             <?php } elseif ($speltak == 'welpen') { ?>
             	<img src="<?php echo base_url();?>images/shanti.png">
             <?php } elseif ($speltak == 'scouts') { ?>
