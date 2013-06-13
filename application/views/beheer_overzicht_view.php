@@ -8,29 +8,162 @@
 	</div>
 
 	<div class='row-fluid'>
-		<div class='span12'>
+		<div class='span10 offset1'>
+            <ul id="myTab" class="nav nav-tabs">
+            	<li class="active"><a href="#algemeen" data-toggle="tab">Algemeen</a></li>
+            	<li><a href="#bezoekers" data-toggle="tab">Bezoekers</a></li>
+            	<li><a href="#oorsprong" data-toggle="tab">Oorsprong</a></li>
+            	<li><a href="#browsers" data-toggle="tab">Browsers</a></li>
+            	<li><a href="#fouten" data-toggle="tab">Fouten</a></li>
+            </ul>
 
-<!--<script src="<?php echo base_url();?>assets/flot/jquery.js"></script>-->
+        </div>
+    </div>
 
+    <div class='row-fluid'>
+		<div class='span10 offset1'>
 
+			<div id="myTabContent" class="tab-content">
 
-                <script type="text/javascript">
-                $(function () {
-                    var hits = { label: "hits per uur", data: [
-                    [1370466000000, 22], [1370505600000, 7], [1370509200000, 18], [1370520000000, 25], [1370548800000, 1], [1370617200000, 3], [1370642400000, 2], [1370779200000, 60], [1370782800000, 92], [1370786400000, 69], [1370790000000, 25], [1370797200000, 21], [1370800800000, 18], [1370844000000, 6], [1370887200000, 25], [1370890800000, 35], [1370894400000, 35], [1370898000000, 58], [1370973600000, 68], [1370977200000, 62], [1370980800000, 118], [1370984400000, 81], [1370988000000, 31], [1370991600000, 18], [1371013200000, 1], [1371056400000, 5], [1371060000000, 15], [1371063600000, 18], [1371067200000, 32], [1371070800000, 3],
-                    ],
-                    bars: {show:true} };
-            
-                $.plot(
-                    $("#graph_hits_ph"),
-                    [hits],
-                    { xaxis: { mode: "time" }}
-                    );
+				<div class="tab-pane fade in active" id="algemeen">
+					<p>Aantal bezoekers vandaag: <?php echo $stats_today['0']['count']; ?></p>
 
-                });
-                </script>
+				</div>
 
-                <div id="graph_hits_ph" style="width:600px;height:300px;"></div>
+				<div class="tab-pane" id="bezoekers">
+
+                	<script type="text/javascript">
+                		$(function () {
+							var hits = { label: "hits", data: [
+								<?php foreach ($hits_ph as $hour) {
+									echo "[".$hour['timestamp'].", ".$hour['hits']."], ";
+								} ?>
+							],
+								bars: {show:true}
+							};
+
+                			$.plot(
+                    			$("#graph_hits_ph"),
+                    			[hits],
+                    			{ xaxis: {
+                    				mode: "time",
+                    				timezone: "browser"
+                    			  }
+                    			}
+                    		);
+
+                		});
+                	</script>
+
+                	<div id="graph_hits_ph" style="width:600px;height:300px;"></div>
+                	<br>
+                	<table class='table'>
+						<caption>Populaire pagina's</caption>
+						<thead>
+							<tr>
+								<th>Lokatie</th>
+								<th>Hits</th>
+							</tr>
+						</thead>
+						<tbody>
+							<?php foreach ($popular as $page) { ?>
+								<tr>
+									<td><a href="<?php echo base_url().$page['uri'] ?>">/<?php echo $page['uri'] ?></a></td>
+									<td><?php echo $page['hits'] ?></td>
+								</tr>
+							<?php } ?>
+						</tbody>
+					</table>
+
+				</div>
+
+				<div class="tab-pane" id="oorsprong">
+					<table class='table'>
+						<caption>Waar komen de bezoekers vandaan</caption>
+						<thead>
+							<tr>
+								<th>Lokatie</th>
+								<th>Aantal</th>
+							</tr>
+						</thead>
+						<tbody>
+							<?php foreach ($referrer as $refer) { ?>
+								<tr>
+									<td><a href="<?php echo $refer['referrer'] ?>" target='new'><?php echo $refer['referrer'] ?></a></td>
+									<td><?php echo $refer['count'] ?></td>
+								</tr>
+							<?php } ?>
+						</tbody>
+					</table>
+				</div>
+
+				<div class="tab-pane" id="browsers">
+					<table class='table'>
+						<caption>Welke browsers gebruiken bezoekers</caption>
+						<thead>
+							<tr>
+								<th>Browser</th>
+								<th>Hits</th>
+								<th>Procent</th>
+							</tr>
+						</thead>
+						<tbody>
+							<?php foreach ($browsers as $browser) { ?>
+								<tr>
+									<td><?php echo $browser['browser'].' '.$browser['version'] ?></td>
+									<td><?php echo $browser['hits'] ?></td>
+									<td><?php echo round(($browser['hits']/$totalhits)*100, 1, PHP_ROUND_HALF_UP) ?></td>
+								</tr>
+							<?php } ?>
+						</tbody>
+					</table>
+
+					<table class='table'>
+						<caption>Welke systemen gebruiken bezoekers</caption>
+						<thead>
+							<tr>
+								<th>OS</th>
+								<th>Hits</th>
+								<th>Procent</th>
+							</tr>
+						</thead>
+						<tbody>
+							<?php foreach ($oses as $os) { ?>
+								<tr>
+									<td><?php echo $os['platform'].' '.$os['mobile'] ?></td>
+									<td><?php echo $os['hits'] ?></td>
+									<td><?php echo round(($os['hits']/$totalhits)*100, 1, PHP_ROUND_HALF_UP) ?></td>
+								</tr>
+							<?php } ?>
+						</tbody>
+					</table>
+
+				</div>
+
+				<div class="tab-pane" id="fouten">
+					<table class='table'>
+						<caption>Fouten in de website</caption>
+						<thead>
+							<tr>
+								<th>Lokatie</th>
+								<th>Vanwaar</th>
+								<th>Aantal</th>
+							</tr>
+						</thead>
+						<tbody>
+							<?php foreach ($error_404 as $error) { ?>
+								<tr>
+									<td>/<?php echo $error['uri'] ?></td>
+									<td><a href="<?php echo $error['referrer'] ?>"><?php echo $error['referrer'] ?></a></td>
+									<td><?php echo $error['count'] ?></td>
+								</tr>
+							<?php } ?>
+						</tbody>
+					</table>
+
+				</div>
+
+			</div>
 
 		</div>
 	</div>

@@ -312,6 +312,21 @@
             // Modellen laden
             $this->load->model('statistics_model');
             $data['hits_ph'] = $this->statistics_model->get_hits();
+            $data['popular'] = $this->statistics_model->get_popular();
+            $data['referrer'] = $this->statistics_model->get_referrer();
+            $data['browsers'] = $this->statistics_model->get_browsers();
+
+            $data['totalhits'] = 0;
+
+            foreach ($data['browsers'] as $browser) {
+                $data['totalhits'] = $data['totalhits'] + $browser['hits'];
+            }
+
+            $data['stats_today'] = $this->statistics_model->get_stats_today();
+
+            $data['oses'] = $this->statistics_model->get_os();
+            $data['error_404'] = $this->statistics_model->get_404();
+            $data['returning'] = $this->statistics_model->get_returning_visitors();
 
             // Variabelen goedzetten
             $data['page'] = 'beheer';
