@@ -37,7 +37,7 @@
             <div class="item">
                 <center><img src="<?php echo base_url();?>images/carousel_6.png" alt="&copy; R. Welling" title="&copy; R. Welling"></center>
                 <div class="carousel-caption">
-                    <p>PA6/JAM 2012</p>
+                    <p>PA6JAM/J 2012</p>
                 </div>
             </div>
     	</div>
