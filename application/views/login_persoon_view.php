@@ -9,11 +9,8 @@
 
 	<div class='row-fluid'>
 		<div class='span8 offset1'>
-			<p>Hieronder is het mogelijk in te loggen voor individuele personen welke hier expliciet toestemming voor
-				hebben gekregen van de JOTA-JOTI organisatie. Indien je dat niet hebt, heb vooral veel plezier met de
-				rest van de website en de mogelijkheden welke deze biedt.</p>
-			<p>Indien je van mening bent dat je een account zou moeten hebben, dan weet je ook waar je deze moet aanvragen.</p>
-			<p>If you do not understand the Dutch text above, please visit the 
+            <P>Als je van de JOTA-JOTI-organisatie een inlognaam en wachtwoord hebt ontvangen om in te loggen op deze website, kun je dat doen door onderstaande velden in te vullen. Heb je geen inlognaam en wachtwoord ontvangen en ben je van mening dat je deze wel zou moeten hebben, neem dan even contact op met de JOTA-JOTI-organisatie om deze aan te vragen.</P>            <P>Als je per ongeluk hier terecht bent gekomen, klik dan rustig verder via bovenstaand menu. We wensen je veel plezier met de rest van de website!</P>
+            <P>If you don't understand the text above, please visit the international JOTA-JOTI website.
 				<a href='http://www.scout.org/en/information_events/events/jota'>international scouts website</a>.</p>
 			<br>
 
