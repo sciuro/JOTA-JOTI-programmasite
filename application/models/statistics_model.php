@@ -16,6 +16,7 @@
                 COUNT(*) AS hits
                 FROM    statistics
                 WHERE timestamp >= (NOW() - INTERVAL 1 MONTH)
+                and platform != "Unknown Platform"
                 GROUP BY
                     YEAR(timestamp),
                     MONTH(timestamp),
@@ -32,6 +33,7 @@
             $this->db->from('(select session
                                 from statistics
                                 where timestamp >= curdate()
+                                and platform != "Unknown Platform"
                                 group by session) AS s');
 
             $query = $this->db->get();
@@ -43,6 +45,7 @@
             $this->db->from('statistics');
 
             $this->db->where('error_code', '200');
+            $this->db->where('platform !=', 'Unknown Platform');
 
             $this->db->group_by('uri');
             $this->db->order_by('hits', 'DESC');
@@ -56,9 +59,10 @@
             $this->db->from('statistics');
 
             $this->db->where('error_code', '200');
+            $this->db->where('platform !=', 'Unknown Platform');
 
             $this->db->group_by('browser, version');
-            $this->db->order_by('hits DESC, browser, version');
+            $this->db->order_by('browser, cast(version as unsigned) DESC');
 
             $query = $this->db->get();
             return $query->result_array();
@@ -69,6 +73,7 @@
             $this->db->from('statistics');
 
             $this->db->where('error_code', '200');
+            $this->db->where('platform !=', 'Unknown Platform');
 
             $this->db->group_by('platform, mobile');
             $this->db->order_by('hits DESC, platform, mobile');

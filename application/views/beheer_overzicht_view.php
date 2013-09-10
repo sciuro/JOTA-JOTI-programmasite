@@ -108,13 +108,48 @@
 							</tr>
 						</thead>
 						<tbody>
-							<?php foreach ($browsers as $browser) { ?>
+							<?php
+							$current['hits'] = '0';
+							$current['browser'] = $browsers[0]['browser'];
+							foreach ($browsers as $browser) { ?>
+								<?php if ($current['browser'] == $browser['browser']) {
+									$current['hits'] = $current['hits'] + $browser['hits']; ?>
+
 								<tr>
 									<td><?php echo $browser['browser'].' '.$browser['version'] ?></td>
 									<td><?php echo $browser['hits'] ?></td>
 									<td><?php echo round(($browser['hits']/$totalhits)*100, 1) ?></td>
 								</tr>
+
+								<?php } else { ?>
+
+								<tr>
+									<td><strong><?php echo $current['browser']; ?></strong></td>
+									<td><strong><?php echo $current['hits']; ?></strong></td>
+									<td><strong><?php echo round(($current['hits']/$totalhits)*100, 1) ?></strong></td>
+								</tr>
+
+								<?php
+ 									$current['hits'] = '0';
+									$current['browser'] = $browser['browser'];
+									$current['hits'] = $current['hits'] + $browser['hits']; ?>
+
+								<tr>
+									<td><?php echo $browser['browser'].' '.$browser['version'] ?></td>
+									<td><?php echo $browser['hits'] ?></td>
+									<td><?php echo round(($browser['hits']/$totalhits)*100, 1) ?></td>
+								</tr>
+
+								<?php } ?>
+
 							<?php } ?>
+
+								<tr>
+									<td><strong><?php echo $current['browser']; ?></strong></td>
+									<td><strong><?php echo $current['hits']; ?></strong></td>
+									<td><strong><?php echo round(($current['hits']/$totalhits)*100, 1) ?></strong></td>
+								</tr>
+
 						</tbody>
 					</table>
 
