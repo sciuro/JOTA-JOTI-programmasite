@@ -204,6 +204,10 @@
    									<?php } ?>
       							</td>
     						</tr>
+    						<tr>
+      							<td>Winnende code</td>
+      							<td><?php echo $spel['wincode']; ?></td>
+    						</tr>
     						<?php if ($spel['copyright'] != '') { ?>
     						<tr>
       							<td>Copyright</td>

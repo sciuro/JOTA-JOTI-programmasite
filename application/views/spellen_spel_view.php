@@ -117,6 +117,10 @@
    						<?php } ?>
       					</th>
     				</tr>
+    				<tr>
+      					<th>Winnende code</th>
+      					<th><?php echo $spel['wincode']; ?></th>
+    				</tr>
     				<?php if ($spel['copyright'] != '') { ?>
     				<tr>
       					<th>Copyright</th>

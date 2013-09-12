@@ -36,10 +36,6 @@
 										<td><strong>Uitleg:</strong></td>
 										<td><?php echo $spel['omschrijving']; ?></td>
 									</tr>
-									<tr>
-										<td><strong>Geheime code:</strong></td>
-										<td><?php echo $spel['wincode']; ?></td>
-									</tr>
 								</tbody>
 							</table>
 							<br>
@@ -47,6 +43,8 @@
 						</div>
 
 						<div class="modal-footer">
+							<?php if ($speltak == 'scouts') {$buttontext="Kleurcode"; } else {$buttontext="Kluiscode"; } ?>
+							<a href="<?php echo base_url();?>spellen/code/<?php echo $spel['id'].'/'.$gebiednr; ?>"><button role="button" class="btn btn-success"><?php echo $buttontext ?></button></a>
 							<a href="<?php echo base_url();?>spellen/spel/<?php echo $spel['id']; ?>"><button role="button" class="btn btn-info">Spelbeschrijving</button></a>
 							<button class="btn" data-dismiss="modal" aria-hidden="true">Sluiten</button>
 						</div>
@@ -75,10 +73,6 @@
 										<td><strong>Uitleg:</strong></td>
 										<td><?php echo $spel['omschrijving']; ?></td>
 									</tr>
-									<tr>
-										<td><strong>Geheime code:</strong></td>
-										<td><?php echo $spel['wincode']; ?></td>
-									</tr>
 								</tbody>
 							</table>
 							<br>
@@ -86,6 +80,8 @@
 						</div>
 
 						<div class="modal-footer">
+							<?php if ($speltak == 'scouts') {$buttontext="Kleurcode"; } else {$buttontext="Kluiscode"; } ?>
+							<a href="<?php echo base_url();?>spellen/code/<?php echo $spel['id'].'/'.$gebiednr; ?>"><button role="button" class="btn btn-success"><?php echo $buttontext ?></button></a>
 							<a href="<?php echo base_url();?>spellen/spel/<?php echo $spel['id']; ?>"><button role="button" class="btn btn-info">Spelbeschrijving</button></a>
 							<button class="btn" data-dismiss="modal" aria-hidden="true">Sluiten</button>
 						</div>
@@ -115,10 +111,6 @@
 										<td><strong>Uitleg:</strong></td>
 										<td><?php echo $spel['omschrijving']; ?></td>
 									</tr>
-									<tr>
-										<td><strong>Geheime code:</strong></td>
-										<td><?php echo $spel['wincode']; ?></td>
-									</tr>
 								</tbody>
 							</table>
 							<br>
@@ -126,6 +118,8 @@
 						</div>
 
 						<div class="modal-footer">
+							<?php if ($speltak == 'scouts') {$buttontext="Kleurcode"; } else {$buttontext="Kluiscode"; } ?>
+							<a href="<?php echo base_url();?>spellen/code/<?php echo $spel['id'].'/'.$gebiednr; ?>"><button role="button" class="btn btn-success"><?php echo $buttontext ?></button></a>
 							<a href="<?php echo base_url();?>spellen/spel/<?php echo $spel['id']; ?>"><button role="button" class="btn btn-info">Spelbeschrijving</button></a>
 							<button class="btn" data-dismiss="modal" aria-hidden="true">Sluiten</button>
 						</div>

@@ -267,6 +267,39 @@
              // Als laatste de footer laden.
              $this->load->view('footer_view', $data);         
         }
+		
+        public function code($spelnr, $gebied) {
+			// Agent informatie laden
+			$this->load->library('user_agent');
+			
+            // Modellen laden.
+            $this->load->model('overzicht_model');
+            $speltak = $this->overzicht_model->get_gebied_speltak($gebied)->naam;
+            $gebiednaam = $this->overzicht_model->get_gebied_naam($gebied)->naam;
+
+            $data['spel'] = $this->overzicht_model->get_spel($spelnr);
+            
+
+            // Variabelen van de pagina zetten.
+            $data['page'] = "spellen";
+            $data['titel'] = "Code van ".$data['spel'][0]['titel'];
+            $data['speltak'] = $speltak;
+            $data['gebied'] = $gebiednaam;
+            $data['gebiednr'] = $gebied;
+			$data['returnurl'] = $this->agent->referrer();
+
+            // Eerst de header laden.
+            $this->load->view('header_view', $data);
+
+            // Menu laden.
+            $this->load->view('menu_view', $data);
+
+            // Pagina weergeven
+            $this->load->view('spellen_code_view', $data);
+
+             // Als laatste de footer laden.
+             $this->load->view('footer_view', $data);         
+        }
 
         private function keuze($speltak) {
             // Variabelen van de pagina zetten.
