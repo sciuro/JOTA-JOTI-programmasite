@@ -27,3 +27,20 @@ versie: 0.2.2
 		Er is een mogelijkheid erbij gekomen om de copyright op spelen in te stellen.
 		Bij de speltakken krijg je nu een themaverhaaltje te lezen. Deze staat in de database en werkt automatisch op tijd.
 		Er is een begin gemaakt met het bijhouden van scores voor de scouts.
+
+2013-09-12  Rogier Neeleman  <rogier.neeleman@jota-joti.nl>
+versie: 0.3.0
+
+* Beheer:
+		Statistieken worden nu bijgehouden en zijn zichtbaar
+		
+* Pagina's:
+		Broodkruimels zijn nu zichtbaar op alle pagina's, behalve de foto pagina(s).
+		
+* Spellen:
+		Scoutsspel is aanwezig.
+		Speltakken kunnen in het spel de winnende code zien.
+		Leiding ziet dit bij alle uitleg van de spelen al.
+		De antwoorden kunnen worden ingevult ter controle.
+		In de database kan hiervoor ofwel een youtube filmpje, of een plaatje te zien zijn.
+		
