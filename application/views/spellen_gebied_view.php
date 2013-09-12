@@ -9,7 +9,8 @@
 
 	<div class='row-fluid'>
 		<div class='span12'>
-			<center><img src="<?php echo base_url();?>images/gebied_<?php echo $gebiednr;?>_overzicht.png" width="800" border="0" usemap="#kaart"></center>
+			<?php if ($speltak == 'scouts') { $hoogte='200'; } else { $hoogte='600'; } ?>
+			<center><img src="<?php echo base_url();?>images/gebied_<?php echo $gebiednr;?>_overzicht.png" width="<?php echo $hoogte ?>" border="0" usemap="#kaart"></center>
 		</div>
 	</div>
 	<?php $i = 0; ?>
