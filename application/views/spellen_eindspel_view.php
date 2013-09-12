@@ -11,7 +11,8 @@
 
 	<?php if (!isset($win)) { ?>
 		
-		<div class='span8 offset1'>
+		<?php if ($speltak == 'scouts') { $kluis=''; } else { $kluis='kluis'; } ?>
+		<div class='span8 offset1 <?php echo $kluis ?>'>
 			<p>Vul hier alle antwoorden van de verschillende spelen in welke jullie allemaal gedaan hebben.</p>
 			
 			<p>
