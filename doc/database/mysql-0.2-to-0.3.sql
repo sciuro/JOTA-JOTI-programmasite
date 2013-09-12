@@ -98,3 +98,9 @@ CREATE TABLE `jota`.`wincode` (
 `plaatje` VARCHAR( 128 ) NOT NULL
 ) ENGINE = MYISAM ;
 
+-- Voorbeeld voor de wincodes
+INSERT INTO `wincode` (`code`, `youtube`, `plaatje`) VALUES
+('welpen-1-2-3-4-5-6-7-8', 'm4eTnN6AW14', ''),
+('scouts-1-2-3-4-5-6-7-8', '', 'http://someonenoticed.files.wordpress.com/2011/03/thumbsupd.png'),
+('bevers-8-7-6-5-4-3-2-1', 'Ld1DTmXesTo', '');
+
