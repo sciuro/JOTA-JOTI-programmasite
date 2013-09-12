@@ -136,3 +136,32 @@
         </div>
     </div>
 </div>
+
+<?php
+if ($this->session->userdata('bc2') != uri_string()) {
+	$this->session->set_userdata('bc0', $this->session->userdata('bc1'));
+	$this->session->set_userdata('bc0title', $this->session->userdata('bc1title'));
+	$this->session->set_userdata('bc1', $this->session->userdata('bc2'));
+	$this->session->set_userdata('bc1title', $this->session->userdata('bc2title'));
+	$this->session->set_userdata('bc2', uri_string());
+	$this->session->set_userdata('bc2title', $titel);
+}
+?>
+
+<?php if (!isset($pagina['banner']) || (isset($pagina['banner']) && $pagina['banner'] != 1)) { ?>
+<div class='container pagina'>
+	<div class='row-fluid tekst'>
+		<div class='offset1 span7'>
+		    <ul class="breadcrumb">
+				<?php if ($this->session->userdata('bc0') != '') { ?>
+		    	<li><a href="<?php echo base_url($this->session->userdata('bc0'));?>"><?php echo $this->session->userdata('bc0title') ?></a> <span class="divider">/</span></li>
+				<?php } ?>
+				<?php if ($this->session->userdata('bc1') != '') { ?>
+		    	<li><a href="<?php echo base_url($this->session->userdata('bc1'));?>"><?php echo $this->session->userdata('bc1title') ?></a> <span class="divider">/</span></li>
+				<?php } ?>
+		    	<li class="active"><?php echo $this->session->userdata('bc2title') ?></li>
+		    </ul>
+		</div>
+	</div>
+</div>
+<?php } ?>
