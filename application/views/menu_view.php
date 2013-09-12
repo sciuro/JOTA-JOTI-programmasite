@@ -36,7 +36,7 @@
 						<ul class="dropdown-menu" role="menu">
 							<li><a tabindex="-1" href="<?php echo base_url();?>spellen/bevers/">Bevers</a></li>
                             <li><a tabindex="-1" href="<?php echo base_url();?>spellen/welpen/">Welpen</a></li>
-                            <li><a tabindex="-1" href="<?php echo base_url();?>info/pagina/scouts/">Scouts</a></li>
+                            <li><a tabindex="-1" href="<?php echo base_url();?>spellen/scouts/">Scouts</a></li>
                             <li><a tabindex="-1" href="<?php echo base_url();?>info/pagina/twitterhike">Explorers</a></li>
                             <li><a tabindex="-1" href="<?php echo base_url();?>info/pagina/twitterhike">Roverscouts</a></li>
 						</ul>
