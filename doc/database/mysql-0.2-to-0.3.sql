@@ -91,3 +91,10 @@ ALTER TABLE `statistics` ADD `error_code` INT( 3 ) NOT NULL AFTER `uri` ;
 -- Tabel spelen heeft een generiekere wincode
 ALTER TABLE `spel` CHANGE `wincode` `wincode` VARCHAR( 32 ) NOT NULL ;
 
+-- Tabel voor alle winnende codes
+CREATE TABLE `jota`.`wincode` (
+`code` VARCHAR( 64 ) NOT NULL ,
+`youtube` VARCHAR( 32 ) NOT NULL ,
+`plaatje` VARCHAR( 128 ) NOT NULL
+) ENGINE = MYISAM ;
+

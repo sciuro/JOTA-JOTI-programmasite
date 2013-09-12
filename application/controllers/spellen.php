@@ -361,8 +361,22 @@
             $data['titel'] = "Eindspel ".$speltak;
             $data['speltak'] = $speltak;
             $data['opkomstduur'] = $opkomstduur;
+			
+			// Post data
+			if ($this->input->post() != '') {
+				$antwoord = $speltak;
+				foreach ($this->input->post() as $item) {
+					$antwoord .= '-'.$item;
+				}
+				
+				// Controleren antwoord
+				$this->load->model('wincode_model');
+				$data['win'] = $this->wincode_model->controleer($antwoord);
+			}
 
             // Modellen laden.
+            $this->load->model('overzicht_model');
+            $data['gebieden'] = $this->overzicht_model->get_gebieden($speltak);
 
             // Eerst de header laden.
             $this->load->view('header_view', $data);

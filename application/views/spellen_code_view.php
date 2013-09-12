@@ -2,7 +2,7 @@
 	<div class='row-fluid tekst'>
 		<div class='span7 offset1'>
 			<header class="jumbotron subhead">
-				<h1><?php echo $spel[0]['titel']; ?></h1>
+				<h1><?php echo $gebied; ?></h1>
 			</header>
 		</div>
 	</div>
