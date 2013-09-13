@@ -41,9 +41,6 @@ CREATE TABLE IF NOT EXISTS `feedback` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
--- Groepsid is niet meer opvolgend en wachtwoorden doen we niet  meer aan.
-ALTER TABLE `groep` CHANGE `id` `id` INT( 6 ) NOT NULL;
-ALTER TABLE `groep` DROP `wachtwoord`;
 
 -- Groepsdata word nu ook opgeslagen
 ALTER TABLE `statistics` ADD `group` INT( 6 ) NOT NULL AFTER `user`;
@@ -92,7 +89,7 @@ ALTER TABLE `statistics` ADD `error_code` INT( 3 ) NOT NULL AFTER `uri` ;
 ALTER TABLE `spel` CHANGE `wincode` `wincode` VARCHAR( 32 ) NOT NULL ;
 
 -- Tabel voor alle winnende codes
-CREATE TABLE `jota`.`wincode` (
+CREATE TABLE `wincode` (
 `code` VARCHAR( 64 ) NOT NULL ,
 `youtube` VARCHAR( 32 ) NOT NULL ,
 `plaatje` VARCHAR( 128 ) NOT NULL
@@ -105,11 +102,17 @@ INSERT INTO `wincode` (`code`, `youtube`, `plaatje`) VALUES
 ('bevers-8-7-6-5-4-3-2-1', 'Ld1DTmXesTo', '');
 
 -- De speltakpagina van de scouts werkt nu ook.
-UPDATE `jota`.`gebied` SET `kaartloc` = '65,130,179,334' WHERE `gebied`.`id` =35;
-UPDATE `jota`.`gebied` SET `kaartloc` = '297,124,411,316' WHERE `gebied`.`id` =36;
-UPDATE `jota`.`gebied` SET `kaartloc` = '410,126,524,318' WHERE `gebied`.`id` =37;
-UPDATE `jota`.`gebied` SET `kaartloc` = '180,125,294,317' WHERE `gebied`.`id` =38;
-UPDATE `jota`.`gebied` SET `kaartloc` = '62,342,176,534' WHERE `gebied`.`id` =39;
-UPDATE `jota`.`gebied` SET `kaartloc` = '298,339,412,531' WHERE `gebied`.`id` =40;
-UPDATE `jota`.`gebied` SET `kaartloc` = '174,326,288,535' WHERE `gebied`.`id` =41;
-UPDATE `jota`.`gebied` SET `kaartloc` = '415,339,529,531' WHERE `gebied`.`id` =42;
+UPDATE `gebied` SET `kaartloc` = '65,130,179,334' WHERE `gebied`.`id` =35;
+UPDATE `gebied` SET `kaartloc` = '297,124,411,316' WHERE `gebied`.`id` =36;
+UPDATE `gebied` SET `kaartloc` = '410,126,524,318' WHERE `gebied`.`id` =37;
+UPDATE `gebied` SET `kaartloc` = '180,125,294,317' WHERE `gebied`.`id` =38;
+UPDATE `gebied` SET `kaartloc` = '62,342,176,534' WHERE `gebied`.`id` =39;
+UPDATE `gebied` SET `kaartloc` = '298,339,412,531' WHERE `gebied`.`id` =40;
+UPDATE `gebied` SET `kaartloc` = '174,326,288,535' WHERE `gebied`.`id` =41;
+UPDATE `gebied` SET `kaartloc` = '415,339,529,531' WHERE `gebied`.`id` =42;
+
+
+-- Groepsid is niet meer opvolgend en wachtwoorden doen we niet  meer aan.
+-- Deze regel als laatste gezien de drop-wachtwoord geen if-exists snapt en mogelijk exit. 
+ALTER TABLE `groep` CHANGE `id` `id` INT( 6 ) NOT NULL;
+ALTER TABLE `groep` DROP `wachtwoord`;

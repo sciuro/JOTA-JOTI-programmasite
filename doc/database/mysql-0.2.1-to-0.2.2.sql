@@ -1,7 +1,3 @@
--- Groepsid is niet meer opvolgend en wachtwoorden doen we niet  meer aan.
-ALTER TABLE `groep` CHANGE `id` `id` INT( 6 ) NOT NULL;
-ALTER TABLE `groep` DROP `wachtwoord`;
-
 -- Groepsdata word nu ook opgeslagen
 ALTER TABLE `statistics` ADD `group` INT( 6 ) NOT NULL AFTER `user`;
 
@@ -40,3 +36,9 @@ ALTER TABLE `spel` CHANGE `timestamp` `timestamp` TIMESTAMP ON UPDATE CURRENT_TI
 
 -- Copyright bij Spellen
 ALTER TABLE `spel` ADD `copyright` VARCHAR( 64 ) NOT NULL AFTER `beschrijving`;
+
+-- Groepsid is niet meer opvolgend en wachtwoorden doen we niet  meer aan.
+-- Deze regel als laatste gezien de drop-wachtwoord geen if-exists snapt en mogelijk exit. 
+ALTER TABLE `groep` CHANGE `id` `id` INT( 6 ) NOT NULL;
+ALTER TABLE `groep` DROP `wachtwoord`;
+
