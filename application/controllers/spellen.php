@@ -77,7 +77,7 @@
         public function overzicht() {
             // Variabelen van de pagina zetten.
             $data['page'] = "leiding";
-            $data['titel'] = "Spellen overzicht";
+            $data['titel'] = "Activiteitenoverzicht";
 
             // Modellen laden.
             $this->load->model('overzicht_model');
