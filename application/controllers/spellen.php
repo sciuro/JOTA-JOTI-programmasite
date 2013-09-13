@@ -51,7 +51,7 @@
         public function download() {
             // Variabelen van de pagina zetten.
             $data['page'] = "leiding";
-            $data['titel'] = "Spellen downloaden";
+            $data['titel'] = "Activiteiten downloaden";
 
             // Modellen laden.
             $this->load->model('overzicht_model');

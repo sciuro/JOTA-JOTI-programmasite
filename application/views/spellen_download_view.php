@@ -9,9 +9,8 @@
 
 	<div class='row-fluid'>
 		<div class='span6 offset1'>
-			<div>
-				Dit zijn alle spellen met uitleg, gesorteerd per speltak en totale opkomstduur. Via de link krijg je een lijst met alle spellen welke binnen je selectie past.
-				Hiervan kun je dan 1 PDF laten genereren waar alle speluitleg voor de destbetreffende speltak en opkomstduur. Ook zit hierbij een benodigdhedenlijst.
+            <div>
+            Dit zijn alle activiteiten met uitleg, gesorteerd per speltak en totale opkomstduur. Via de link krijg je een lijst met alle activiteiten die binnen je selectie past. Hiervan kun je dan 1 PDF laten genereren waar alle speluitleg voor de desbetreffende speltak en opkomstduur. Ook zit hierbij een benodigdhedenlijst.
 			</div>
 
 			<?php foreach ($speltakken as $speltak) { ?>
