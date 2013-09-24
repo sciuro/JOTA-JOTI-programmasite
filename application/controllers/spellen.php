@@ -48,6 +48,20 @@
             }
         }
 
+        public function explorers($view = NULL, $opkomstduur = NULL, $jjkeuze = NULL) {
+            if ($view == 'web') {
+                $this->web('explorers', $opkomstduur, $jjkeuze);
+            } elseif ($view == 'pdf') {
+                $this->pdf('explorers', $opkomstduur, $jjkeuze);
+            } elseif ($view == 'eindspel') {
+                $this->eindspel('explorers', $opkomstduur);
+            } elseif ($view == 'overzicht') {
+                $this->spellenoverzicht('explorers', $opkomstduur, $jjkeuze);
+            } else {
+                $this->keuze('explorers');
+            }
+        }
+        
         public function download() {
             // Variabelen van de pagina zetten.
             $data['page'] = "leiding";
