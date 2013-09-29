@@ -28,8 +28,8 @@
            <h4>Eindspellen</h4> 
              Dit zijn de filmpjes voor de eindspellen voor offline gebruik. 
              <ul> 
-              <li><a href="<?php echo base_url();?>bijlage/download/73">Bevers</li>  
-              <li><a href="<?php echo base_url();?>bijlage/download/74">Welpen</li>  
+              <li><a href="<?php echo base_url();?>bijlage/download/74">Bevers</li>  
+              <li><a href="<?php echo base_url();?>bijlage/download/73">Welpen</li>  
              </ul>    
 		</div>
 
