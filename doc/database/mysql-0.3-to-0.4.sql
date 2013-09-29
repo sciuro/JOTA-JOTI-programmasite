@@ -1,5 +1,12 @@
+-- Add explorers as spelgebied and speltak
+
+INSERT INTO `speltak` (`id`, `naam`) VALUES
+(14, 'Explorers');
+
 INSERT INTO `gebied` (`id`, `speltak_id`, `naam`, `kaartloc`) VALUES
 (43, 14, 'Explorers', '290,116,760,585');
+
+-- bind scout-games to explorers also
 
 INSERT INTO `spel_gebied` (`spel_id`, `gebied_id`) VALUES
 (300, 43),
@@ -85,3 +92,16 @@ INSERT INTO `spel_gebied` (`spel_id`, `gebied_id`) VALUES
 (379, 43),
 (380, 43),
 (381, 43);
+
+-- Add movie bijlages
+
+INSERT INTO `bijlage` (`id`, `omschrijving`, `filename`, `timestamp`) VALUES
+(74, 'Filmpje eindspel Bevers', 'Bevers.zip', '2013-09-29 15:52:19'),
+(73, 'Filmpje eindspel Welpen', 'Welpen.zip', '2013-09-29 15:52:19');
+
+INSERT INTO `spel_bijlage` (`spel_id`, `bijlage_id`) VALUES
+(43, 74),
+(44, 74),
+(125, 73),
+(126, 73);
+
