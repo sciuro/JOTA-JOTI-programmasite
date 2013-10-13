@@ -162,7 +162,7 @@
 			<center>
 				<br>
 				<p>
-					<img src="<?php echo base_url();?>images/gebied_<?php echo $gebied['id']; ?>_logo.png">
+					<img src="<?php echo base_url();?>images/gebied_<?php echo $gebied['id']; ?>_overzicht.png">
 					<h1>Gebied<br>
 					<?php echo $gebied['naam']; ?></h1><br>
 				</p>
